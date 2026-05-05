@@ -1,81 +1,73 @@
 ---
 layout: page
-title: Digits-Classification-Project
+title: Digits Classification Project
 description: Team Lead | CNN vs. MLP benchmark for digit recognition (analyze model performance and architectural trade-offs).
-img: assets/img/MNIST.jpg
+img: assets/img/MNIST.jpg # Tải ảnh này từ repo cũ và bỏ vào thư mục assets/img/ của web hiện tại nhé
 importance: 2
 category: study
 giscus_comments: true
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white) ![Python](https://img.shields.io/badge/python-3.8+-blue.svg?style=for-the-badge&logo=python&logoColor=white) ![License](https://img.shields.io/badge/license-MIT-green.svg?style=for-the-badge)
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+> Course Project **Introduction to Information Technology** > **Faculty of Information Technology - VNU-HCM University of Science**
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+This project implements and compares the performance of Deep Learning models (MLP & CNN) for handwritten digit recognition using the MNIST dataset. The project is built with a modular architecture, designed for extensibility and academic research purposes.
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+---
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+## 📄 Documentation & Paper
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
+The project is accompanied by a detailed scientific report, providing an in-depth analysis of the mathematical foundations and empirical evaluation.
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+👉 **[Read the full report (PDF)](https://raw.githubusercontent.com/xdnhatnguyen/Digits-Classification-Project/main/docs/final_article.pdf)**
 
-{% raw %}
+---
 
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-```
+## ✨ Key Features
 
-{% endraw %}
+* **Modular Architecture:** Clear separation between Data Loading, Model, Loss function, and Training loop.
+* **Multi-Architecture Support:**
+    * **MLP (Multi-layer Perceptron):** Fully Connected Neural Network, Basic Feed-Forward Network (Baseline).
+    * **CNN (Convolutional Neural Network):** Convolutional network optimized for spatial feature extraction.
+* **Reproducibility:** Hyperparameter management via `yaml` configuration files.
+* **Logging & Visualization:** Real-time loss/accuracy tracking and prediction visualization.
+
+## 📅 Project Timeline and Team Members (HCMUS-ConChoCaoBangBoPC)
+
+Below is the implementation progress and task distribution of the team throughout the development process:
+
+![Gantt Chart](https://raw.githubusercontent.com/xdnhatnguyen/Digits-Classification-Project/main/assets/GanttChart.png)
+
+---
+
+## 📂 Project Structure
+
+```bash
+digits_classification/
+├── docs/                           # Project documentation
+│   └── final_article.pdf           # Scientific report file
+├── configs/                        # Configuration files
+│   └── config.yaml                 # Main config (Epochs, LR, Model type...)
+├── assets/                         # Image files
+│   └── GanttChart.png              # Project Timeline
+│   └── Figure_1.png                # A graph that compares loss over time between the two models during training
+│   └── Figure_2.png                # A graph that compares accuracy over time between the two models after every epoch
+│   └── Figure_3.png                # An evaluation table for the MLP Model
+│   └── Figure_4.png                # An evaluation table for the CNN Model
+│   └── cnn_interface.png           # User interface for the CNN Model
+│   └── mlp_interface.png           # User interface for the CNN Model
+│   └── demo.mp4                    # Interactive Demo
+│   └── cnn_confusion_matrix.pdf    # A confusion matrix for CNN Model
+│   └── mlp_confusion_matrix.pdf    # A confusion matrix for MLP Model
+│   └── mnist_samples_high_res.pdf  # Samples of the MNIST dataset
+├── src/                            # Source code
+│   ├── dataloader.py               # Data processing module (DataLoader, Transforms)
+│   ├── model.py                    # Model architecture definitions (CNN, MLP)
+│   ├── trainer.py                  # Training script
+│   └── utils.py                    # Utilities (Visualization, reading from config.yaml, etc)
+├── model                           # Directory for saving trained model weights
+├── main.py                         # Perform all the training, validating, and result visualizing steps defined in 'src/.'      
+├── app.py                          # Play a demo of both models
+├── requirements.txt                # Project dependencies
+└── README.md                       # README file
