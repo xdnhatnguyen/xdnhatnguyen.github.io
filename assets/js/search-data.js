@@ -393,7 +393,7 @@ ninja.data = [{
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
             },},{id: "projects-digits-classification-project",
-          title: 'Digits-Classification-Project',
+          title: 'Digits Classification Project',
           description: "Team Lead | CNN vs. MLP benchmark for digit recognition (analyze model performance and architectural trade-offs).",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project/";
