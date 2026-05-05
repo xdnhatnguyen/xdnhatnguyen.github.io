@@ -384,8 +384,8 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/announcement_2/";
-            },},{id: "news-nhat-nguyen-just-stole-your-heart-sparkles-smile",
-          title: 'Nhat Nguyen just stole your heart. :sparkles: :smile:',
+            },},{id: "news-sparkles-smile",
+          title: ':sparkles: :smile:',
           description: "",
           section: "News",},{id: "projects-project-1",
           title: 'project 1',
