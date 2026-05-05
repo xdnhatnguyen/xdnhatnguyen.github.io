@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Nhat Nguyen just stole your heart. :sparkles: :smile:
+:sparkles: :smile:
