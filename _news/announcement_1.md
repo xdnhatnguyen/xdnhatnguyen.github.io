@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-A simple inline announcement.
+Take my recent publication [here](https://www.youtube.com/watch?v=dQw4w9WgXcQ).
