@@ -376,11 +376,11 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
-            },},{id: "news-a-simple-inline-announcement",
-          title: 'A simple inline announcement.',
+            },},{id: "news-take-my-recent-publication-here",
+          title: 'Take my recent publication here.',
           description: "",
-          section: "News",},{id: "news-a-long-announcement-with-details",
-          title: 'A long announcement with details',
+          section: "News",},{id: "news-honey-if-you-see-this-you-are-gay",
+          title: 'Honey, if you see this, you are gay!',
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/announcement_2/";
