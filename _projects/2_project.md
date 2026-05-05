@@ -1,10 +1,10 @@
 ---
 layout: page
-title: project 2
-description: a project with a background image and giscus comments
-img: assets/img/3.jpg
+title: Digits-Classification-Project
+description: Team Lead | CNN vs. MLP benchmark for digit recognition (analyze model performance and architectural trade-offs).
+img: assets/img/MNIST.jpg
 importance: 2
-category: work
+category: study
 giscus_comments: true
 ---
 
