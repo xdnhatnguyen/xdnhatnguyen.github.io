@@ -379,13 +379,13 @@ ninja.data = [{
             },},{id: "news-take-my-recent-publication-here",
           title: 'Take my recent publication here.',
           description: "",
-          section: "News",},{id: "news-a-long-announcement-with-details",
-          title: 'A long announcement with details',
+          section: "News",},{id: "news-honey-if-you-see-this-you-are-gay",
+          title: 'Honey, if you see this, you are gay!',
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/announcement_2/";
-            },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
-          title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
+            },},{id: "news-nhat-nguyen-just-stole-your-heart-sparkles-smile",
+          title: 'Nhat Nguyen just stole your heart. :sparkles: :smile:',
           description: "",
           section: "News",},{id: "projects-project-1",
           title: 'project 1',
