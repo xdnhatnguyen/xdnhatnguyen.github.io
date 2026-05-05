@@ -2,7 +2,7 @@
 layout: page
 title: Digits Classification Project
 description: Team Lead | CNN vs. MLP benchmark for digit recognition (analyze model performance and architectural trade-offs).
-img: assets/img/MNIST.jpg # Tải ảnh này từ repo cũ và bỏ vào thư mục assets/img/ của web hiện tại nhé
+img: assets/img/MNIST.png # Tải ảnh này từ repo cũ và bỏ vào thư mục assets/img/ của web hiện tại nhé
 importance: 2
 category: study
 giscus_comments: true
@@ -65,9 +65,20 @@ digits_classification/
 │   ├── dataloader.py               # Data processing module (DataLoader, Transforms)
 │   ├── model.py                    # Model architecture definitions (CNN, MLP)
 │   ├── trainer.py                  # Training script
-│   └── utils.py                    # Utilities (Visualization, reading from config.yaml, etc)
-├── model                           # Directory for saving trained model weights
-├── main.py                         # Perform all the training, validating, and result visualizing steps defined in 'src/.'      
-├── app.py                          # Play a demo of both models
-├── requirements.txt                # Project dependencies
-└── README.md                       # README file
+```  
+---
+#### Demo Preview  
+A demonstration of the real-time digit recognition process.
+<p align="center">
+  <video src="https://github.com/user-attachments/assets/031d2be2-56bb-4402-8393-782c79fc0de9" width="700px" autoplay loop muted title="Gradio Demo">
+  </video>
+  <br>
+  <i>Figure 1: Real-time inference demo showing model predictions.</i>
+</p>  
+
+#### Side-by-Side Comparison: MLP vs. CNN
+As discussed in our analysis, the MLP model often struggles with subtle geometric variations due to its flattened input. In contrast, the CNN leverages convolutional filters to maintain spatial correlations.
+
+<table style="width: 100%; border-collapse: collapse;"> <tr> <td align="center" width="50%"><b>Multi-Layer Perceptron (MLP)</b></td> <td align="center" width="50%"><b>Convolutional Neural Network (CNN)</b></td> </tr> <tr> <td><img src="assets/mlp_interface.png" alt="MLP Interface" width="100%"></td> <td><img src="assets/cnn_interface.png" alt="CNN Interface" width="100%"></td> </tr> <tr> <td align="center"><i>MLP result showing higher ambiguity in probabilities</i></td> <td align="center"><i>CNN result showing robust spatial feature extraction</i></td> </tr> </table>
+
+---
