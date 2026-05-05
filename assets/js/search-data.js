@@ -379,8 +379,8 @@ ninja.data = [{
             },},{id: "news-take-my-recent-publication-here",
           title: 'Take my recent publication here.',
           description: "",
-          section: "News",},{id: "news-honey-if-you-see-this-you-are-gay",
-          title: 'Honey, if you see this, you are gay!',
+          section: "News",},{id: "news-a-long-announcement-with-details",
+          title: 'A long announcement with details',
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/announcement_2/";
