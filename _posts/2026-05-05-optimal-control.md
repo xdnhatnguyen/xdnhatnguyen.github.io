@@ -10,7 +10,7 @@ related_posts: true
 ---
 {% tabs language-switch %}
 
-{% tab Tiếng Việt %}
+{% tab language-switch Tiếng Việt %}
 
 # The Pontryagin's maximum principle
 
@@ -123,8 +123,8 @@ Ta cần chứng minh $\dot{x}^*(t) = \frac{\partial H}{\partial p}$. Theo
 thiết lập bài toán ban đầu: $$\dot{x}(t) = f(x, u)$$ Mà theo định nghĩa
 của Hamiltonian: $H(x, u, p) = p^T \cdot f(x, u) + L(x, u)$. Đạo hàm $H$
 theo $p$, ta thu được: $$\frac{\partial H}{\partial p} = f(x, u)$$ Từ
-(6) và (7) suy ra: $$\frac{\partial H}{\partial p} = \dot{x}^*(t)$$ **c.
-Điều kiện tối ưu hóa Control**\
+(6) và (7) suy ra: $$\frac{\partial H}{\partial p} = \dot{x}^*(t)$$ 
+**c. Điều kiện tối ưu hóa Control**\
 Mặt khác, xét phiếm hàm:
 $\mathcal{L} = \int_0^T \left( H(x, u, p) - p^T \dot{x} \right) dt$. Lấy
 biến phân theo $u$ (tương đương với việc lấy đạo hàm theo $u$ và nhân
@@ -216,10 +216,12 @@ biến thiên của trạng thái như sau:
 
 Thay các xấp xỉ này vào phương trình
 [\[eq:taylor_expansion\]](#eq:taylor_expansion){reference-type="eqref"
-reference="eq:taylor_expansion"}, ta thu được: $$\begin{aligned}
+reference="eq:taylor_expansion"}, ta thu được: 
+$$\begin{aligned}
     J^*(x(t), t) = \min_{u(t)} \Big\{ &L(x(t), u(t)) \Delta t + J^*(x(t), t) + J_t^*(x(t), t) \Delta t \nonumber \\
     &+ J_x^{*T}(x(t), t) \left[ f(x(t), u(t)) \right] \Delta t + o(\Delta t) \Big\} \label{eq:small_dt}
-\end{aligned}$$ trong đó $J_t^* = \frac{\partial J^*}{\partial t}$,
+\end{aligned}$$ 
+trong đó $J_t^* = \frac{\partial J^*}{\partial t}$,
 $J_x^* = \frac{\partial J^*}{\partial x} = \nabla_x J^*$, và
 $o(\Delta t)$ ký hiệu các số hạng chứa $(\Delta t)^2$ và các vô cùng bé
 bậc cao hơn của $\Delta t$ phát sinh từ việc xấp xỉ tích phân và cắt cụt
@@ -418,16 +420,16 @@ Do đó, ta cũng có quan hệ sau: $$p(t) = \nabla_x J^*(x, t) = K(t)x(t)$$
 
 {% endtab %}
 
-{% tab English %}
+{% tab language-switch English %}
 
 ## 1. The Pontryagin's Maximum Principle
 
 ### Statement of the Problem
 Consider the optimal control problem with an initial value:
-\begin{align}
-	\dot{x}(t) &= f(x(t), u(t)) \\
+$$\begin{align}
+	\dot{x}(t) &= f(x(t), u(t))
 	x(0) &= x_0 
-\end{align}
+\end{align}$$
 
 The objective is to optimize the general cost function:
 $$
@@ -440,11 +442,11 @@ Define the Hamiltonian function:
 \end{equation}
 
 Pontryagin's Maximum Principle (PMP) yields the following relations:
-\begin{align}
+$$\begin{align}
 	\dot{x}^*(t) &= \frac{\partial H}{\partial p} \\
 	\dot{p}(t) &= -\frac{\partial H}{\partial x} \\
 	\frac{\partial H}{\partial u} &= 0
-\end{align}
+\end{align}$$
 
 ---
 
@@ -486,10 +488,10 @@ $$
 **Proof of \eqref{eq:i}:**
 
 We introduce a perturbation to the state variable with parameter $\epsilon$:
-\begin{align}
+$$\begin{align}
 	\text{State: } & x(t, \epsilon) = x^*(t) + \epsilon \cdot \eta(t) \implies \delta x = \epsilon \eta(t) \nonumber \\
 	\text{Velocity: } & \dot{x}(t, \epsilon) = \dot{x}^*(t) + \epsilon \cdot \dot{\eta}(t) \implies \delta \dot{x} = \epsilon \dot{\eta}(t) \nonumber
-\end{align}
+\end{align}$$
 
 Consider the functional with respect to $\epsilon$:
 $$
@@ -524,10 +526,10 @@ $$
 $$
 
 By definition of the first variation: $\delta \mathcal{L} = \left( \frac{d\mathcal{L}}{d\epsilon} \Big|_{\epsilon=0} \right) \cdot \epsilon$. Multiplying the expression by $\epsilon$:
-\begin{align}
+$$\begin{align}
 	\delta \mathcal{L} &= \int_0^T \left[ \frac{\partial H}{\partial x} (\epsilon \eta(t)) - p^T (\epsilon \dot{\eta}(t)) \right] dt \nonumber \\
 	&= \int_0^T \left[ \frac{\partial H}{\partial x} \delta x - p^T \cdot \delta \dot{x} \right] dt \nonumber
-\end{align}
+\end{align}$$
 
 **Proof of \eqref{eq:ii}:**
 
@@ -537,21 +539,21 @@ $$
 $$
 
 Considering the second term separately and applying integration by parts:
-\begin{align}
+$$\begin{align}
 	\int_0^T p^T (\delta \dot{x}) \, dt &= \int_0^T p^T \cdot d(\delta x) \nonumber \\
 	&= \left[ p^T \cdot \delta x \right]_0^T - \int_0^T \delta x \cdot d(p^T) \nonumber \\
 	&= p^T(T) \cdot \delta x(T) - p^T(0) \cdot \delta x(0) - \int_0^T \delta x \cdot \dot{p}^T dt \nonumber
-\end{align}
+\end{align}$$
 Since the initial state is fixed $x(0) = x_0$, we have $\delta x(0) = 0$. 
 
 **On the other hand, considering the general problem with the addition of $\Phi(x(T))$:**
 
 Taking the total variation for $\mathcal{L}$:
-\begin{align}
+$$\begin{align}
 	\delta \mathcal{L} &= \delta \big( \Phi(x(T)) \big) + \int_0^T \left( \frac{\partial H}{\partial x} \delta x + \dot{p}^T \cdot \delta x \right) dt - p^T(T) \cdot \delta x(T) \nonumber \\
 	&= I + \frac{\partial \Phi}{\partial x} \cdot \delta x - p^T(T) \cdot \delta x(T) \nonumber \\
 	&= I + \left[ \nabla \Phi(x(T))^T \cdot \delta x(T) - p^T(T) \cdot \delta x(T) \right] \nonumber
-\end{align}
+\end{align}$$
 (where $I$ is the integral part that equates to $0$ to yield the adjoint equation).
 For $\delta \mathcal{L} = 0$ at the boundary, we must have:
 $$
@@ -645,20 +647,20 @@ According to Bellman's Principle of Optimality, the optimal trajectory has a nes
 Here, $J^*(x(t + \Delta t), t + \Delta t)$ is the minimum cost of the process in the time interval $t + \Delta t \le \tau \le T$, with the "initial" state being $x(t + \Delta t)$.
 
 Assuming that the second-order partial derivatives of $J^*$ exist and are bounded, we can expand the Taylor series for $J^*(x(t + \Delta t), t + \Delta t)$ around the point $(x(t), t)$ to obtain:
-\begin{align}
+$$\begin{align}
 	J^*(x(t), t) = \min_{\substack{u(\tau) \\ t \le \tau \le t+\Delta t}} \Bigg\{ &\int_t^{t+\Delta t} L(x(\tau), u(\tau)) d\tau + J^*(x(t), t) + \left[ \frac{\partial J^*}{\partial t}(x(t), t) \right] \Delta t \nonumber \\
 	&+ \left[ \frac{\partial J^*}{\partial x}(x(t), t) \right]^T [x(t + \Delta t) - x(t)] + \text{higher-order terms} \Bigg\} \label{eq:taylor_expansion}
-\end{align}
+\end{align}$$
 
 Now, considering a sufficiently small $\Delta t$. We can approximate the integral and the state variation as follows:
 *   $\int_t^{t+\Delta t} L(x(\tau), u(\tau)) d\tau \approx L(x(t), u(t)) \Delta t$
 *   $x(t + \Delta t) - x(t) \approx \dot{x}(t) \Delta t = f(x(t), u(t)) \Delta t$
 
 Substituting these approximations into equation \eqref{eq:taylor_expansion}, we obtain:
-\begin{align}
+$$\begin{align}
 	J^*(x(t), t) = \min_{u(t)} \Big\{ &L(x(t), u(t)) \Delta t + J^*(x(t), t) + J_t^*(x(t), t) \Delta t \nonumber \\
 	&+ J_x^{*T}(x(t), t) \left[ f(x(t), u(t)) \right] \Delta t + o(\Delta t) \Big\} \label{eq:small_dt}
-\end{align}
+\end{align}$$
 where $J_t^* = \frac{\partial J^*}{\partial t}$, $J_x^* = \frac{\partial J^*}{\partial x} = \nabla_x J^*$, and $o(\Delta t)$ denotes the terms containing $(\Delta t)^2$ and higher-order infinitesimals of $\Delta t$ arising from the integral approximation and Taylor series truncation.
 
 Next, since the quantities $J^*(x(t), t)$ and $J_t^*(x(t), t) \Delta t$ do not depend on the control variable $u(t)$, we can move them outside the minimization operator:
@@ -681,10 +683,10 @@ With the boundary condition at the terminal time $T$:
 	J^*(x(T), T) = \Phi(x(T)) \label{eq:hjb_boundary}
 \end{equation}
 From the minimization [since these quantities do not depend on $u(t)$], we obtain:
-\begin{align}
+$$\begin{align}
 	0 &= \frac{\partial J^*}{\partial t}(x(t), t) \Delta t + \min_{u(t)} \Big\{ L(x(t), u(t)) \Delta t \nonumber \\
 	&\quad + \nabla_x J^*(x(t), t)^T f(x(t), u(t)) \Delta t + o(\Delta t) \Big\}. \label{eq:3.11-9}
-\end{align}
+\end{align}$$
 
 Dividing both sides by $\Delta t$ and taking the limit as $\Delta t \to 0$, we have:
 \begin{equation}
@@ -747,10 +749,10 @@ therefore, the control signal satisfying equation \eqref{eq:3.11-17} truly minim
 	u^*(t) = -2\nabla_x J^*(x(t), t), \label{eq:3.11-19}
 \end{equation}
 Substituting this $u^*(t)$ value into the Hamilton-Jacobi-Bellman equation $\left(0 = \frac{\partial J^*}{\partial t} + H \right)$, we get:
-\begin{align}
+$$\begin{align}
 	0 &= \frac{\partial J^*}{\partial t} + \frac{1}{4}[-2\nabla_x J^*]^2 + [\nabla_x J^*]x(t) - 2[\nabla_x J^*]^2 \nonumber \\
 	&= \frac{\partial J^*}{\partial t} - [\nabla_x J^*]^2 + [\nabla_x J^*]x(t). \label{eq:3.11-20}
-\end{align}
+\end{align}$$
 From \eqref{eq:3.11-15}, the boundary value is:
 \begin{equation}
 	J^*(x(T), T) = \frac{1}{4}x^2(T). \label{eq:3.11-21}
@@ -788,30 +790,30 @@ $K(t)$ is a scalar function of $t$; therefore, the solution can be found using s
 \end{equation}
 
 Then, the optimal control law is:
-\begin{align}
+$$\begin{align}
 	u^*(t) &= -2\nabla_x J^*(x(t), t) \nonumber \\
 	&= -2K(t)x(t). \label{eq:3.11-28}
-\end{align}
+\end{align}$$
 
 Note that as $T \to \infty$, this linear time-varying feedback approaches a constant feedback ($K(t) \to 1$), and the controlled system:
-\begin{align}
+$$\begin{align}
 	\dot{x}(t) &= x(t) - 2x(t) \nonumber \\
 	&= -x(t) \label{eq:3.11-29}
-\end{align}
+\end{align}$$
 becomes stable. If this did not occur, the value of the performance measure would approach infinity.
 
 ### Solve by the Pontryagin’s maximum principle
 
-\begin{align}
+$$\begin{align}
 	\text{System dynamics:} \quad &\dot{x}(t) = x(t) + u(t) \nonumber \\
 	\text{Cost function:} \quad &J = \frac{1}{4}x^2(T) + \int_0^T \frac{1}{4}u^2(t) dt \nonumber
-\end{align}
+\end{align}$$
 
 By definition, the Hamiltonian function for this problem is:
-\begin{align}
+$$\begin{align}
 	H(x, u, p) &= L(x, u) + p(t) f(x, u) \nonumber \\
 	&= \frac{1}{4}u^2(t) + p(t)[x(t) + u(t)] \label{eq:pmp_H}
-\end{align}
+\end{align}$$
 
 According to Pontryagin's maximum principle, the optimal trajectory must satisfy 3 equations:
 \begin{equation}
