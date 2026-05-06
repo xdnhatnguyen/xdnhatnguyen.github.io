@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
-        },{id: "books-the-godfather",
+        },{id: "post-optimal-control-pontryagin-39-s-maximum-principle-and-hjb-equation",
+        
+          title: "Optimal Control: Pontryagin&#39;s Maximum Principle and HJB Equation",
+        
+        description: "Notes on the mathematical foundations of Optimal Control Theory, including PMP and Hamilton-Jacobi-Bellman derivations.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/optimal-control/";
+          
+        },
+      },{id: "books-the-godfather",
           title: 'The Godfather',
           description: "",
           section: "Books",handler: () => {
