@@ -10,7 +10,7 @@ related_posts: true
 ---
 {% tabs language-switch %}
 
-{% tab language-switch Tiếng Việt %}
+{% tab language-switch Vietnamese %}
 
 # The Pontryagin's maximum principle
 
