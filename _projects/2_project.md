@@ -79,6 +79,6 @@ A demonstration of the real-time digit recognition process.
 #### Side-by-Side Comparison: MLP vs. CNN
 As discussed in our analysis, the MLP model often struggles with subtle geometric variations due to its flattened input. In contrast, the CNN leverages convolutional filters to maintain spatial correlations.
 
-<table style="width: 100%; border-collapse: collapse;"> <tr> <td align="center" width="50%"><b>Multi-Layer Perceptron (MLP)</b></td> <td align="center" width="50%"><b>Convolutional Neural Network (CNN)</b></td> </tr> <tr> <td><img src="assets/mlp_interface.png" alt="MLP Interface" width="100%"></td> <td><img src="assets/cnn_interface.png" alt="CNN Interface" width="100%"></td> </tr> <tr> <td align="center"><i>MLP result showing higher ambiguity in probabilities</i></td> <td align="center"><i>CNN result showing robust spatial feature extraction</i></td> </tr> </table>
+<table style="width: 100%; border-collapse: collapse;"> <tr> <td align="center" width="50%"><b>Multi-Layer Perceptron (MLP)</b></td> <td align="center" width="50%"><b>Convolutional Neural Network (CNN)</b></td> </tr> <tr> <td><img src="assets/img/mlp_interface.png" alt="MLP Interface" width="100%"></td> <td><img src="assets/img/cnn_interface.png" alt="CNN Interface" width="100%"></td> </tr> <tr> <td align="center"><i>MLP result showing higher ambiguity in probabilities</i></td> <td align="center"><i>CNN result showing robust spatial feature extraction</i></td> </tr> </table>
 
 ---
