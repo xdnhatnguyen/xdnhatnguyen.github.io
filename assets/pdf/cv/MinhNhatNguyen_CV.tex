@@ -1,0 +1,182 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+	\vspace{6pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{8pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+	\item\small{
+		{#1 \vspace{3pt}}
+	}
+}
+
+\newcommand{\resumeSubheading}[4]{
+	\vspace{4pt}\item
+	\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+		\textbf{#1} & #2 \\
+		\textit{\small#3} & \textit{\small #4} \\
+	\end{tabular*}\vspace{7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+	\item
+	\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+		\textit{\small#1} & \textit{\small #2} \\
+	\end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+	\item
+	\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+		\small#1 & #2 \\
+	\end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+	\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+	\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-3pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+	
+	%----------HEADING----------
+	\begin{center}
+		\textbf{\Huge \scshape Minh-Nhat Nguyen} \\ \vspace{4pt}
+		\small (+84) 898-203-321 $|$ \href{mailto:2512021580@student.hcmus.edu.vn}{\underline{2512021580@student.hcmus.edu.vn}} $|$ 
+		%		\href{https://www.linkedin.com/in/xdnhatnguyen/}{\underline{linkedin.com/in/xdnhatnguyen}} $|$
+		\href{https://github.com/xdnhatnguyen}{\underline{github.com/xdnhatnguyen}}
+	\end{center}
+	\vspace{5pt}
+	
+	%-----------EDUCATION-----------
+	\section{Education}
+	\resumeSubHeadingListStart
+	
+	\resumeSubheading
+	{University of Science, VNUHCM}{Ho Chi Minh City, Vietnam}
+	{Bachelor of Information Technology}{Aug. 2025 -- 2029 (expected)}\vspace{2pt}
+	\small{\item{
+			\textit{Intended Major:} Computer Science \\
+			\textit{Relevant Coursework:} Calculus, Linear Algebra, Data Structures and Algorithms
+	}}
+	
+	\resumeSubheading
+	{Le Quy Don Gifted High School}{Da Nang, Vietnam}
+	{High School Diploma -- Mathematics Specialization}{Aug. 2022 -- May 2025}
+	
+	\resumeSubHeadingListEnd
+	
+	
+	%-----------EXPERIENCE & RESEARCH-----------
+	\section{Experience \& Research}
+	\resumeSubHeadingListStart
+	
+	\resumeSubheading
+	{Undergraduate AI Researcher}{March 2026 -- Present}
+	{University of Science, VNUHCM}{Ho Chi Minh City, Vietnam}
+	\resumeItemListStart
+	\resumeItem{Developing a Training-Free method for Style Transfer using Diffusion Models and Flow Matching.}
+	\resumeItem{Optimizing generative algorithms by manipulating the sampling process, guidance terms, and attention maps to control structural outputs.}
+	\resumeItemListEnd
+	
+	\resumeSubHeadingListEnd
+	
+	%-----------PROJECTS-----------
+	\section{Projects}
+	\resumeSubHeadingListStart
+	
+	\resumeProjectHeading
+	{\textbf{Handwritten Digits Classification} $|$ \emph{PyTorch, CNN, MLP} $|$ \href{https://github.com/xdnhatnguyen/Digits-Classification-Project}{\underline{GitHub}}}{Nov. 2025}
+	\resumeItemListStart
+	\resumeItem{Led a research team to build and train Convolutional Neural Network (CNN) and Multilayer Perceptron (MLP) architectures from scratch for the MNIST dataset.}
+	\resumeItem{Emphasized rigorous evaluation by benchmarking and comparing the efficiency, loss convergence, and accuracy between the two architectures.}
+	\resumeItem{Co-authored an article detailing mathematical derivations and comparative analysis (\href{https://github.com/xdnhatnguyen/Digits-Classification-Project/blob/main/docs/final_article.pdf}{\underline{Article Link}}).}
+	\resumeItemListEnd
+	
+	\resumeProjectHeading
+	{\textbf{Gomoku (Tic-Tac-Toe) AI Bot} $|$ \emph{C++, Algorithms} $|$ \href{https://github.com/shouko69/Tic-Tac-Toe-Project/tree/}{\underline{GitHub}}}{Dec. 2025}
+	\resumeItemListStart
+	\resumeItem{Developed a classical AI opponent for the game of Gomoku using procedural programming in C++.}
+	\resumeItem{Implemented the Minimax algorithm combined with Alpha-Beta pruning to optimize decision-making processes and evaluate game states efficiently.}
+	\resumeItemListEnd
+	
+	\resumeSubHeadingListEnd
+	
+	%-----------TECHNICAL SKILLS-----------
+	\section{Technical Skills}
+	\begin{itemize}[leftmargin=0.15in, label={}]
+		\small{\item{
+				\textbf{Core Knowledge}{: Deep Learning, Computer Vision, Generative Models (Flow Matching, Diffusion Models)} \\
+				\textbf{Programming \& Tools}{: Python, C/C++, PyTorch, Git, LaTeX} \\
+				\textbf{Mathematics}{: Linear Algebra, Multivariable Calculus}
+		}}
+	\end{itemize}
+	
+	%-------------------------------------------
+\end{document}

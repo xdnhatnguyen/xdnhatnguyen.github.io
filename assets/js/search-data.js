@@ -37,7 +37,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-svd-based-style-transfer",
+        },{id: "post-literature-review-stylegallery-cvpr-2026",
+        
+          title: "Literature Review: StyleGallery (CVPR 2026)",
+        
+        description: "Literature Review về Style Transfer: Paper StyleGallery tại CVPR 2026 (Presentation Slides &amp; Material).",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/literature-review-stylegallery/";
+          
+        },
+      },{id: "post-svd-based-style-transfer",
         
           title: "SVD-based Style Transfer",
         
@@ -157,7 +168,7 @@ ninja.data = [{
         title: 'CV',
         section: 'Socials',
         handler: () => {
-          window.open("/assets/pdf/example_pdf.pdf", "_blank");
+          window.open("/assets/pdf/cv/MinhNhatNguyen_CV.pdf", "_blank");
         },
       },{
         id: 'social-email',
