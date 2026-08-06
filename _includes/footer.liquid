@@ -11,7 +11,33 @@
   {% endif %}
 {% endcapture %}
 
-{% if site.footer_fixed %}
+{% if page.portfolio_page %}
+  <footer class="portfolio-footer" role="contentinfo">
+    <div class="portfolio-footer-inner">
+      <div>
+        <a class="portfolio-footer-brand" href="{{ '/' | relative_url }}">Nhat Nguyen</a>
+        <p class="portfolio-footer-caption">&copy; {{ site.time | date: '%Y' }} · Research in public.</p>
+      </div>
+      <div>
+        <p class="portfolio-footer-heading">Explore</p>
+        <ul class="portfolio-footer-links">
+          <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
+          <li><a href="{{ '/publications/' | relative_url }}">Publications</a></li>
+          <li><a href="{{ '/projects/' | relative_url }}">Projects</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="portfolio-footer-heading">Connect</p>
+        <ul class="portfolio-footer-links">
+          <li><a href="{{ '/cv/' | relative_url }}">CV</a></li>
+          <li><a href="https://github.com/xdnhatnguyen" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="{{ '/' | relative_url }}#contact">Contact</a></li>
+        </ul>
+      </div>
+      <p class="portfolio-footer-signoff" aria-hidden="true">Built in {{ site.time | date: '%Y' }}.</p>
+    </div>
+  </footer>
+{% elsif site.footer_fixed %}
   <footer class="fixed-bottom" role="contentinfo">
     <div class="container mt-0">
       {{ footer_contents }}

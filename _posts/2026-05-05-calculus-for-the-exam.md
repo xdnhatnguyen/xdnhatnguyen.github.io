@@ -7,6 +7,7 @@ tags: math calculus exam
 categories: study-notes
 giscus_comments: true
 related_posts: true
+excerpt_separator: "<!--more-->"
 ---
 {% tabs language-switch %}
 
@@ -172,4 +173,6 @@ $\nabla f(x_0, y_0, z_0)$.
     $$\frac{\partial z}{\partial x} = -\frac{F_x}{F_z} \quad \text{và} \quad \frac{\partial z}{\partial y} = -\frac{F_y}{F_z}$$
 
 
-{% end tab %}
+{% endtab %}
+{% endtabs %}
+<!--more-->

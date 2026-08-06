@@ -7,6 +7,7 @@ tags: math optimal-control calculus
 categories: study-notes
 giscus_comments: true
 related_posts: true
+excerpt_separator: "<!--more-->"
 ---
 {% tabs language-switch %}
 
@@ -880,3 +881,4 @@ $$
 {% endtab %}
 
 {% endtabs %}
+<!--more-->

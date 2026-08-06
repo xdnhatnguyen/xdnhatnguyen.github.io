@@ -117,6 +117,11 @@
               {% endif %}
             {% endif %}
           {% endfor %}
+          {% if page.portfolio_page %}
+            <li class="nav-item nav-item--github">
+              <a class="nav-link" href="https://github.com/xdnhatnguyen" rel="noopener noreferrer">GitHub ↗</a>
+            </li>
+          {% endif %}
           {% if site.search_enabled %}
             <!-- Search -->
             <li class="nav-item">

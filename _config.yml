@@ -191,6 +191,7 @@ exclude:
   - README.md
   - readme_preview/
   - vendor
+  - assets/jupyter/ # exclude locally if Jupyter is not installed; remove this line when Jupyter is available
 keep_files:
   - CNAME
   - .nojekyll
@@ -354,7 +355,7 @@ external_links:
 # MAKE SURE imagemagick is installed and on your PATH before enabling imagemagick. In a terminal, run:
 #   convert -version
 imagemagick:
-  enabled: true # enables responsive images for your site (recommended, see https://github.com/alshedivat/al-folio/issues/537)
+  enabled: false # disabled locally due to Windows path bug (drive letter stripped) — re-enable in Docker/CI
   widths:
     - 480
     - 800
