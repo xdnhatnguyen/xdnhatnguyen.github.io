@@ -8,24 +8,64 @@ layout: default
   </style>
 {% endif %}
 
-<div class="post">
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-    <p class="post-description">{{ page.description }}</p>
-  </header>
+<div class="portfolio-page portfolio-page--generic" data-portfolio-page>
+  <div class="portfolio-noise" aria-hidden="true"></div>
+  <div class="portfolio-shell">
+    <header class="portfolio-hero" style="min-height: auto; padding: 2.5rem 0 3.5rem; grid-template-columns: minmax(0, 1fr) auto;">
+      <div class="portfolio-hero-copy">
+        <p class="portfolio-kicker">
+          — {% if page.category %}Project / {{ page.category }}{% elsif page.permalink contains '/news/' %}Announcements{% else %}Overview{% endif %}
+        </p>
+        <h1 style="font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.05; margin: 0.5rem 0;">{{ page.title }}</h1>
+        {% if page.description %}
+          <p class="portfolio-hero-description" style="margin-top: 1rem !important;">{{ page.description }}</p>
+        {% endif %}
 
-  <article>
-    {{ content }}
-  </article>
+        {% if page.category or page.importance %}
+          <div class="portfolio-tags" style="margin-top: 1.25rem;">
+            {% if page.category %}
+              <span class="portfolio-tag" style="border-color: var(--portfolio-accent); font-weight: 600;">📁 @{{ page.category }}</span>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
 
-  {% if page.related_publications %}
-    <h2>References</h2>
-    <div class="publications">
-      {% bibliography --cited_in_order %}
-    </div>
-  {% endif %}
+      <div class="portfolio-hero-aside" style="align-self: flex-start;">
+        {% if page.permalink contains '/projects/' or page.url contains '/projects/' %}
+          <a class="portfolio-button portfolio-button--ghost" href="{{ '/projects/' | relative_url }}" style="font-size: 0.75rem; padding: 0.35rem 0.85rem; text-decoration: none; display: inline-flex;">
+            ← All Projects
+          </a>
+        {% elsif page.permalink contains '/news/' or page.url contains '/news/' %}
+          <a class="portfolio-button portfolio-button--ghost" href="{{ '/' | relative_url }}" style="font-size: 0.75rem; padding: 0.35rem 0.85rem; text-decoration: none; display: inline-flex;">
+            ← Home
+          </a>
+        {% else %}
+          <a class="portfolio-button portfolio-button--ghost" href="{{ '/' | relative_url }}" style="font-size: 0.75rem; padding: 0.35rem 0.85rem; text-decoration: none; display: inline-flex;">
+            ← Home
+          </a>
+        {% endif %}
+      </div>
+    </header>
 
-  {% if site.giscus and page.giscus_comments %}
-    {% include giscus.liquid %}
-  {% endif %}
+    <main style="padding: 3rem 0 5rem;">
+      <article class="portfolio-prose" id="markdown-content" style="line-height: 1.8; font-size: 1.05rem;">
+        {{ content }}
+      </article>
+
+      {% if page.related_publications %}
+        <div style="margin-top: 3rem;">
+          <h2 style="font-family: var(--portfolio-display); font-size: 2rem; border-bottom: 1px solid var(--portfolio-border); padding-bottom: 0.5rem;">References</h2>
+          <div class="publications">
+            {% bibliography --cited_in_order %}
+          </div>
+        </div>
+      {% endif %}
+
+      {% if site.giscus and page.giscus_comments %}
+        <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px dashed var(--portfolio-border);">
+          {% include giscus.liquid %}
+        </div>
+      {% endif %}
+    </main>
+  </div>
 </div>

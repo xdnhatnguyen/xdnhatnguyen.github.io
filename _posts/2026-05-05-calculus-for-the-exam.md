@@ -4,7 +4,7 @@ title: "Compilation of Problem in Calculus 2"
 date: 2026-05-06 17:28:00 +0700
 description: Compilation of challenging in Calculus 2 preparing for the exam.
 tags: math calculus exam
-categories: study-notes
+categories: university
 giscus_comments: true
 related_posts: true
 excerpt_separator: "<!--more-->"

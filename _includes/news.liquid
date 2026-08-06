@@ -1,34 +1,32 @@
 <div class="news">
   {% if site.news != blank %}
     {% assign news_size = site.news | size %}
-    <div
-      class="table-responsive"
-      {% if include.limit and page.announcements.scrollable and news_size > 3 %}
-        style="max-height: 60vw"
-      {% endif %}
-    >
-      <table class="table table-sm table-borderless">
-        {% assign news = site.news | reverse %}
-        {% if include.limit and page.announcements.limit %}
-          {% assign news_limit = page.announcements.limit %}
-        {% else %}
-          {% assign news_limit = news_size %}
-        {% endif %}
-        {% for item in news limit: news_limit %}
-          <tr>
-            <th scope="row" style="width: 20%">{{ item.date | date: '%b %d, %Y' }}</th>
-            <td>
-              {% if item.inline %}
-                {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
-              {% else %}
-                <a class="news-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
-              {% endif %}
-            </td>
-          </tr>
-        {% endfor %}
-      </table>
-    </div>
+    {% assign news = site.news | reverse %}
+    {% if include.limit and page.announcements.limit %}
+      {% assign news_limit = page.announcements.limit %}
+    {% else %}
+      {% assign news_limit = news_size %}
+    {% endif %}
+
+    <ul class="about-news-list" style="margin: 0; padding: 0; list-style: none;">
+      {% for item in news limit: news_limit %}
+        <li class="about-news-row" style="padding: 1.25rem 0; border-bottom: 1px solid var(--portfolio-border, rgba(255,255,255,0.1)); display: flex; gap: 1.5rem; align-items: baseline;">
+          <span class="portfolio-year" style="min-width: 110px; font-weight: 500;">
+            {{ item.date | date: '%b %d, %Y' }}
+          </span>
+          <span class="about-news-body" style="flex: 1; font-size: 1rem; color: var(--portfolio-fg);">
+            {% if item.inline %}
+              {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
+            {% else %}
+              <a class="news-title" href="{{ item.url | relative_url }}" style="color: var(--portfolio-fg); text-decoration: none; font-weight: 500; transition: color 150ms ease;">
+                {{ item.title }} →
+              </a>
+            {% endif %}
+          </span>
+        </li>
+      {% endfor %}
+    </ul>
   {% else %}
-    <p>No news so far...</p>
+    <p style="color: var(--portfolio-muted);">No news so far...</p>
   {% endif %}
 </div>

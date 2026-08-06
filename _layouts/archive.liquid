@@ -1,38 +1,67 @@
 ---
 layout: default
 ---
-<div class="post">
-  <header class="post-header">
-    {% if page.type == 'categories' %}
-      <h1 class="post-title"><i class="fa-solid fa-tag fa-sm"></i> {{ page.title }}</h1>
-      <p class="post-description">an archive of {{ page.collection_name }} in this category</p>
-    {% elsif page.type == 'year' %}
-      <h1 class="post-title"><i class="fa-solid fa-calendar fa-sm"></i> {{ page.date | date: '%Y' }}</h1>
-      <p class="post-description">an archive of {{ page.collection_name }} from this year</p>
-    {% elsif page.type == 'tags' %}
-      <h1 class="post-title"><i class="fa-solid fa-hashtag fa-sm"></i> {{ page.title }}</h1>
-      <p class="post-description">an archive of {{ page.collection_name }} with this tag</p>
-    {% endif %}
-  </header>
+<div class="portfolio-page portfolio-page--archive" data-portfolio-page>
+  <div class="portfolio-noise" aria-hidden="true"></div>
+  <div class="portfolio-shell">
+    <header class="portfolio-hero" style="min-height: auto; padding: 2.5rem 0 3.5rem; grid-template-columns: minmax(0, 1fr) auto;">
+      <div class="portfolio-hero-copy">
+        <p class="portfolio-kicker">
+          — {% if page.type == 'categories' %}Category Archive{% elsif page.type == 'tags' %}Tag Archive{% elsif page.type == 'year' %}Year Archive{% else %}Archive{% endif %}
+        </p>
+        <h1 style="font-size: clamp(3rem, 6vw, 5rem); line-height: 1; margin: 0.5rem 0;">
+          {% if page.type == 'categories' %}
+            <em>@{{ page.title }}</em>
+          {% elsif page.type == 'tags' %}
+            # <em>{{ page.title }}</em>
+          {% elsif page.type == 'year' %}
+            <em>{{ page.date | date: '%Y' }}</em>
+          {% else %}
+            <em>{{ page.title }}</em>
+          {% endif %}
+        </h1>
+        <p class="portfolio-hero-description" style="margin-top: 1rem !important;">
+          Archive of {{ page.documents.size }} {% if page.documents.size == 1 %}article{% else %}articles{% endif %} in this collection.
+        </p>
+      </div>
+      <div class="portfolio-hero-aside" style="align-self: flex-start;">
+        <a class="portfolio-button portfolio-button--ghost" href="{{ '/blog/' | relative_url }}" style="font-size: 0.75rem; padding: 0.35rem 0.85rem; text-decoration: none; display: inline-flex;">
+          ← Back to Blog
+        </a>
+      </div>
+    </header>
 
-  <article class="archive">
-    <div class="table-responsive">
-      <table class="table table-sm table-borderless">
-        {% for document in page.documents %}
-          <tr>
-            <th scope="row">{{ document.date | date: '%b %d, %Y' }}</th>
-            <td>
-              {% if document.redirect == blank %}
-                <a class="post-link" href="{{ document.url | relative_url }}">{{ document.title }}</a>
-              {% elsif document.redirect contains '://' %}
-                <a class="post-link" href="{{ document.redirect }}" target="_blank">{{ document.title }}</a>
-              {% else %}
-                <a class="post-link" href="{{ document.redirect | relative_url }}">{{ document.title }}</a>
-              {% endif %}
-            </td>
-          </tr>
-        {% endfor %}
-      </table>
+    <div class="portfolio-toolbar" aria-label="Archive list metadata" style="margin: 2rem 0 1.5rem; display: flex; justify-content: space-between; align-items: center;">
+      <p class="portfolio-source" style="margin: 0;">_posts/ · archive: {{ page.title }} · {{ page.documents.size }} entries</p>
     </div>
-  </article>
+
+    <main style="padding-bottom: 5rem;">
+      <ul class="portfolio-post-list">
+        {% for document in page.documents %}
+          {% assign read_time = document.content | number_of_words | divided_by: 180 | plus: 1 %}
+          <li>
+            <a class="portfolio-post-row" href="{% if document.redirect == blank %}{{ document.url | relative_url }}{% else %}{{ document.redirect }}{% endif %}">
+              <span class="portfolio-year">{{ document.date | date: '%Y' }}<br>{{ document.date | date: '%m.%d' }}</span>
+              <span>
+                <h3>{{ document.title }}</h3>
+                {% if document.description %}
+                  <p>{{ document.description }}</p>
+                {% endif %}
+              </span>
+              <span class="portfolio-post-meta">
+                {% if document.categories != empty %}
+                  <span class="portfolio-tag" style="margin-bottom: 0.3rem; display: inline-block; font-size: 0.7rem; border-color: var(--portfolio-border-strong);">
+                    @{{ document.categories | join: ', ' }}
+                  </span>
+                  <br>
+                {% endif %}
+                {{ read_time }} min read
+              </span>
+              <span class="portfolio-post-arrow" aria-hidden="true">→</span>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </main>
+  </div>
 </div>

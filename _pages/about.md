@@ -7,7 +7,7 @@ permalink: /
 nav: false
 
 profile:
-  image: reading.jpg
+  image: avt.png
 
 announcements:
   enabled: true
@@ -41,7 +41,7 @@ latest_posts:
     <figure class="about-profile-figure" aria-label="Profile photo">
       <div class="about-profile-img-wrap">
         <img
-          src="{{ 'assets/img/reading.jpg' | relative_url }}"
+          src="{{ 'assets/img/avt.png' | relative_url }}"
           alt="Nhat Nguyen — reading"
           class="about-profile-img"
           loading="eager"
@@ -248,7 +248,7 @@ latest_posts:
     </div>
   </section>
 
-  <p class="portfolio-note">Rendered from <code>_pages/about.md</code> · profile image from <code>assets/img/reading.jpg</code></p>
+  <p class="portfolio-note">Rendered from <code>_pages/about.md</code> · profile image from <code>assets/img/avt.png</code></p>
 </div>
 
 <script>

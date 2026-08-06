@@ -7,6 +7,7 @@ title: CV
 nav: true
 nav_order: 4
 cv_format: rendercv
+cv_pdf: /assets/pdf/cv/MinhNhatNguyen_CV.pdf
 description: First-year CS student and aspiring AI researcher building from mathematics toward computer vision and diffusion models.
 ---
 
@@ -19,11 +20,30 @@ description: First-year CS student and aspiring AI researcher building from math
       <p class="portfolio-hero-description">{{ page.description }}</p>
     </div>
     <div class="portfolio-cv-actions" aria-label="CV actions">
-      <button class="portfolio-button" type="button" onclick="window.print()">Print / save</button>
+      <a class="portfolio-button" href="{{ '/assets/pdf/cv/MinhNhatNguyen_CV.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer">
+        View PDF CV ↗
+      </a>
+      <button class="portfolio-button portfolio-button--ghost" type="button" onclick="togglePdfViewer()" id="pdf-toggle-btn">
+        Preview PDF
+      </button>
+      <button class="portfolio-button portfolio-button--ghost" type="button" onclick="window.print()">Print / save</button>
       <a class="portfolio-button portfolio-button--ghost" href="https://github.com/xdnhatnguyen" rel="noopener noreferrer">View GitHub ↗</a>
     </div>
     <p class="portfolio-index" aria-hidden="true">— 04 / 04 · CV</p>
   </header>
+
+  <div id="pdf-viewer-container" style="display: none; margin: 1.5rem 0; width: 100%;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; padding: 0.5rem 1rem; background: var(--portfolio-surface, rgba(255, 255, 255, 0.05)); border-radius: 8px; border: 1px solid var(--portfolio-border, #333);">
+      <span style="font-size: 0.85rem; opacity: 0.9; font-weight: 500;">
+        📄 MinhNhatNguyen_CV.pdf
+      </span>
+      <div style="display: flex; gap: 0.5rem;">
+        <a href="{{ '/assets/pdf/cv/MinhNhatNguyen_CV.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer" class="portfolio-button portfolio-button--ghost" style="padding: 0.25rem 0.75rem; min-height: 2rem; font-size: 0.75rem;">Open full page ↗</a>
+        <a href="{{ '/assets/pdf/cv/MinhNhatNguyen_CV.pdf' | relative_url }}" download class="portfolio-button" style="padding: 0.25rem 0.75rem; min-height: 2rem; font-size: 0.75rem;">Download PDF ⤓</a>
+      </div>
+    </div>
+    <iframe src="{{ '/assets/pdf/cv/MinhNhatNguyen_CV.pdf' | relative_url }}" style="width: 100%; height: 800px; border: 1px solid var(--portfolio-border, #333); border-radius: 12px; background: #ffffff;" title="CV PDF Viewer"></iframe>
+  </div>
 
   <div class="portfolio-cv-grid">
     <aside class="portfolio-cv-sidebar" aria-label="Profile details">
@@ -110,3 +130,19 @@ description: First-year CS student and aspiring AI researcher building from math
     <span>Last updated 2026</span>
   </div>
 </div>
+
+<script>
+  function togglePdfViewer() {
+    const container = document.getElementById('pdf-viewer-container');
+    const toggleBtn = document.getElementById('pdf-toggle-btn');
+    if (container.style.display === 'none') {
+      container.style.display = 'block';
+      if (toggleBtn) toggleBtn.textContent = 'Hide PDF Preview';
+      container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      container.style.display = 'none';
+      if (toggleBtn) toggleBtn.textContent = 'Preview PDF';
+    }
+  }
+</script>
+

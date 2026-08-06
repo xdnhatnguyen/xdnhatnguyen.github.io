@@ -1444,6 +1444,107 @@ body.portfolio-site {
     }
   }
 
+  /* Portfolio Article & Markdown Prose Styling */
+  .portfolio-prose,
+  #markdown-content {
+    h1, h2, h3, h4, h5, h6 {
+      color: var(--portfolio-fg);
+      font-family: var(--portfolio-display);
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      line-height: 1.25;
+    }
+
+    h1 { font-size: 2.2rem; border-bottom: 1px solid var(--portfolio-border); padding-bottom: 0.5rem; }
+    h2 { font-size: 1.75rem; border-bottom: 1px dashed var(--portfolio-border); padding-bottom: 0.4rem; }
+    h3 { font-size: 1.4rem; color: var(--portfolio-accent); }
+    h4 { font-size: 1.2rem; }
+
+    p, li {
+      color: rgba(250, 250, 250, 0.88);
+      line-height: 1.75;
+      font-size: 1.02rem;
+    }
+
+    a {
+      color: var(--portfolio-accent);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: opacity 150ms ease;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    blockquote {
+      border-left: 3px solid var(--portfolio-accent);
+      padding: 0.8rem 1.25rem;
+      margin: 1.5rem 0;
+      background: var(--portfolio-surface, rgba(255, 255, 255, 0.03));
+      border-radius: 0 8px 8px 0;
+      color: rgba(250, 250, 250, 0.9);
+      font-style: italic;
+
+      p {
+        margin: 0;
+      }
+    }
+
+    code:not([class*="language-"]) {
+      background: rgba(255, 255, 255, 0.08);
+      color: #f97316;
+      padding: 0.2rem 0.45rem;
+      border-radius: 4px;
+      font-size: 0.9em;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    }
+
+    pre {
+      background: #14110d !important;
+      border: 1px solid var(--portfolio-border);
+      border-radius: 10px;
+      padding: 1.25rem;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      margin: 1.5rem 0;
+      border-collapse: collapse;
+
+      th, td {
+        padding: 0.75rem 1rem;
+        border: 1px solid var(--portfolio-border);
+        color: var(--portfolio-fg);
+      }
+
+      th {
+        background: rgba(255, 255, 255, 0.05);
+        font-family: var(--portfolio-body);
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        letter-spacing: 0.05em;
+      }
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      border: 1px solid var(--portfolio-border);
+      margin: 1.5rem 0;
+    }
+
+    hr {
+      border: 0;
+      height: 1px;
+      background: var(--portfolio-border);
+      margin: 2.5rem 0;
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     *,
     *::before,

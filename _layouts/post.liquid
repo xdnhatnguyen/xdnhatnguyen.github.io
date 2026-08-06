@@ -13,85 +13,99 @@ layout: default
   </style>
 {% endif %}
 
-<div class="post">
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-    <p class="post-meta">
-      Created on {{ page.date | date: '%B %d, %Y' }}
-      {% if page.author %}by {{ page.author }}{% endif %}
-      {% assign last_date = page.last_modified_at | default: page.last_updated %}
-      {% if last_date %}, last updated on {{ last_date | date: '%B %d, %Y' }}{% endif %}
-      {% if page.meta %}• {{ page.meta }}{% endif %}
-    </p>
-    <p class="post-tags">
-      {% if url_beginning == '/blog/' %}
-        <a href="{{ year | prepend: '/blog/' | relative_url }}"> <i class="fa-solid fa-calendar fa-sm"></i> {{ year }} </a>
-      {% else %}
-        <i class="fa-solid fa-calendar fa-sm"></i> {{ year }}
-      {% endif %}
-      {% if tags != '' %}
-        &nbsp; &middot; &nbsp;
-        {% for tag in page.tags %}
-          {% if url_beginning == '/blog/' %}
-            <a href="{{ tag | slugify | prepend: '/blog/tag/' | relative_url }}"> <i class="fa-solid fa-hashtag fa-sm"></i> {{ tag }}</a>
-          {% else %}
-            <i class="fa-solid fa-hashtag fa-sm"></i> {{ tag }}
+<div class="portfolio-page portfolio-page--post" data-portfolio-page>
+  <div class="portfolio-noise" aria-hidden="true"></div>
+  <div class="portfolio-shell">
+    <header class="portfolio-hero" style="min-height: auto; padding: 2rem 0 3rem; grid-template-columns: minmax(0, 1fr) auto;">
+      <div class="portfolio-hero-copy">
+        <p class="portfolio-kicker">
+          — {% if url_beginning == '/blog/' %}Blog / {{ page.categories | join: ', ' | default: 'Note' }}{% else %}Article / {{ page.categories | join: ', ' | default: 'Post' }}{% endif %}
+        </p>
+        <h1 style="font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.05; margin: 0.5rem 0;">{{ page.title }}</h1>
+        {% if page.description %}
+          <p class="portfolio-hero-description" style="margin-top: 1rem !important;">{{ page.description }}</p>
+        {% endif %}
+        
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; margin-top: 1.5rem; font-size: 0.82rem; opacity: 0.85; color: var(--portfolio-fg);">
+          <span>📅 {{ page.date | date: '%B %d, %Y' }}</span>
+          {% if page.author %}<span>✍️ {{ page.author }}</span>{% endif %}
+          {% assign read_time = page.content | number_of_words | divided_by: 180 | plus: 1 %}
+          <span>⏱️ {{ read_time }} min read</span>
+          {% if categories != '' %}
+            {% for category in page.categories %}
+              {% if url_beginning == '/blog/' %}
+                <a href="{{ category | slugify | prepend: '/blog/category/' | relative_url }}" class="portfolio-tag" style="border-color: var(--portfolio-accent); font-weight: 600; text-decoration: none;">@{{ category }}</a>
+              {% else %}
+                <span class="portfolio-tag" style="border-color: var(--portfolio-accent); font-weight: 600;">@{{ category }}</span>
+              {% endif %}
+            {% endfor %}
           {% endif %}
-          {% unless forloop.last %}
-            &nbsp;
-          {% endunless %}
-        {% endfor %}
-      {% endif %}
+        </div>
 
-      {% if categories != '' %}
-        &nbsp; &middot; &nbsp;
-        {% for category in page.categories %}
-          {% if url_beginning == '/blog/' %}
-            <a href="{{ category | slugify | prepend: '/blog/category/' | relative_url }}"> <i class="fa-solid fa-tag fa-sm"></i> {{ category -}}</a>
-          {% else %}
-            <i class="fa-solid fa-tag fa-sm"></i> {{ category }}
-          {% endif %}
-          {% unless forloop.last %}
-            &nbsp;
-          {% endunless %}
-        {% endfor %}
-      {% endif %}
-    </p>
-  </header>
-
-  <article class="post-content">
-    {% if page.toc and page.toc.beginning %}
-      <div id="table-of-contents">
-        {% toc %}
+        {% if tags != '' %}
+          <div class="portfolio-tags" style="margin-top: 1rem;" aria-label="Post tags">
+            {% for tag in page.tags %}
+              {% if url_beginning == '/blog/' %}
+                <a href="{{ tag | slugify | prepend: '/blog/tag/' | relative_url }}" class="portfolio-tag" style="text-decoration: none;"># {{ tag }}</a>
+              {% else %}
+                <span class="portfolio-tag"># {{ tag }}</span>
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% endif %}
       </div>
-      <hr>
-    {% endif %}
-    <div id="markdown-content">
-      {{ content }}
-    </div>
-  </article>
 
-  {% if page.citation %}
-    {% include citation.liquid %}
-  {% endif %}
+      <div class="portfolio-hero-aside" style="align-self: flex-start;">
+        <a class="portfolio-button portfolio-button--ghost" href="{{ '/blog/' | relative_url }}" style="font-size: 0.75rem; padding: 0.35rem 0.85rem; text-decoration: none; display: inline-flex;">
+          ← Back to Blog
+        </a>
+      </div>
+    </header>
 
-  {% if page.related_publications %}
-    <h2>References</h2>
-    <div class="publications">
-      {% bibliography --group_by none --cited_in_order %}
-    </div>
-  {% endif %}
+    <main class="portfolio-post-body" style="padding: 3rem 0;">
+      {% if page.toc and page.toc.beginning %}
+        <div id="table-of-contents" style="margin-bottom: 2rem; padding: 1.25rem 1.5rem; background: var(--portfolio-surface, rgba(255, 255, 255, 0.03)); border: 1px solid var(--portfolio-border); border-radius: 12px;">
+          {% toc %}
+        </div>
+      {% endif %}
 
-  {% if site.related_blog_posts and site.related_blog_posts.enabled %}
-    {% if page.related_posts == null or page.related_posts %}
-      {% include related_posts.liquid %}
-    {% endif %}
-  {% endif %}
+      <article class="portfolio-prose" id="markdown-content" style="line-height: 1.8; font-size: 1.05rem;">
+        {{ content }}
+      </article>
 
-  {% if site.disqus_shortname and page.disqus_comments %}
-    {% include disqus.liquid %}
-  {% endif %}
-  {% if site.giscus and page.giscus_comments %}
-    {% include giscus.liquid %}
-  {% endif %}
+      {% if page.citation %}
+        <div style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--portfolio-border);">
+          {% include citation.liquid %}
+        </div>
+      {% endif %}
+
+      {% if page.related_publications %}
+        <div style="margin-top: 3rem;">
+          <h2 style="font-family: var(--portfolio-display); font-size: 2rem; border-bottom: 1px solid var(--portfolio-border); padding-bottom: 0.5rem;">References</h2>
+          <div class="publications">
+            {% bibliography --group_by none --cited_in_order %}
+          </div>
+        </div>
+      {% endif %}
+
+      {% if site.related_blog_posts and site.related_blog_posts.enabled %}
+        {% if page.related_posts == null or page.related_posts %}
+          <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px dashed var(--portfolio-border);">
+            {% include related_posts.liquid %}
+          </div>
+        {% endif %}
+      {% endif %}
+
+      {% if site.disqus_shortname and page.disqus_comments %}
+        <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px dashed var(--portfolio-border);">
+          {% include disqus.liquid %}
+        </div>
+      {% endif %}
+      {% if site.giscus and page.giscus_comments %}
+        <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px dashed var(--portfolio-border);">
+          {% include giscus.liquid %}
+        </div>
+      {% endif %}
+    </main>
+  </div>
 </div>

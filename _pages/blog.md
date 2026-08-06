@@ -29,15 +29,30 @@ pagination:
     <p class="portfolio-index" aria-hidden="true">— 01 / 04 · Blog</p>
   </header>
 
-  <div class="portfolio-toolbar" aria-label="Blog metadata and topics">
-    <p class="portfolio-source">_posts/ · paginator · 5 per page</p>
-    <nav aria-label="Blog topics">
-      <ul class="portfolio-filter-list">
+  <div class="portfolio-toolbar" aria-label="Blog metadata and topics" style="display: flex; flex-direction: column; align-items: flex-start; gap: 0.8rem;">
+    <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; flex-wrap: wrap; gap: 0.5rem; border-bottom: 1px dashed var(--portfolio-border, rgba(255, 255, 255, 0.15)); padding-bottom: 0.5rem;">
+      <p class="portfolio-source" style="margin: 0;">_posts/ · {{ site.posts.size }} articles · {{ site.display_categories.size }} categories</p>
+      <span style="font-size: 0.75rem; opacity: 0.7; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em;">Filter by Category & Tag</span>
+    </div>
+    
+    <nav aria-label="Blog categories" style="width: 100%;">
+      <ul class="portfolio-filter-list" style="flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.2rem;">
+        <li><span style="font-weight: 600; font-size: 0.75rem; opacity: 0.6; text-transform: uppercase; margin-right: 0.3rem;">Categories:</span></li>
+        {% for category in site.display_categories %}
+          <li>
+            <a class="portfolio-filter" href="{{ category | slugify | prepend: '/blog/category/' | relative_url }}" style="font-weight: 600; border-color: var(--portfolio-accent, #4ea8de);">
+              @{{ category }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+    <nav aria-label="Blog tags" style="width: 100%;">
+      <ul class="portfolio-filter-list" style="flex-wrap: wrap; gap: 0.4rem;">
+        <li><span style="font-weight: 600; font-size: 0.75rem; opacity: 0.6; text-transform: uppercase; margin-right: 0.3rem;">Topics:</span></li>
         {% for tag in site.display_tags %}
           <li><a class="portfolio-filter" href="{{ tag | slugify | prepend: '/blog/tag/' | relative_url }}"># {{ tag }}</a></li>
-        {% endfor %}
-        {% for category in site.display_categories %}
-          <li><a class="portfolio-filter" href="{{ category | slugify | prepend: '/blog/category/' | relative_url }}">@ {{ category }}</a></li>
         {% endfor %}
       </ul>
     </nav>
@@ -63,8 +78,11 @@ pagination:
           <h2>{{ featured.title }}</h2>
           <p>{{ featured.description }}</p>
           <div class="portfolio-tags" aria-label="Featured post tags">
+            {% if featured.categories != empty %}
+              <span class="portfolio-tag" style="border-color: var(--portfolio-accent); font-weight: 600;"> @{{ featured.categories | join: ', ' }}</span>
+            {% endif %}
             {% for tag in featured.tags limit: 4 %}
-              <span class="portfolio-tag">{{ tag }}</span>
+              <span class="portfolio-tag">#{{ tag }}</span>
             {% endfor %}
           </div>
         </div>
@@ -90,7 +108,15 @@ pagination:
                 <h3>{{ post.title }}</h3>
                 <p>{{ post.description }}</p>
               </span>
-              <span class="portfolio-post-meta">{{ read_time }} min read<br>{{ post.categories | join: ' · ' }}</span>
+              <span class="portfolio-post-meta">
+                {% if post.categories != empty %}
+                  <span class="portfolio-tag" style="margin-bottom: 0.3rem; display: inline-block; font-size: 0.7rem; border-color: var(--portfolio-border-strong);">
+                    @{{ post.categories | join: ', ' }}
+                  </span>
+                  <br>
+                {% endif %}
+                {{ read_time }} min read
+              </span>
               <span class="portfolio-post-arrow" aria-hidden="true">→</span>
             </a>
           </li>

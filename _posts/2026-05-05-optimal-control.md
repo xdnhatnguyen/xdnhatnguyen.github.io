@@ -4,7 +4,7 @@ title: "Optimal Control: Pontryagin's Maximum Principle and HJB Equation"
 date: 2026-05-05 10:33:00 +0700
 description: Notes on the mathematical foundations of Optimal Control Theory, including PMP and Hamilton-Jacobi-Bellman derivations.
 tags: math optimal-control calculus
-categories: study-notes
+categories: ai-theory
 giscus_comments: true
 related_posts: true
 excerpt_separator: "<!--more-->"
@@ -18,7 +18,7 @@ excerpt_separator: "<!--more-->"
 ## Statement of the Problem
 
 Xét bài toán tối ưu điều khiển với giá trị khởi tạo: $$\begin{aligned}
-    \dot{x}(t) &= f(x(t), u(t))  \\
+    \dot{x}(t) &= f(x(t), u(t))  \\\\
     x(0) &= x_0 
 \end{aligned}$$
 
@@ -28,8 +28,8 @@ Hamiltonian: $$H(x, u, p) = p^T \cdot f(x, u) + L(x, u)$$
 
 Pontryagin's Maximum Principle (PMP) cho ra các hệ thức sau:
 $$\begin{aligned}
-    \dot{x}^*(t) &= \frac{\partial H}{\partial p}  \\
-    \dot{p}(t) &= -\frac{\partial H}{\partial x}  \\
+    \dot{x}^*(t) &= \frac{\partial H}{\partial p}  \\\\
+    \dot{p}(t) &= -\frac{\partial H}{\partial x}  \\\\
     \frac{\partial H}{\partial u} &= 0
 \end{aligned}$$
 
@@ -45,30 +45,30 @@ $$\dot{p}(t) = -\frac{\partial H}{\partial x}$$.
 
 **Bài toán:** Trước hết, xét bài toán tối ưu chỉ có chi phí gốc:
 $$J = \int_0^T L(x, u) dt$$ với điều kiện ràng buộc động lực học:
-$f(x, u) - \dot{x}(t) = 0$.
+$$f(x, u) - \dot{x}(t) = 0$$.
 
 Xét phiếm hàm mở rộng (Augmented Functional):
 $$\mathcal{L} = \int_0^T \left[ L(x, u) + p(t)^T (f(x, u) - \dot{x}) \right] dt$$
 Thay định nghĩa hàm Hamiltonian vào, ta được:
 $$\mathcal{L} = \int_0^T \left( H(x, u, p) - p(t)^T \cdot \dot{x} \right) dt$$
 
-Lấy biến phân bậc I của $\mathcal{L}$:
+Lấy biến phân bậc I của $$\mathcal{L}$$:
 $$\Rightarrow \delta \mathcal{L} = \int_0^T \left[ \frac{\partial H}{\partial x} \cdot \delta x - p(t)^T \cdot \delta \dot{x} \right] dt = 0 \tag{i}$$
 $$\Rightarrow \delta \mathcal{L} = \int_0^T \left( \frac{\partial H}{\partial x} + \dot{p}(t)^T \right) \delta x \, dt = 0 \tag{ii}$$
-Do tích phân bằng 0 với mọi $\delta x$, ta suy ra biểu thức bên trong
+Do tích phân bằng 0 với mọi $$\delta x$$, ta suy ra biểu thức bên trong
 tích phân phải bằng 0:
 $$\frac{\partial H}{\partial x} + \dot{p}^T = 0 \implies \dot{p}^T(t) = -\frac{\partial H}{\partial x}$$
 **Chứng minh (i):**\
 Ta thiết lập nhiễu động (perturbation) cho biến trạng thái với tham số
-$\epsilon$: $$\begin{aligned}
-    \text{Trạng thái: } & x(t, \epsilon) = x^*(t) + \epsilon \cdot \eta(t) \implies \delta x = \epsilon \eta(t) \\
+$$\epsilon$$: $$\begin{aligned}
+    \text{Trạng thái: } & x(t, \epsilon) = x^*(t) + \epsilon \cdot \eta(t) \implies \delta x = \epsilon \eta(t) \\\\
     \text{Vận tốc: } & \dot{x}(t, \epsilon) = \dot{x}^*(t) + \epsilon \cdot \dot{\eta}(t) \implies \delta \dot{x} = \epsilon \dot{\eta}(t)
 \end{aligned}$$
 
-Xét phiếm hàm theo $\epsilon$:
+Xét phiếm hàm theo $$\epsilon$$:
 $$\mathcal{L}(\epsilon) = \int_0^T \left[ H(x(t, \epsilon), u, p) - p^T \cdot \dot{x}(t, \epsilon) \right] dt$$
 
-Khảo sát đạo hàm theo $\epsilon$:
+Khảo sát đạo hàm theo $$\epsilon$$:
 $$\frac{d\mathcal{L}}{d\epsilon} = \int_0^T \frac{\partial}{\partial \epsilon} \left[ H(x(t, \epsilon), u, p) - p^T \cdot \dot{x}(t, \epsilon) \right] dt$$
 
 Áp dụng quy tắc chuỗi (Chain Rule):
@@ -90,9 +90,9 @@ Thay vào tích phân:
 $$\frac{d\mathcal{L}}{d\epsilon} = \int_0^T \left( \frac{\partial H}{\partial x} \cdot \eta(t) - p^T \cdot \dot{\eta}(t) \right) dt$$
 
 Theo định nghĩa biến phân bậc I:
-$\delta \mathcal{L} = \left( \frac{d\mathcal{L}}{d\epsilon} \Big|_{\epsilon=0} \right) \cdot \epsilon$.
-Nhân $\epsilon$ vào biểu thức trên: $$\begin{aligned}
-    \delta \mathcal{L} &= \int_0^T \left[ \frac{\partial H}{\partial x} (\epsilon \eta(t)) - p^T (\epsilon \dot{\eta}(t)) \right] dt \\
+$$\delta \mathcal{L} = \left( \frac{d\mathcal{L}}{d\epsilon} \Big|_{\epsilon=0} \right) \cdot \epsilon$$.
+Nhân $$\epsilon$$ vào biểu thức trên: $$\begin{aligned}
+    \delta \mathcal{L} &= \int_0^T \left[ \frac{\partial H}{\partial x} (\epsilon \eta(t)) - p^T (\epsilon \dot{\eta}(t)) \right] dt \\\\
     &= \int_0^T \left[ \frac{\partial H}{\partial x} \delta x - p^T \cdot \delta \dot{x} \right] dt \quad
 \end{aligned}$$
 
@@ -102,39 +102,39 @@ $$\delta \mathcal{L} = \int_0^T \left[ \frac{\partial H}{\partial x} \cdot \delt
 
 Xét riêng số hạng thứ hai và áp dụng tích phân từng phần:
 $$\begin{aligned}
-    \int_0^T p^T (\delta \dot{x}) \, dt &= \int_0^T p^T \cdot d(\delta x) \\
-    &= \left[ p^T \cdot \delta x \right]_0^T - \int_0^T \delta x \cdot d(p^T) \\
+    \int_0^T p^T (\delta \dot{x}) \, dt &= \int_0^T p^T \cdot d(\delta x) \\\\
+    &= \left[ p^T \cdot \delta x \right]_0^T - \int_0^T \delta x \cdot d(p^T) \\\\
     &= p^T(T) \cdot \delta x(T) - p^T(0) \cdot \delta x(0) - \int_0^T \delta x \cdot \dot{p}^T dt
-\end{aligned}$$ Vì trạng thái khởi tạo cố định $x(0) = x_0$ nên
-$\delta x(0) = 0$.
+\end{aligned}$$ Vì trạng thái khởi tạo cố định $$x(0) = x_0$$ nên
+$$\delta x(0) = 0$$.
 
-**Mặt khác, xét bài toán tổng quát có thêm $\Phi(x(T))$:** Khi lấy biến
-phân toàn phần cho $\mathcal{L}$: $$\begin{aligned}
-    \delta \mathcal{L} &= \delta \big( \Phi(x(T)) \big) + \int_0^T \left( \frac{\partial H}{\partial x} \delta x + \dot{p}^T \cdot \delta x \right) dt - p^T(T) \cdot \delta x(T) \\
-    &= I + \frac{\partial \Phi}{\partial x} \cdot \delta x - p^T(T) \cdot \delta x(T) \\
+**Mặt khác, xét bài toán tổng quát có thêm $$\Phi(x(T))$$:** Khi lấy biến
+phân toàn phần cho $$\mathcal{L}$$: $$\begin{aligned}
+    \delta \mathcal{L} &= \delta \big( \Phi(x(T)) \big) + \int_0^T \left( \frac{\partial H}{\partial x} \delta x + \dot{p}^T \cdot \delta x \right) dt - p^T(T) \cdot \delta x(T) \\\\
+    &= I + \frac{\partial \Phi}{\partial x} \cdot \delta x - p^T(T) \cdot \delta x(T) \\\\
     &= I + \left[ \nabla \Phi(x(T))^T \cdot \delta x(T) - p^T(T) \cdot \delta x(T) \right]
-\end{aligned}$$ (Trong đó $I$ là phần tích phân bằng $0$ để tạo ra
-phương trình adjoint). Để $\delta \mathcal{L} = 0$ tại biên, ta phải có:
+\end{aligned}$$ (Trong đó $$I$$ là phần tích phân bằng $$0$$ để tạo ra
+phương trình adjoint). Để $$\delta \mathcal{L} = 0$$ tại biên, ta phải có:
 $$\nabla \Phi(x(T)) = p(T) \quad \text{(Điều kiện Transversality)}$$
 
 ---
 
 **b. Phương trình trạng thái**\
-Ta cần chứng minh $\dot{x}^*(t) = \frac{\partial H}{\partial p}$. Theo
+Ta cần chứng minh $$\dot{x}^*(t) = \frac{\partial H}{\partial p}$$. Theo
 thiết lập bài toán ban đầu: $$\dot{x}(t) = f(x, u)$$ Mà theo định nghĩa
-của Hamiltonian: $H(x, u, p) = p^T \cdot f(x, u) + L(x, u)$. Đạo hàm $H$
-theo $p$, ta thu được: $$\frac{\partial H}{\partial p} = f(x, u)$$ Từ
+của Hamiltonian: $$H(x, u, p) = p^T \cdot f(x, u) + L(x, u)$$. Đạo hàm $$H$$
+theo $$p$$, ta thu được: $$\frac{\partial H}{\partial p} = f(x, u)$$ Từ
 (6) và (7) suy ra: $$\frac{\partial H}{\partial p} = \dot{x}^*(t)$$ 
 **c. Điều kiện tối ưu hóa Control**\
 Mặt khác, xét phiếm hàm:
-$\mathcal{L} = \int_0^T \left( H(x, u, p) - p^T \dot{x} \right) dt$. Lấy
-biến phân theo $u$ (tương đương với việc lấy đạo hàm theo $u$ và nhân
-với $\delta u$):
+$$\mathcal{L} = \int_0^T \left( H(x, u, p) - p^T \dot{x} \right) dt$$. Lấy
+biến phân theo $$u$$ (tương đương với việc lấy đạo hàm theo $$u$$ và nhân
+với $$\delta u$$):
 $$\delta_u \mathcal{L} = \int_0^T \left( \frac{\partial H}{\partial u} \cdot \delta u \right) dt$$
 Bởi vì
-$\frac{d\mathcal{L}}{du} = \int_0^T \frac{\partial H}{\partial u} dt$.
-Để tối ưu hóa, ta ép $\delta_u \mathcal{L} = 0$ với mọi biến thiên
-$\delta u$ tùy ý. Từ đó suy ra: $$\frac{\partial H}{\partial u} = 0$$
+$$\frac{d\mathcal{L}}{du} = \int_0^T \frac{\partial H}{\partial u} dt$$.
+Để tối ưu hóa, ta ép $$\delta_u \mathcal{L} = 0$$ với mọi biến thiên
+$$\delta u$$ tùy ý. Từ đó suy ra: $$\frac{\partial H}{\partial u} = 0$$
 
 # The Hamilton-Jacobi-Bellman Equation
 
@@ -148,7 +148,7 @@ hành trình.\"\
 *Tham khảo: Donald E. Kirk, \"Optimal Control Theory: An Introduction\",
 Mục 3.11.*
 
-Trong phần tiếp cận ban đầu với quy hoạch động, chúng ta đã xấp xỉ các
+Trong phần tiếp cận ban đầu với quy hoạch động, chúng bản đã xấp xỉ các
 hệ thống hoạt động liên tục bằng các hệ thống rời rạc. Cách tiếp cận này
 dẫn đến một hệ thức truy hồi lý tưởng cho việc giải trên máy tính. Trong
 phần này, chúng ta sẽ xem xét một cách tiếp cận thay thế dẫn đến một
@@ -161,115 +161,112 @@ Xét quá trình được mô tả bởi phương trình trạng thái:
 $$\dot{x}(t) = f(x(t), u(t)) \label{eq:state_HJB}$$ Quá trình này cần
 được điều khiển để cực tiểu hóa độ đo hiệu suất (hàm chi phí):
 $$J = \Phi(x(T)) + \int_0^T L(x(\tau), u(\tau)) d\tau \label{eq:cost_HJB}$$
-trong đó $\Phi$ và $L$ là các hàm đã cho, thời gian bắt đầu $0$ và kết
-thúc $T$ được cố định, và $\tau$ là biến tích phân giả (dummy
+trong đó $$\Phi$$ và $$L$$ là các hàm đã cho, thời gian bắt đầu $$0$$ và kết
+thúc $$T$$ được cố định, và $$\tau$$ là biến tích phân giả (dummy
 variable).\
 Phương trình Đạo hàm riêng (PDE) mang tên Hamilton-Jacobi-Bellman:
-$$-\frac{\partial J^*}{\partial t}(x(t), t) = H(x(t), u^*(x(t), \nabla_x J^*, t), \nabla_x J^*). \label{eq:3.11-10a}$$
+$$-\frac{\partial J^*}{\partial t}(x(t), t) = H(x(t), u^*(x(t), \nabla_x J^*, t), \nabla_x J^*). \label{eq:3.11-10a_intro}$$
 
 ## Proof
 
 Ta sử dụng nguyên lý nhúng (imbedding principle) để đưa bài toán này vào
 một lớp các bài toán rộng hơn bằng cách xét hàm chi phí từ một thời điểm
-$t$ bất kỳ:
+$$t$$ bất kỳ:
 $$J(x(t), t, u(\tau)) = \Phi(x(T)) + \int_t^T L(x(\tau), u(\tau)) d\tau \label{eq:imbedding}$$
-với $t$ có thể là bất kỳ giá trị nào nhỏ hơn hoặc bằng $T$ ($t \le T$),
-và $x(t)$ có thể là bất kỳ giá trị trạng thái hợp lệ nào.
+với $$t$$ có thể là bất kỳ giá trị nào nhỏ hơn hoặc bằng $$T$$ ($$t \le T$$),
+và $$x(t)$$ có thể là bất kỳ giá trị trạng thái hợp lệ nào.
 
-Gọi $J^*(x(t), t)$ là chi phí tối ưu để đi từ trạng thái $x(t)$ ở thời
-điểm $t$ đến thời điểm kết thúc $T$. Hàm giá trị tối ưu được định nghĩa
+Gọi $$J^*(x(t), t)$$ là chi phí tối ưu để đi từ trạng thái $$x(t)$$ ở thời
+điểm $$t$$ đến thời điểm kết thúc $$T$$. Hàm giá trị tối ưu được định nghĩa
 là:
-$$J^*(x(t), t) = \min_{\substack{u(\tau) \\ t \le \tau \le T}} \left\{ \Phi(x(T)) + \int_t^T L(x(\tau), u(\tau)) d\tau \right\}$$
+$$J^*(x(t), t) = \min_{\substack{u(\tau) \\\\ t \le \tau \le T}} \left\{ \Phi(x(T)) + \int_t^T L(x(\tau), u(\tau)) d\tau \right\}$$
 
 Bằng cách chia nhỏ khoảng thời gian tích phân thành hai đoạn
-$[t, t+\Delta t]$ và $[t+\Delta t, T]$, ta thu được:
-$$J^*(x(t), t) = \min_{\substack{u(\tau) \\ t \le \tau \le T}} \left\{ \int_t^{t+\Delta t} L(x(\tau), u(\tau)) d\tau + \int_{t+\Delta t}^T L(x(\tau), u(\tau)) d\tau + \Phi(x(T)) \right\} \label{eq:subdivide}$$
+$$[t, t+\Delta t]$$ và $$[t+\Delta t, T]$$, ta thu được:
+$$J^*(x(t), t) = \min_{\substack{u(\tau) \\\\ t \le \tau \le T}} \left\{ \int_t^{t+\Delta t} L(x(\tau), u(\tau)) d\tau + \int_{t+\Delta t}^T L(x(\tau), u(\tau)) d\tau + \Phi(x(T)) \right\} \label{eq:subdivide}$$
 
 Theo Nguyên lý Tối ưu (Principle of Optimality) của Bellman, quỹ đạo tối
 ưu có tính chất lồng nhau. Do đó, ta có thể tối ưu hóa cho đoạn nhỏ
-$\Delta t$ đầu tiên, và phần còn lại chính là hàm chi phí tối ưu bắt đầu
-từ $t+\Delta t$:
-$$J^*(x(t), t) = \min_{\substack{u(\tau) \\ t \le \tau \le t+\Delta t}} \left\{ \int_t^{t+\Delta t} L(x(\tau), u(\tau)) d\tau + J^*(x(t+\Delta t), t+\Delta t) \right\} \label{eq:principle_opt}$$
+$$\Delta t$$ đầu tiên, và phần còn lại chính là hàm chi phí tối ưu bắt đầu
+từ $$t+\Delta t$$:
+$$J^*(x(t), t) = \min_{\substack{u(\tau) \\\\ t \le \tau \le t+\Delta t}} \left\{ \int_t^{t+\Delta t} L(x(\tau), u(\tau)) d\tau + J^*(x(t+\Delta t), t+\Delta t) \right\} \label{eq:principle_opt}$$
 
 *(Từ phương trình
-[\[eq:principle_opt\]](#eq:principle_opt){reference-type="eqref"
-reference="eq:principle_opt"} này, bằng cách khai triển chuỗi Taylor cho
-$J^*(x(t+\Delta t), t+\Delta t)$ và cho $\Delta t \to 0$, ta sẽ thu được
+$$\eqref{eq:principle_opt}$$ này, bằng cách khai triển chuỗi Taylor cho
+$$J^*(x(t+\Delta t), t+\Delta t)$$ và cho $$\Delta t \to 0$$, ta sẽ thu được
 phương trình đạo hàm riêng HJB hoàn chỉnh.)*
 
-Trong đó, $J^*(x(t + \Delta t), t + \Delta t)$ là chi phí tối thiểu của
-quá trình trong khoảng thời gian $t + \Delta t \le \tau \le T$, với
-trạng thái \"khởi tạo\" là $x(t + \Delta t)$.
+Trong đó, $$J^*(x(t + \Delta t), t + \Delta t)$$ là chi phí tối thiểu của
+quá trình trong khoảng thời gian $$t + \Delta t \le \tau \le T$$, với
+trạng thái \"khởi tạo\" là $$x(t + \Delta t)$$.
 
-Giả sử rằng các đạo hàm riêng bậc hai của $J^*$ tồn tại và bị chặn, ta
-có thể khai triển chuỗi Taylor cho $J^*(x(t + \Delta t), t + \Delta t)$
-quanh điểm $(x(t), t)$ để thu được: $$\begin{aligned}
-    J^*(x(t), t) = \min_{\substack{u(\tau) \\ t \le \tau \le t+\Delta t}} \Bigg\{ &\int_t^{t+\Delta t} L(x(\tau), u(\tau)) d\tau + J^*(x(t), t) + \left[ \frac{\partial J^*}{\partial t}(x(t), t) \right] \Delta t \nonumber \\
+Giả sử rằng các đạo hàm riêng bậc hai của $$J^*$$ tồn tại và bị chặn, ta
+có thể khai triển chuỗi Taylor cho $$J^*(x(t + \Delta t), t + \Delta t)$$
+quanh điểm $$(x(t), t)$$ để thu được: $$\begin{aligned}
+    J^*(x(t), t) = \min_{\substack{u(\tau) \\\\ t \le \tau \le t+\Delta t}} \Bigg\{ &\int_t^{t+\Delta t} L(x(\tau), u(\tau)) d\tau + J^*(x(t), t) + \left[ \frac{\partial J^*}{\partial t}(x(t), t) \right] \Delta t \nonumber \\\\
     &+ \left[ \frac{\partial J^*}{\partial x}(x(t), t) \right]^T [x(t + \Delta t) - x(t)] + \text{các số hạng bậc cao} \Bigg\} \label{eq:taylor_expansion}
 \end{aligned}$$
 
-Bây giờ, xét với $\Delta t$ đủ nhỏ. Ta có thể xấp xỉ tích phân và độ
+Bây giờ, xét với $$\Delta t$$ đủ nhỏ. Ta có thể xấp xỉ tích phân và độ
 biến thiên của trạng thái như sau:
 
--   $\int_t^{t+\Delta t} L(x(\tau), u(\tau)) d\tau \approx L(x(t), u(t)) \Delta t$
+-   $$\int_t^{t+\Delta t} L(x(\tau), u(\tau)) d\tau \approx L(x(t), u(t)) \Delta t$$
 
--   $x(t + \Delta t) - x(t) \approx \dot{x}(t) \Delta t = f(x(t), u(t)) \Delta t$
+-   $$x(t + \Delta t) - x(t) \approx \dot{x}(t) \Delta t = f(x(t), u(t)) \Delta t$$
 
 Thay các xấp xỉ này vào phương trình
-[\[eq:taylor_expansion\]](#eq:taylor_expansion){reference-type="eqref"
-reference="eq:taylor_expansion"}, ta thu được: 
+$$\eqref{eq:taylor_expansion}$$, ta thu được: 
 $$\begin{aligned}
-    J^*(x(t), t) = \min_{u(t)} \Big\{ &L(x(t), u(t)) \Delta t + J^*(x(t), t) + J_t^*(x(t), t) \Delta t \nonumber \\
+    J^*(x(t), t) = \min_{u(t)} \Big\{ &L(x(t), u(t)) \Delta t + J^*(x(t), t) + J_t^*(x(t), t) \Delta t \nonumber \\\\
     &+ J_x^{*T}(x(t), t) \left[ f(x(t), u(t)) \right] \Delta t + o(\Delta t) \Big\} \label{eq:small_dt}
 \end{aligned}$$ 
-trong đó $J_t^* = \frac{\partial J^*}{\partial t}$,
-$J_x^* = \frac{\partial J^*}{\partial x} = \nabla_x J^*$, và
-$o(\Delta t)$ ký hiệu các số hạng chứa $(\Delta t)^2$ và các vô cùng bé
-bậc cao hơn của $\Delta t$ phát sinh từ việc xấp xỉ tích phân và cắt cụt
+trong đó $$J_t^* = \frac{\partial J^*}{\partial t}$$,
+$$J_x^* = \frac{\partial J^*}{\partial x} = \nabla_x J^*$$, và
+$$o(\Delta t)$$ ký hiệu các số hạng chứa $$(\Delta t)^2$$ và các vô cùng bé
+bậc cao hơn của $$\Delta t$$ phát sinh từ việc xấp xỉ tích phân và cắt cụt
 khai triển chuỗi Taylor.
 
-Tiếp theo, vì các đại lượng $J^*(x(t), t)$ và $J_t^*(x(t), t) \Delta t$
-không phụ thuộc vào biến điều khiển $u(t)$, ta có thể đưa chúng ra khỏi
+Tiếp theo, vì các đại lượng $$J^*(x(t), t)$$ và $$J_t^*(x(t), t) \Delta t$$
+không phụ thuộc vào biến điều khiển $$u(t)$$, ta có thể đưa chúng ra khỏi
 toán tử cực tiểu hóa:
 $$J^*(x(t), t) = J^*(x(t), t) + J_t^*(x(t), t) \Delta t + \min_{u(t)} \Big\{ L(x(t), u(t)) \Delta t + J_x^{*T}(x(t), t) f(x(t), u(t)) \Delta t + o(\Delta t) \Big\}$$
 
-Triệt tiêu $J^*(x(t), t)$ ở cả hai vế, chia toàn bộ phương trình cho
-$\Delta t$ và chuyển vế $J_t^*$:
+Triệt tiêu $$J^*(x(t), t)$$ ở cả hai vế, chia toàn bộ phương trình cho
+$$\Delta t$$ và chuyển vế $$J_t^*$$:
 $$-J_t^*(x(t), t) = \min_{u(t)} \left\{ L(x(t), u(t)) + J_x^{*T}(x(t), t) f(x(t), u(t)) + \frac{o(\Delta t)}{\Delta t} \right\}$$
 
-Cuối cùng, khi lấy giới hạn $\Delta t \to 0$, số hạng
-$\frac{o(\Delta t)}{\Delta t}$ sẽ tiến về $0$. Ta thu được phương trình
+Cuối cùng, khi lấy giới hạn $$\Delta t \to 0$$, số hạng
+$$\frac{o(\Delta t)}{\Delta t}$$ sẽ tiến về $$0$$. Ta thu được phương trình
 đạo hàm riêng Hamilton-Jacobi-Bellman (HJB):
 $$-\frac{\partial J^*(x, t)}{\partial t} = \min_{u(t)} \left[ L(x, u) + \nabla_x J^*(x, t)^T f(x, u) \right] \label{eq:hjb_final}$$
 
-Với điều kiện biên tại thời điểm kết thúc $T$:
+Với điều kiện biên tại thời điểm kết thúc $$T$$:
 $$J^*(x(T), T) = \Phi(x(T)) \label{eq:hjb_boundary}$$ Từ phép cực tiểu
-hóa \[vì các đại lượng này không phụ thuộc vào $u(t)$\], ta thu được:
+hóa \[vì các đại lượng này không phụ thuộc vào $$u(t)$$\], ta thu được:
 $$\begin{aligned}
-    0 &= \frac{\partial J^*}{\partial t}(x(t), t) \Delta t + \min_{u(t)} \Big\{ L(x(t), u(t)) \Delta t \nonumber \\
+    0 &= \frac{\partial J^*}{\partial t}(x(t), t) \Delta t + \min_{u(t)} \Big\{ L(x(t), u(t)) \Delta t \nonumber \\\\
     &\quad + \nabla_x J^*(x(t), t)^T f(x(t), u(t)) \Delta t + o(\Delta t) \Big\}. \label{eq:3.11-9}
 \end{aligned}$$
 
-Chia hai vế cho $\Delta t$ và lấy giới hạn khi $\Delta t \to 0$, ta có:
+Chia hai vế cho $$\Delta t$$ và lấy giới hạn khi $$\Delta t \to 0$$, ta có:
 $$0 = \frac{\partial J^*}{\partial t}(x(t), t) + \min_{u(t)} \left\{ L(x(t), u(t)) + \nabla_x J^*(x(t), t)^T f(x(t), u(t)) \right\}. \label{eq:3.11-10}$$
 
-Để tìm giá trị biên cho phương trình đạo hàm riêng này, ta đặt $t = T$;
+Để tìm giá trị biên cho phương trình đạo hàm riêng này, ta đặt $$t = T$$;
 từ định nghĩa hàm chi phí ban đầu, rõ ràng ta có:
 $$J^*(x(T), T) = \Phi(x(T)). \label{eq:3.11-11}$$
 
-Ta định nghĩa hàm Hamiltonian $H$ là:
+Ta định nghĩa hàm Hamiltonian $$H$$ là:
 $$H(x(t), u(t), \nabla_x J^*) \triangleq L(x(t), u(t)) + \nabla_x J^*(x(t), t)^T f(x(t), u(t)) \label{eq:3.11-12}$$
 và
 $$H(x(t), u^*(x(t), \nabla_x J^*, t), \nabla_x J^*) = \min_{u(t)} H(x(t), u(t), \nabla_x J^*), \label{eq:3.11-13}$$
-bởi vì tín hiệu điều khiển cực tiểu hóa sẽ phụ thuộc vào $x$,
-$\nabla_x J^*$, và $t$. Sử dụng các định nghĩa này, ta thu được phương
+bởi vì tín hiệu điều khiển cực tiểu hóa sẽ phụ thuộc vào $$x$$,
+$$\nabla_x J^*$$, và $$t$$. Sử dụng các định nghĩa này, ta thu được phương
 trình Hamilton-Jacobi:
 $$0 = \frac{\partial J^*}{\partial t}(x(t), t) + H(x(t), u^*(x(t), \nabla_x J^*, t), \nabla_x J^*). \label{eq:3.11-10a}$$
 
 Phương trình này là phiên bản tương tự trong miền thời gian liên tục của
 phương trình truy hồi Bellman; do đó, ta sẽ gọi phương trình
-[\[eq:3.11-10a\]](#eq:3.11-10a){reference-type="eqref"
-reference="eq:3.11-10a"} là **\"Phương trình
+$$\eqref{eq:3.11-10a}$$ là **\"Phương trình
 Hamilton-Jacobi-Bellman\"**.
 
 # A Calculus Example
@@ -279,15 +276,15 @@ Ví dụ 3.11-1.* Một hệ thống bậc nhất được mô tả bởi phươ
 phân: $$\dot{x}(t) = f(x(t), u(t)) = x(t) + u(t); \label{eq:3.11-14}$$
 Ta cần tìm luật điều khiển tối ưu hóa độ đo hiệu suất (hàm chi phí):
 $$J = \Phi(x(T)) + \int_0^T L(x(t), u(t)) dt = \frac{1}{4}x^2(T) + \int_0^T \frac{1}{4}u^2(t) dt. \label{eq:3.11-15}$$
-Thời gian kết thúc $T$ được xác định trước, và các giá trị trạng thái
+Thời gian kết thúc $$T$$ được xác định trước, và các giá trị trạng thái
 cũng như tín hiệu điều khiển không bị giới hạn bởi bất kỳ ràng buộc biên
 nào.
 
 ## Solve by the HJB Equation
 
-Thay $L(x(t), u(t)) = \frac{1}{4}u^2(t)$ và
-$f(x(t), u(t)) = x(t) + u(t)$ vào định nghĩa Hamiltonian, ta có hàm
-Hamiltonian là (để gọn, ta bỏ qua các đối số của $\nabla_x J^*$):
+Thay $$L(x(t), u(t)) = \frac{1}{4}u^2(t)$$ và
+$$f(x(t), u(t)) = x(t) + u(t)$$ vào định nghĩa Hamiltonian, ta có hàm
+Hamiltonian là (để gọn, ta bỏ qua các đối số của $$\nabla_x J^*$$):
 $$H(x(t), u(t), \nabla_x J^*, t) = \frac{1}{4}u^2(t) + \nabla_x J^* \cdot [x(t) + u(t)], \label{eq:3.11-16}$$
 và vì tín hiệu điều khiển không bị ràng buộc, điều kiện cần mà điều
 khiển tối ưu phải thỏa mãn là:
@@ -296,64 +293,54 @@ $$\frac{\partial H}{\partial u} = \frac{1}{2}u(t) + \nabla_x J^*(x(t), t) = 0. \
 Quan sát thấy rằng:
 $$\frac{\partial^2 H}{\partial u^2} = \frac{1}{2} > 0; \label{eq:3.11-18}$$
 do đó, tín hiệu điều khiển thỏa mãn phương trình
-[\[eq:3.11-17\]](#eq:3.11-17){reference-type="eqref"
-reference="eq:3.11-17"} thực sự làm cực tiểu hóa hàm $H$. Từ
-[\[eq:3.11-17\]](#eq:3.11-17){reference-type="eqref"
-reference="eq:3.11-17"}, ta rút ra:
+$$\eqref{eq:3.11-17}$$ thực sự làm cực tiểu hóa hàm $$H$$. Từ
+$$\eqref{eq:3.11-17}$$, ta rút ra:
 $$u^*(t) = -2\nabla_x J^*(x(t), t), \label{eq:3.11-19}$$ Khi thay giá
-trị $u^*(t)$ này vào phương trình Hamilton-Jacobi-Bellman
-$\left(0 = \frac{\partial J^*}{\partial t} + H \right)$, ta được:
+trị $$u^*(t)$$ này vào phương trình Hamilton-Jacobi-Bellman
+$$\left(0 = \frac{\partial J^*}{\partial t} + H \right)$$, ta được:
 $$\begin{aligned}
-    0 &= \frac{\partial J^*}{\partial t} + \frac{1}{4}[-2\nabla_x J^*]^2 + [\nabla_x J^*]x(t) - 2[\nabla_x J^*]^2 \nonumber \\
+    0 &= \frac{\partial J^*}{\partial t} + \frac{1}{4}[-2\nabla_x J^*]^2 + [\nabla_x J^*]x(t) - 2[\nabla_x J^*]^2 \nonumber \\\\
     &= \frac{\partial J^*}{\partial t} - [\nabla_x J^*]^2 + [\nabla_x J^*]x(t). \label{eq:3.11-20}
-\end{aligned}$$ Từ [\[eq:3.11-15\]](#eq:3.11-15){reference-type="eqref"
-reference="eq:3.11-15"}, giá trị tại biên là:
+\end{aligned}$$ Từ $$\eqref{eq:3.11-15}$$, giá trị tại biên là:
 $$J^*(x(T), T) = \frac{1}{4}x^2(T). \label{eq:3.11-21}$$
 
 Một cách để giải phương trình Hamilton-Jacobi-Bellman là đoán một dạng
 của nghiệm và kiểm tra xem nó có thỏa mãn phương trình vi phân và các
 điều kiện biên hay không. Giả sử nghiệm có dạng:
 $$J^*(x(t), t) = \frac{1}{2} K(t) x^2(t), \label{eq:3.11-22}$$ trong đó
-$K(t)$ đại diện cho một hàm vô hướng của $t$ cần được xác định. Lưu ý
+$$K(t)$$ đại diện cho một hàm vô hướng của $$t$$ cần được xác định. Lưu ý
 rằng: $$\nabla_x J^*(x(t), t) = K(t) x(t), \label{eq:3.11-23}$$ kết hợp
-với phương trình [\[eq:3.11-19\]](#eq:3.11-19){reference-type="eqref"
-reference="eq:3.11-19"}, ta suy ra:
+với phương trình $$\eqref{eq:3.11-19}$$, ta suy ra:
 $$u^*(t) = -2K(t)x(t). \label{eq:3.11-24}$$ Như vậy, nếu ta có thể tìm
-được một hàm $K(t)$ thỏa mãn
-[\[eq:3.11-20\]](#eq:3.11-20){reference-type="eqref"
-reference="eq:3.11-20"} và
-[\[eq:3.11-21\]](#eq:3.11-21){reference-type="eqref"
-reference="eq:3.11-21"}, thì luật điều khiển tối ưu sẽ là *hồi tiếp
+được một hàm $$K(t)$$ thỏa mãn
+$$\eqref{eq:3.11-20}$$ và
+$$\eqref{eq:3.11-21}$$, thì luật điều khiển tối ưu sẽ là *hồi tiếp
 tuyến tính của trạng thái* (linear feedback of the state) --- thực tế,
 đây chính là động lực để chúng ta chọn nghiệm có dạng như
-[\[eq:3.11-22\]](#eq:3.11-22){reference-type="eqref"
-reference="eq:3.11-22"}.
+$$\eqref{eq:3.11-22}$$.
 
-Bằng cách chọn $K(T) = \frac{1}{2}$, nghiệm giả định sẽ khớp với điều
+Bằng cách chọn $$K(T) = \frac{1}{2}$$, nghiệm giả định sẽ khớp với điều
 kiện biên được chỉ định bởi
-[\[eq:3.11-21\]](#eq:3.11-21){reference-type="eqref"
-reference="eq:3.11-21"}. Thay
-[\[eq:3.11-23\]](#eq:3.11-23){reference-type="eqref"
-reference="eq:3.11-23"} vào vị trí của $\nabla_x J^*$ và thay
+$$\eqref{eq:3.11-21}$$. Thay
+$$\eqref{eq:3.11-23}$$ vào vị trí của $$\nabla_x J^*$$ và thay
 $$\frac{\partial J^*}{\partial t}(x(t), t) = \frac{1}{2} \dot{K}(t) x^2(t)$$
-vào phương trình [\[eq:3.11-20\]](#eq:3.11-20){reference-type="eqref"
-reference="eq:3.11-20"}, ta được:
+vào phương trình $$\eqref{eq:3.11-20}$$, ta được:
 $$0 = \frac{1}{2} \dot{K}(t) x^2(t) - K^2(t) x^2(t) + K(t) x^2(t). \label{eq:3.11-25}$$
-Vì phương trình này phải được thỏa mãn với mọi $x(t)$, nên ta có:
+Vì phương trình này phải được thỏa mãn với mọi $$x(t)$$, nên ta có:
 $$\frac{1}{2} \dot{K}(t) - K^2(t) + K(t) = 0. \label{eq:3.11-26}$$
-$K(t)$ là một hàm vô hướng của $t$; do đó, nghiệm có thể được giải bằng
+$$K(t)$$ là một hàm vô hướng của $$t$$; do đó, nghiệm có thể được giải bằng
 phương pháp tách biến (separation of variables), cho ra kết quả:
 $$K(t) = \frac{e^{(T-t)}}{e^{(T-t)} + e^{-(T-t)}}. \label{eq:3.11-27}$$
 
 Khi đó, luật điều khiển tối ưu là: $$\begin{aligned}
-    u^*(t) &= -2\nabla_x J^*(x(t), t) \nonumber \\
+    u^*(t) &= -2\nabla_x J^*(x(t), t) \nonumber \\\\
     &= -2K(t)x(t). \label{eq:3.11-28}
 \end{aligned}$$
 
-Lưu ý rằng khi $T \to \infty$, hồi tiếp biến thiên theo thời gian tuyến
-tính này sẽ tiến dần đến hồi tiếp hằng số ($K(t) \to 1$), và hệ thống
+Lưu ý rằng khi $$T \to \infty$$, hồi tiếp biến thiên theo thời gian tuyến
+tính này sẽ tiến dần đến hồi tiếp hằng số ($$K(t) \to 1$$), và hệ thống
 được điều khiển: $$\begin{aligned}
-    \dot{x}(t) &= x(t) - 2x(t) \nonumber \\
+    \dot{x}(t) &= x(t) - 2x(t) \nonumber \\\\
     &= -x(t) \label{eq:3.11-29}
 \end{aligned}$$ trở nên ổn định. Nếu điều này không xảy ra, giá trị độ
 đo hiệu suất sẽ tiến đến vô cực.
@@ -361,12 +348,12 @@ tính này sẽ tiến dần đến hồi tiếp hằng số ($K(t) \to 1$), và
 ## Solve by the Pontryagin's maximum principle
 
 $$\begin{aligned}
-    \text{Động lực hệ:} \quad &\dot{x}(t) = x(t) + u(t) \\
+    \text{Động lực hệ:} \quad &\dot{x}(t) = x(t) + u(t) \\\\
     \text{Hàm chi phí:} \quad &J = \frac{1}{4}x^2(T) + \int_0^T \frac{1}{4}u^2(t) dt
 \end{aligned}$$
 
 Theo định nghĩa, hàm Hamiltonian cho bài toán này là: $$\begin{aligned}
-    H(x, u, p) &= L(x, u) + p(t) f(x, u) \nonumber \\
+    H(x, u, p) &= L(x, u) + p(t) f(x, u) \nonumber \\\\
     &= \frac{1}{4}u^2(t) + p(t)[x(t) + u(t)] \label{eq:pmp_H}
 \end{aligned}$$
 
@@ -375,46 +362,38 @@ trình:
 $$\frac{\partial H}{\partial u} = 0 \implies \frac{1}{2}u(t) + p(t) = 0 \implies u^*(t) = -2p(t) \label{eq:pmp_u}$$
 $$\dot{x}(t) = \frac{\partial H}{\partial p} = x(t) + u(t) = x(t) - 2p(t) \label{eq:pmp_state}$$
 $$\dot{p}(t) = -\frac{\partial H}{\partial x} = -p(t) \label{eq:pmp_adjoint}$$
-Tại thời điểm kết thúc $T$, biến đối ngẫu $p(T)$ được xác định bởi đạo
-hàm của hàm chi phí biên $\Phi(x(T)) = \frac{1}{4}x^2(T)$:
+Tại thời điểm kết thúc $$T$$, biến đối ngẫu $$p(T)$$ được xác định bởi đạo
+hàm của hàm chi phí biên $$\Phi(x(T)) = \frac{1}{4}x^2(T)$$:
 $$p(T) = \nabla_x \Phi(x(T)) = \frac{1}{2}x(T) \label{eq:pmp_transversality}$$
 
 **Giải hệ phương trình bằng Phương pháp quét (Sweep Method)** Từ
-[\[eq:pmp_state\]](#eq:pmp_state){reference-type="eqref"
-reference="eq:pmp_state"} và
-[\[eq:pmp_adjoint\]](#eq:pmp_adjoint){reference-type="eqref"
-reference="eq:pmp_adjoint"}, ta có một hệ phương trình vi phân biên hai
+$$\eqref{eq:pmp_state}$$ và
+$$\eqref{eq:pmp_adjoint}$$, ta có một hệ phương trình vi phân biên hai
 điểm (Two-Point Boundary Value Problem). Để tìm ra luật điều khiển hồi
 tiếp (feedback control), ta giả sử có một mối quan hệ tuyến tính giữa
-biến đối ngẫu $p(t)$ và trạng thái $x(t)$:
+biến đối ngẫu $$p(t)$$ và trạng thái $$x(t)$$:
 $$p(t) = K(t)x(t) \label{eq:pmp_riccati_sub}$$ Lấy đạo hàm hai vế theo
-thời gian $t$:
+thời gian $$t$$:
 $$\dot{p}(t) = \dot{K}(t)x(t) + K(t)\dot{x}(t) \label{eq:pmp_dp}$$
 
-Bây giờ, ta thay $\dot{p}(t)$ từ
-[\[eq:pmp_adjoint\]](#eq:pmp_adjoint){reference-type="eqref"
-reference="eq:pmp_adjoint"} và $\dot{x}(t)$ từ
-[\[eq:pmp_state\]](#eq:pmp_state){reference-type="eqref"
-reference="eq:pmp_state"} vào phương trình
-[\[eq:pmp_dp\]](#eq:pmp_dp){reference-type="eqref"
-reference="eq:pmp_dp"}: $$-p(t) = \dot{K}(t)x(t) + K(t)[x(t) - 2p(t)]$$
-Thay tiếp $p(t) = K(t)x(t)$ vào cả hai vế:
+Bây giờ, ta thay $$\dot{p}(t)$$ từ
+$$\eqref{eq:pmp_adjoint}$$ và $$\dot{x}(t)$$ từ
+$$\eqref{eq:pmp_state}$$ vào phương trình
+$$\eqref{eq:pmp_dp}$$: $$-p(t) = \dot{K}(t)x(t) + K(t)[x(t) - 2p(t)]$$
+Thay tiếp $$p(t) = K(t)x(t)$$ vào cả hai vế:
 $$-K(t)x(t) = \dot{K}(t)x(t) + K(t)x(t) - 2K^2(t)x(t)$$ Vì hệ thức này
-phải đúng với mọi quỹ đạo trạng thái $x(t) \neq 0$, ta có thể triệt tiêu
-$x(t)$ ở hai vế: $$-K(t) = \dot{K}(t) + K(t) - 2K^2(t)$$ Sắp xếp lại, ta
-thu được phương trình vi phân Riccati cho hàm $K(t)$:
+phải đúng với mọi quỹ đạo trạng thái $$x(t) \neq 0$$, ta có thể triệt tiêu
+$$x(t)$$ ở hai vế: $$-K(t) = \dot{K}(t) + K(t) - 2K^2(t)$$ Sắp xếp lại, ta
+thu được phương trình vi phân Riccati cho hàm $$K(t)$$:
 $$\frac{1}{2}\dot{K}(t) + K(t) - K^2(t) = 0 \label{eq:pmp_riccati}$$
 
 Xét điều kiện biên từ phương trình
-[\[eq:pmp_transversality\]](#eq:pmp_transversality){reference-type="eqref"
-reference="eq:pmp_transversality"}:
+$$\eqref{eq:pmp_transversality}$$:
 $$p(T) = K(T)x(T) = \frac{1}{2}x(T) \implies K(T) = \frac{1}{2}$$
 
 **Kết luận:** Phương trình vi phân
-[\[eq:pmp_riccati\]](#eq:pmp_riccati){reference-type="eqref"
-reference="eq:pmp_riccati"} và điều kiện biên $K(T) = \frac{1}{2}$ thu
-được phương trình [\[eq:3.11-26\]](#eq:3.11-26){reference-type="eqref"
-reference="eq:3.11-26"} tương tự phương pháp HJB. Luật điều khiển tối
+$$\eqref{eq:pmp_riccati}$$ và điều kiện biên $$K(T) = \frac{1}{2}$$ thu
+được phương trình $$\eqref{eq:3.11-26}$$ tương tự phương pháp HJB. Luật điều khiển tối
 ưu: $$u^*(t) = -2p(t) = -2K(t)x(t)$$
 
 Do đó, ta cũng có quan hệ sau: $$p(t) = \nabla_x J^*(x, t) = K(t)x(t)$$
