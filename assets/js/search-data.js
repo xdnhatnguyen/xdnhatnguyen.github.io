@@ -37,7 +37,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-compilation-of-problem-in-calculus-2",
+        },{id: "post-svd-based-style-transfer",
+        
+          title: "SVD-based Style Transfer",
+        
+        description: "SVD-based Style Transfer.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/svd-style-transfer/";
+          
+        },
+      },{id: "post-compilation-of-problem-in-calculus-2",
         
           title: "Compilation of Problem in Calculus 2",
         
