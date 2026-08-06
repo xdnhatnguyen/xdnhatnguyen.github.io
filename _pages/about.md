@@ -29,7 +29,7 @@ latest_posts:
       <h1>Nhat M.<br><em>Nguyen.</em></h1>
       <p class="about-subtitle">First-year CS student · aspiring AI researcher</p>
       <p class="portfolio-hero-description">
-        University of Social Sciences, Vietnam National University, Ho Chi Minh City.
+        University of Science, Viet Nam National University Ho Chi Minh City.
         Building toward computer vision and diffusion models — one equation at a time.
       </p>
       <div class="about-ctas">
@@ -68,7 +68,7 @@ latest_posts:
     <div class="about-bio-body">
       <p>
         I am a university student from Vietnam, majoring in Information Technology at the
-        University of Social Sciences, Vietnam National University, Ho Chi Minh City.
+        University of Science, Viet Nam National University Ho Chi Minh City
       </p>
       <p>
         My research areas focus on <strong>generative models</strong>,
