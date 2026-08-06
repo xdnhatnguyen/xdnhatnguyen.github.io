@@ -18,19 +18,48 @@ ninja.data = [{
           },
         },{id: "nav-publications",
           title: "publications",
-          description: "A collection of my publications.",
+          description: "Research notes, working papers, and the mathematics behind the experiments.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/publications/";
           },
         },{id: "nav-projects",
           title: "projects",
-          description: "A collection of my projects.",
+          description: "Experiments that make the next question clearer.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/projects/";
           },
-        },{id: "post-optimal-control-pontryagin-39-s-maximum-principle-and-hjb-equation",
+        },{id: "nav-cv",
+          title: "CV",
+          description: "First-year CS student and aspiring AI researcher building from mathematics toward computer vision and diffusion models.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/cv/";
+          },
+        },{id: "post-compilation-of-problem-in-calculus-2",
+        
+          title: "Compilation of Problem in Calculus 2",
+        
+        description: "Compilation of challenging in Calculus 2 preparing for the exam.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/calculus-for-the-exam/";
+          
+        },
+      },{id: "post-differential-equations-the-language-of-the-universe",
+        
+          title: "Differential Equations: the language of the universe",
+        
+        description: "Notes on the mathematical foundations of Differential Equations Theory, including Ordinary Differential Equations (ODE), Stochastic Differential Equation (SDE) and Partial Differential Equations (PDE).",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/ode/";
+          
+        },
+      },{id: "post-optimal-control-pontryagin-39-s-maximum-principle-and-hjb-equation",
         
           title: "Optimal Control: Pontryagin&#39;s Maximum Principle and HJB Equation",
         
