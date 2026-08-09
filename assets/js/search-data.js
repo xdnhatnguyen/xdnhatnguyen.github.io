@@ -37,7 +37,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-literature-review-stylegallery-cvpr-2026",
+        },{id: "post-project-report-style-transfer-visualization",
+        
+          title: "Project Report: Style Transfer Visualization",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/style-transfer/";
+          
+        },
+      },{id: "post-literature-review-stylegallery-cvpr-2026",
         
           title: "Literature Review: StyleGallery (CVPR 2026)",
         
