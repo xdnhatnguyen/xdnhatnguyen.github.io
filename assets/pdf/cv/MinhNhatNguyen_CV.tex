@@ -52,52 +52,52 @@
 \raggedright
 \setlength{\tabcolsep}{0in}
 
-% Sections formatting
+% Sections formatting (compact & clean spacing)
 \titleformat{\section}{
-	\vspace{6pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{8pt}]
+	\vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-4pt}]
 
 % Ensure that generate pdf is machine readable/ATS parsable
 \pdfgentounicode=1
 
 %-------------------------
-% Custom commands
+% Custom commands (tight & balanced line spacing)
 \newcommand{\resumeItem}[1]{
 	\item\small{
-		{#1 \vspace{3pt}}
+		{#1 \vspace{-2pt}}
 	}
 }
 
 \newcommand{\resumeSubheading}[4]{
-	\vspace{4pt}\item
+	\vspace{-2pt}\item
 	\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
 		\textbf{#1} & #2 \\
 		\textit{\small#3} & \textit{\small #4} \\
-	\end{tabular*}\vspace{7pt}
+	\end{tabular*}\vspace{-4pt}
 }
 
 \newcommand{\resumeSubSubheading}[2]{
 	\item
 	\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
 		\textit{\small#1} & \textit{\small #2} \\
-	\end{tabular*}\vspace{-5pt}
+	\end{tabular*}\vspace{-4pt}
 }
 
 \newcommand{\resumeProjectHeading}[2]{
 	\item
 	\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
 		\small#1 & #2 \\
-	\end{tabular*}\vspace{-5pt}
+	\end{tabular*}\vspace{-4pt}
 }
 
 \newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
 
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
-	\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
-	\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-3pt}}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}, itemsep=-2pt]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{-4pt}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.15in, labelsep=4pt, itemsep=-1pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-3pt}}
 
 %-------------------------------------------
 %%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -107,23 +107,33 @@
 	
 	%----------HEADING----------
 	\begin{center}
-		\textbf{\Huge \scshape Minh-Nhat Nguyen} \\ \vspace{4pt}
+		\textbf{\Huge \scshape Minh-Nhat Nguyen} \\ \vspace{2pt}
 		\small (+84) 898-203-321 $|$ \href{mailto:2512021580@student.hcmus.edu.vn}{\underline{2512021580@student.hcmus.edu.vn}} $|$ 
-		%		\href{https://www.linkedin.com/in/xdnhatnguyen/}{\underline{linkedin.com/in/xdnhatnguyen}} $|$
-		\href{https://github.com/xdnhatnguyen}{\underline{github.com/xdnhatnguyen}}
+		\href{https://github.com/xdnhatnguyen}{\underline{github.com/xdnhatnguyen}} $|$
+		\href{https://xdnhatnguyen.github.io}{\underline{xdnhatnguyen.github.io}}
 	\end{center}
-	\vspace{5pt}
+	\vspace{-8pt}
 	
+	%-----------SUMMARY / OBJECTIVE-----------
+	\section{Professional Summary}
+	\begin{itemize}[leftmargin=0.15in, label={}]
+		\small{\item{
+			A second-year Computer Science undergraduate with a solid mathematical foundation (\textbf{Calculus, Linear Algebra, Stochastic Systems}) and hands-on research in \textbf{Computer Vision} and \textbf{Generative Models (Diffusion Models, Flow Matching)}. Experienced in developing training-free generative methods and multimodal video retrieval pipelines. Seeking an \textbf{AI Engineer / Researcher} position in corporate \textbf{R\&D} to advance applied computer vision and generative AI systems.
+		}}
+	\end{itemize}
+	\vspace{-6pt}
+
 	%-----------EDUCATION-----------
 	\section{Education}
 	\resumeSubHeadingListStart
 	
 	\resumeSubheading
 	{University of Science, VNUHCM}{Ho Chi Minh City, Vietnam}
-	{Bachelor of Information Technology}{Aug. 2025 -- 2029 (expected)}\vspace{2pt}
+	{Bachelor of Information Technology -- \textbf{GPA: 3.74/4.0 (8.75/10.0)}}{Aug. 2025 -- 2029 (expected)}\vspace{-2pt}
 	\small{\item{
 			\textit{Intended Major:} Computer Science \\
-			\textit{Relevant Coursework:} Calculus, Linear Algebra, Data Structures and Algorithms
+			\textit{Relevant Coursework (All 4.0/4.0):} Calculus I \& II, Linear Algebra, Data Structures \& Algorithms, Programming Fundamentals \\
+			\textit{Advanced Online Coursework:} \textbf{MIT 6.S184:} Generative AI with Stochastic Differential Equations
 	}}
 	
 	\resumeSubheading
@@ -131,7 +141,6 @@
 	{High School Diploma -- Mathematics Specialization}{Aug. 2022 -- May 2025}
 	
 	\resumeSubHeadingListEnd
-	
 	
 	%-----------EXPERIENCE & RESEARCH-----------
 	\section{Experience \& Research}
@@ -141,9 +150,19 @@
 	{Undergraduate AI Researcher}{March 2026 -- Present}
 	{University of Science, VNUHCM}{Ho Chi Minh City, Vietnam}
 	\resumeItemListStart
-	\resumeItem{Developing a Training-Free method for Style Transfer using Diffusion Models and Flow Matching.}
-	\resumeItem{Optimizing generative algorithms by manipulating the sampling process, guidance terms, and attention maps to control structural outputs.}
+	\resumeItem{Developing a Training-Free method for Style Transfer using Latent Diffusion Models and Flow Matching, introducing latent patch-shuffling to eliminate content leakage and pixel-space grid artifacts.}
+	\resumeItem{Optimizing generative algorithms by manipulating sampling trajectories, guidance terms, and cross-attention maps to control stylistic and structural outputs.}
 	\resumeItemListEnd
+	
+	\resumeSubHeadingListEnd
+	
+	%-----------HONORS & AWARDS-----------
+	\section{Honors \& Awards}
+	\resumeSubHeadingListStart
+	
+	\resumeSubheading
+	{Quarter-finalist (Top 36 / 200+)}{May 2026}
+	{Coding Challenge 2026 -- Faculty of Information Technology, HCMUS}{Ho Chi Minh City, Vietnam}
 	
 	\resumeSubHeadingListEnd
 	
@@ -151,6 +170,21 @@
 	\section{Projects}
 	\resumeSubHeadingListStart
 	
+	\resumeProjectHeading
+	{\textbf{Video Retrieval Pipeline -- AI Challenge HCMC 2026} $|$ \emph{LanceDB, SigLIP, DP}}{Aug. 2026}
+	\resumeItemListStart
+	\resumeItem{Leading a team in the Ho Chi Minh City AI Challenge 2026 to build an end-to-end multimodal video retrieval pipeline addressing Known-Item Search (KIS), Visual Question Answering (VQA), and Temporal Alignment (TRAKE).}
+	\resumeItem{Engineered a high-throughput hybrid retrieval engine combining dense semantic embeddings (CLIP/SigLIP) with full-text search (BM25 via LanceDB) and Dynamic Programming (DANTE algorithm) for temporal sequence matching.}
+	\resumeItem{Optimized candidate frame ranking, automated query parsing, and sub-second retrieval latency on large-scale video keyframe datasets.}
+	\resumeItemListEnd
+
+	\resumeProjectHeading
+	{\textbf{Latent Patch-Shuffle Style Transfer} $|$ \emph{PyTorch, Stable Cascade Diffusion} $|$ \href{https://xdnhatnguyen.github.io/blog/2026/style-transfer/}{\underline{Article Link}}}{Aug. 2026}
+	\resumeItemListStart
+	\resumeItem{Researched and implemented a training-free style transfer framework on latent diffusion models, utilizing latent patch-shuffling to retain core object geometry while preventing content leakage.}
+	\resumeItem{Eliminated pixel-space grid line artifacts by shifting patch permutations into the latent manifold, achieving vivid artistic style adaptation across diverse domains (Cyberpunk, Starry Night, Poster).}
+	\resumeItemListEnd
+
 	\resumeProjectHeading
 	{\textbf{Handwritten Digits Classification} $|$ \emph{PyTorch, CNN, MLP} $|$ \href{https://github.com/xdnhatnguyen/Digits-Classification-Project}{\underline{GitHub}}}{Nov. 2025}
 	\resumeItemListStart
@@ -170,11 +204,11 @@
 	
 	%-----------TECHNICAL SKILLS-----------
 	\section{Technical Skills}
-	\begin{itemize}[leftmargin=0.15in, label={}]
+	\begin{itemize}[leftmargin=0.15in, label={}, itemsep=-2pt]
 		\small{\item{
-				\textbf{Core Knowledge}{: Deep Learning, Computer Vision, Generative Models (Flow Matching, Diffusion Models)} \\
-				\textbf{Programming \& Tools}{: Python, C/C++, PyTorch, Git, LaTeX} \\
-				\textbf{Mathematics}{: Linear Algebra, Multivariable Calculus}
+				\textbf{Core Knowledge}{: Deep Learning, Computer Vision, Generative Models (Flow Matching, Diffusion Models, SDEs), Multimodal Information Retrieval (LanceDB, FAISS, Vector Search, BM25)} \\
+				\textbf{Programming \& Tools}{: Python, C/C++, PyTorch, LanceDB, HuggingFace (Transformers/CLIP), Git, LaTeX} \\
+				\textbf{Mathematics}{: Linear Algebra, Multivariable Calculus, Optimization, Stochastic Differential Equations (SDEs)}
 		}}
 	\end{itemize}
 	

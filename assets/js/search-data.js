@@ -119,51 +119,21 @@ ninja.data = [{
             },},{id: "news-sparkles-smile",
           title: ':sparkles: :smile:',
           description: "",
-          section: "News",},{id: "projects-project-1",
-          title: 'project 1',
-          description: "with background image",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/1_project/";
-            },},{id: "projects-digits-classification-project",
+          section: "News",},{id: "projects-digits-classification-project",
           title: 'Digits Classification Project',
           description: "Team Lead | CNN vs. MLP benchmark for digit recognition (analyze model performance and architectural trade-offs).",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project/";
-            },},{id: "projects-project-3-with-very-long-name",
-          title: 'project 3 with very long name',
-          description: "a project that redirects to another website",
+            },},{id: "projects-latent-patch-shuffle-style-transfer",
+          title: 'Latent Patch-Shuffle Style Transfer',
+          description: "Training-Free artistic style transfer via Latent Diffusion Models &amp; patch-shuffling to preserve content and eliminate grid artifacts.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/3_project/";
-            },},{id: "projects-project-4",
-          title: 'project 4',
-          description: "another without an image",
+              window.location.href = "/projects/style_transfer/";
+            },},{id: "projects-video-retrieval-pipeline-ai-challenge-hcmc-2026",
+          title: 'Video Retrieval Pipeline — AI Challenge HCMC 2026',
+          description: "Team Lead | Active Competition. Multi-modal video retrieval (KIS, VQA, TRAKE) with LanceDB, CLIP/SigLIP, and Temporal DP.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/4_project/";
-            },},{id: "projects-project-5",
-          title: 'project 5',
-          description: "a project with a background image",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/5_project/";
-            },},{id: "projects-project-6",
-          title: 'project 6',
-          description: "a project with no image",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/6_project/";
-            },},{id: "projects-project-7",
-          title: 'project 7',
-          description: "with background image",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/7_project/";
-            },},{id: "projects-project-8",
-          title: 'project 8',
-          description: "an other project with a background image and giscus comments",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/8_project/";
-            },},{id: "projects-project-9",
-          title: 'project 9',
-          description: "another project with an image 🎉",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/9_project/";
+              window.location.href = "/projects/video_retrieval/";
             },},{id: "teachings-data-science-fundamentals",
           title: 'Data Science Fundamentals',
           description: "This course covers the foundational aspects of data science, including data collection, cleaning, analysis, and visualization. Students will learn practical skills for working with real-world datasets.",
