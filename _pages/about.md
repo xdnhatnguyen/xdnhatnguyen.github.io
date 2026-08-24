@@ -42,8 +42,14 @@ latest_posts:
       <div class="about-profile-img-wrap">
         <img
           src="{{ 'assets/img/avt.png' | relative_url }}"
-          alt="Nhat Nguyen — reading"
-          class="about-profile-img"
+          alt="Nhat Nguyen — Dark mode avatar"
+          class="about-profile-img only-dark"
+          loading="eager"
+        >
+        <img
+          src="{{ 'assets/img/avt_0.png' | relative_url }}"
+          alt="Nhat Nguyen — Light mode avatar"
+          class="about-profile-img only-light"
           loading="eager"
         >
         <div class="about-profile-overlay" aria-hidden="true"></div>
@@ -248,7 +254,7 @@ latest_posts:
     </div>
   </section>
 
-  <p class="portfolio-note">Rendered from <code>_pages/about.md</code> · profile image from <code>assets/img/avt.png</code></p>
+  <p class="portfolio-note">Rendered from <code>_pages/about.md</code> · profile image from <code>assets/img/avt.png</code> (dark) & <code>assets/img/avt_0.png</code> (light)</p>
 </div>
 
 <script>

@@ -55,8 +55,9 @@
     }
   }
 
-  .navbar-brand {
-    color: var(--global-text-color);
+  .navbar-brand,
+  .navbar-brand span {
+    color: var(--global-text-color) !important;
   }
 
   .navbar-nav .nav-item .nav-link {

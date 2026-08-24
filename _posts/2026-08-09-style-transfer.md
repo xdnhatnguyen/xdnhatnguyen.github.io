@@ -2,7 +2,7 @@
 layout: post
 title: "Project Report: Style Transfer Visualization"
 date: 2026-08-09
-categories: [Computer Vision, Deep Learning]
+categories: Deep-Learning
 tags: [Style Transfer, Generative Models]
 ---
 

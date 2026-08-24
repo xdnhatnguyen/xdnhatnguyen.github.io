@@ -33,8 +33,8 @@ description: First-year CS student and aspiring AI researcher building from math
   </header>
 
   <div id="pdf-viewer-container" style="display: none; margin: 1.5rem 0; width: 100%;">
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; padding: 0.5rem 1rem; background: var(--portfolio-surface, rgba(255, 255, 255, 0.05)); border-radius: 8px; border: 1px solid var(--portfolio-border, #333);">
-      <span style="font-size: 0.85rem; opacity: 0.9; font-weight: 500;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; padding: 0.5rem 1rem; background: var(--portfolio-surface-subtle, var(--portfolio-surface)); border-radius: 8px; border: 1px solid var(--portfolio-border);">
+      <span style="font-size: 0.85rem; opacity: 0.9; font-weight: 500; color: var(--portfolio-fg);">
         📄 MinhNhatNguyen_CV.pdf
       </span>
       <div style="display: flex; gap: 0.5rem;">
@@ -42,7 +42,7 @@ description: First-year CS student and aspiring AI researcher building from math
         <a href="{{ '/assets/pdf/cv/MinhNhatNguyen_CV.pdf' | relative_url }}" download class="portfolio-button" style="padding: 0.25rem 0.75rem; min-height: 2rem; font-size: 0.75rem;">Download PDF ⤓</a>
       </div>
     </div>
-    <iframe src="{{ '/assets/pdf/cv/MinhNhatNguyen_CV.pdf' | relative_url }}" style="width: 100%; height: 800px; border: 1px solid var(--portfolio-border, #333); border-radius: 12px; background: #ffffff;" title="CV PDF Viewer"></iframe>
+    <iframe src="{{ '/assets/pdf/cv/MinhNhatNguyen_CV.pdf' | relative_url }}" style="width: 100%; height: 800px; border: 1px solid var(--portfolio-border); border-radius: 12px; background: #ffffff;" title="CV PDF Viewer"></iframe>
   </div>
 
   <div class="portfolio-cv-grid">
