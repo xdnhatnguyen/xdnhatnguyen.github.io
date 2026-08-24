@@ -8,7 +8,7 @@ nav: true
 nav_order: 4
 cv_format: rendercv
 cv_pdf: /assets/pdf/cv/MinhNhatNguyen_CV.pdf
-description: First-year CS student and aspiring AI researcher building from mathematics toward computer vision and diffusion models.
+description: Second-year CS student and aspiring AI researcher building from mathematics toward computer vision and diffusion models.
 ---
 
 <div class="portfolio-shell" id="cv-document">
@@ -16,7 +16,7 @@ description: First-year CS student and aspiring AI researcher building from math
     <div>
       <p class="portfolio-kicker">— Profile / 2026</p>
       <h1>Nhat M.<br><em>Nguyen.</em></h1>
-      <p class="portfolio-cv-subtitle">First-year CS student · aspiring AI researcher</p>
+      <p class="portfolio-cv-subtitle">Second-year CS student · aspiring AI researcher</p>
       <p class="portfolio-hero-description">{{ page.description }}</p>
     </div>
     <div class="portfolio-cv-actions" aria-label="CV actions">

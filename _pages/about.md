@@ -180,7 +180,8 @@ latest_posts:
        LATEST POSTS
   ════════════════════════════════════════════════════ -->
   {% if page.latest_posts.enabled %}
-    {% assign posts_count = site.posts | size %}
+    {% assign public_posts = site.posts | where_exp: "item", "item.hidden != true and item.hide != true" %}
+    {% assign posts_count = public_posts | size %}
     {% if posts_count > 0 %}
       <section class="about-posts" aria-labelledby="posts-heading" data-reveal>
         <div class="portfolio-section-heading">
@@ -189,7 +190,7 @@ latest_posts:
         </div>
 
         <ul class="portfolio-post-list">
-          {% for post in site.posts limit: page.latest_posts.limit %}
+          {% for post in public_posts limit: page.latest_posts.limit %}
             {% assign read_time = post.content | number_of_words | divided_by: 180 | plus: 1 %}
             <li>
               <a class="portfolio-post-row" href="{{ post.url | relative_url }}">
