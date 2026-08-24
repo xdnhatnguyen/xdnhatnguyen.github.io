@@ -27,7 +27,7 @@ latest_posts:
     <div class="about-hero-copy">
       <p class="portfolio-kicker">— About / 2026</p>
       <h1>Nhat M.<br><em>Nguyen.</em></h1>
-      <p class="about-subtitle">First-year CS student · aspiring AI researcher</p>
+      <p class="about-subtitle">Second-year CS student · aspiring AI researcher</p>
       <p class="portfolio-hero-description">
         University of Science, Viet Nam National University Ho Chi Minh City.
         Building toward computer vision and diffusion models — one equation at a time.
