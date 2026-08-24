@@ -37,7 +37,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-project-report-style-transfer-visualization",
+        },{id: "post-if-i-don-39-t-fail",
+        
+          title: "If I don&#39;t fail?",
+        
+        description: "Vài dòng cuối hạ - 08/2026",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/fail/";
+          
+        },
+      },{id: "post-project-report-style-transfer-visualization",
         
           title: "Project Report: Style Transfer Visualization",
         
