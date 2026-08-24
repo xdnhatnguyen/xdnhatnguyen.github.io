@@ -61,6 +61,7 @@ description: First-year CS student and aspiring AI researcher building from math
         <div class="portfolio-tags">
           <span class="portfolio-tag">computer vision</span>
           <span class="portfolio-tag">diffusion models</span>
+          <span class="portfolio-tag">video retrieval</span>
           <span class="portfolio-tag">calculus</span>
           <span class="portfolio-tag">open source</span>
         </div>
@@ -71,9 +72,10 @@ description: First-year CS student and aspiring AI researcher building from math
         <ul>
           <li>Python</li>
           <li>PyTorch</li>
-          <li>Jekyll / Liquid</li>
-          <li>LaTeX</li>
-          <li>Git</li>
+          <li>LanceDB</li>
+          <li>C / C++</li>
+          <li>HuggingFace / CLIP</li>
+          <li>LaTeX & Git</li>
         </ul>
       </section>
     </aside>
@@ -85,7 +87,20 @@ description: First-year CS student and aspiring AI researcher building from math
           <li class="portfolio-timeline-item">
             <p class="portfolio-year">2025 — present</p>
             <h3>VNU-HCM University of Science</h3>
-            <p>Information Technology · first-year computer science student</p>
+            <p><strong>Bachelor of Information Technology</strong> · GPA: 3.74/4.0 (8.75/10.0)</p>
+            <p style="font-size: 0.9em; opacity: 0.9;"><em>Coursework (All 4.0/4.0):</em> Calculus I & II, Linear Algebra, Data Structures & Algorithms, Programming Fundamentals</p>
+            <p style="font-size: 0.9em; opacity: 0.9; margin-top: 0.25rem;"><em>Advanced Online Coursework:</em> <strong>MIT 6.S184:</strong> Generative AI with Stochastic Differential Equations</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="portfolio-cv-section" aria-labelledby="awards-heading">
+        <h2 id="awards-heading">Honors & Awards</h2>
+        <ol class="portfolio-timeline">
+          <li class="portfolio-timeline-item">
+            <p class="portfolio-year">2026</p>
+            <h3>Quarter-finalist (Top 36 / 200+ teams) · Coding Challenge 2026</h3>
+            <p>Faculty of Information Technology, VNUHCM University of Science (FIT - HCMUS).</p>
           </li>
         </ol>
       </section>
@@ -96,7 +111,7 @@ description: First-year CS student and aspiring AI researcher building from math
           <li class="portfolio-timeline-item">
             <p class="portfolio-year">Now</p>
             <h3>Generative models, stochastic systems, and vision</h3>
-            <p>Following the mathematics from differential equations and optimal control toward diffusion models and computer vision experiments.</p>
+            <p>Developing training-free style transfer via latent patch-shuffling in diffusion models and flow matching, alongside optimal control and stochastic differential equations.</p>
           </li>
         </ol>
       </section>
@@ -105,7 +120,17 @@ description: First-year CS student and aspiring AI researcher building from math
         <h2 id="selected-work-heading">Selected work</h2>
         <ol class="portfolio-timeline">
           <li class="portfolio-timeline-item">
-            <p class="portfolio-year">Study / 2026</p>
+            <p class="portfolio-year">Competition / 2026</p>
+            <h3>Video Retrieval Pipeline — AI Challenge HCMC 2026</h3>
+            <p>Team lead building an end-to-end multimodal video retrieval system featuring LanceDB hybrid indexing (Vector + BM25) and dynamic programming for temporal sequence alignment (TRAKE). <em>Active competition (Private source code).</em></p>
+          </li>
+          <li class="portfolio-timeline-item">
+            <p class="portfolio-year">Research / 2026</p>
+            <h3>Latent Patch-Shuffle Style Transfer</h3>
+            <p>Training-free style transfer using Latent Diffusion Models and latent patch-permutations, eliminating content leakage and pixel-space grid artifacts.</p>
+          </li>
+          <li class="portfolio-timeline-item">
+            <p class="portfolio-year">Study / 2025</p>
             <h3>Digits Classification Project</h3>
             <p>Team lead for a CNN vs. MLP benchmark on MNIST, with reproducible training, evaluation, and visualization.</p>
           </li>
@@ -115,6 +140,11 @@ description: First-year CS student and aspiring AI researcher building from math
       <section class="portfolio-cv-section" aria-labelledby="writing-heading">
         <h2 id="writing-heading">Writing</h2>
         <ol class="portfolio-timeline">
+          <li class="portfolio-timeline-item">
+            <p class="portfolio-year">Aug. 2026</p>
+            <h3><a href="{{ '/blog/2026/style-transfer/' | relative_url }}">Style Transfer Visualization & Latent Experiments</a></h3>
+            <p>Experimental results on Stable Diffusion style transfer, patch-shuffle in latent space, and visual convergence analysis.</p>
+          </li>
           <li class="portfolio-timeline-item">
             <p class="portfolio-year">May 2026</p>
             <h3>Calculus 2 · Optimal Control · Differential Equations</h3>

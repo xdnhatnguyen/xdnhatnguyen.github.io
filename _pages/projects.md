@@ -7,7 +7,7 @@ title: projects
 description: Experiments that make the next question clearer.
 nav: true
 nav_order: 3
-display_categories: [live, study, work]
+display_categories: [competitions, research, study]
 horizontal: false
 ---
 
@@ -34,69 +34,68 @@ horizontal: false
     </nav>
   </div>
 
-  {% assign digits_project = site.projects | where: 'title', 'Digits Classification Project' | first %}
+  {% assign vr_project = site.projects | where: 'title', 'Video Retrieval Pipeline — AI Challenge HCMC 2026' | first %}
   <section id="all" aria-labelledby="primary-project-heading">
     <div class="portfolio-section-heading">
       <h2 id="primary-project-heading">The main<br><em class="portfolio-display-accent">experiment.</em></h2>
-      <p>One project in depth, then the smaller questions orbiting it.</p>
+      <p>Featured competition and research projects, followed by ongoing exploration.</p>
     </div>
 
     <div class="portfolio-project-primary">
       <div>
-        <p class="portfolio-meta-label">Study / 01 · Team lead</p>
-        <h2>Digits Classification<br>Project.</h2>
-        <p>{% if digits_project %}{{ digits_project.description }}{% else %}CNN vs. MLP benchmark for digit recognition and architectural trade-offs.{% endif %}</p>
-        <div class="portfolio-tags" aria-label="Digits project technologies">
+        <p class="portfolio-meta-label">Competition / 01 · Team lead · Active Competition</p>
+        <h2>Video Retrieval Pipeline<br>AIC HCMC 2026.</h2>
+        <p>{% if vr_project %}{{ vr_project.description }}{% else %}Multimodal video search pipeline (KIS, VQA, TRAKE) using LanceDB hybrid indexing and Temporal Dynamic Programming.{% endif %}</p>
+        <div class="portfolio-tags" aria-label="Video retrieval project technologies">
+          <span class="portfolio-tag">LanceDB</span>
           <span class="portfolio-tag">PyTorch</span>
-          <span class="portfolio-tag">Python</span>
-          <span class="portfolio-tag">MNIST</span>
+          <span class="portfolio-tag">CLIP</span>
+          <span class="portfolio-tag">DP</span>
         </div>
         <div class="portfolio-action-list portfolio-project-actions">
-          {% if digits_project %}<a class="portfolio-button" href="{{ digits_project.url | relative_url }}">Read project →</a>{% endif %}
-          <a class="portfolio-button portfolio-button--ghost" href="https://github.com/xdnhatnguyen/Digits-Classification-Project" rel="noopener noreferrer">Open GitHub ↗</a>
+          {% if vr_project %}<a class="portfolio-button" href="{{ vr_project.url | relative_url }}">Read project overview →</a>{% endif %}
+          <span class="portfolio-button portfolio-button--ghost" style="opacity: 0.7; cursor: not-allowed;" title="Active competition — Source code is confidential">Private Repo 🔒</span>
         </div>
       </div>
-      <div class="portfolio-terminal" aria-label="Digits classification project terminal preview">
+      <div class="portfolio-terminal" aria-label="Video retrieval project terminal preview">
         <div class="portfolio-terminal-bar" aria-hidden="true"><span></span><span></span><span></span></div>
-        <pre><span class="terminal-accent">$</span> python train.py --model cnn
+        <pre><span class="terminal-accent">$</span> python pipeline.py --task KIS --hybrid
+db        lancedb / 512-dim
+encoder   clip-vit / siglip
+query     "person wearing blue jacket"
+rerank    bm25 + vector fusion
 
-model     cnn / mlp
-metric    accuracy
-status    reproducible
-
-<span class="terminal-accent">cnn_interface.png</span>
-<span class="terminal-accent">mlp_interface.png</span>
-loss      ↓ 0.184
-accuracy  ↑ 0.982</pre>
+status    <span class="terminal-accent">Active Competition (Private Repo)</span>
+latency   sub-second response</pre>
       </div>
     </div>
   </section>
 
-  <section id="study" aria-labelledby="related-projects-heading">
+  <section id="projects-grid" aria-labelledby="related-projects-heading">
     <div class="portfolio-section-heading">
-      <h2 id="related-projects-heading">The next<br><em class="portfolio-display-accent">questions.</em></h2>
-      <p>Research directions, notes, and experiments that are still finding their shape.</p>
+      <h2 id="related-projects-heading">Selected<br><em class="portfolio-display-accent">initiatives.</em></h2>
+      <p>Deep learning architectures, generative diffusion models, and benchmark experiments.</p>
     </div>
 
     <ul class="portfolio-project-list">
       <li>
-        <a class="portfolio-project-row" href="{{ '/blog/' | relative_url }}">
+        <a class="portfolio-project-row" href="{{ '/blog/2026/style-transfer/' | relative_url }}">
           <span class="portfolio-project-index">02</span>
-          <span><h3>Diffusion Notes</h3><p>Research / SDE · score matching · vision</p></span>
+          <span><h3>Latent Patch-Shuffle Style Transfer</h3><p>Research / Generative · training-free · latent diffusion & flow matching</p></span>
+          <span class="portfolio-project-arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+      <li>
+        <a class="portfolio-project-row" href="{{ '/projects/2_project/' | relative_url }}">
+          <span class="portfolio-project-index">03</span>
+          <span><h3>Digits Classification Project</h3><p>Study / PyTorch · CNN vs MLP benchmark · MNIST</p></span>
           <span class="portfolio-project-arrow" aria-hidden="true">→</span>
         </a>
       </li>
       <li>
         <a class="portfolio-project-row" href="{{ '/blog/' | relative_url }}">
-          <span class="portfolio-project-index">03</span>
-          <span><h3>ODE / SDE Atlas</h3><p>Notes / calculus · dynamics · PDE</p></span>
-          <span class="portfolio-project-arrow" aria-hidden="true">→</span>
-        </a>
-      </li>
-      <li>
-        <a class="portfolio-project-row" href="{{ '/publications/' | relative_url }}">
           <span class="portfolio-project-index">04</span>
-          <span><h3>Research in public</h3><p>Working papers / questions before conclusions</p></span>
+          <span><h3>ODE / SDE Atlas</h3><p>Notes / Calculus 2 · optimal control · stochastic systems</p></span>
           <span class="portfolio-project-arrow" aria-hidden="true">→</span>
         </a>
       </li>
