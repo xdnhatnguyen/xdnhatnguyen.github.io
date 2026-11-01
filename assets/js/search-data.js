@@ -96,7 +96,7 @@ ninja.data = [{
         
           title: "Optimal Control: Pontryagin&#39;s Maximum Principle and HJB Equation",
         
-        description: "Notes on the mathematical foundations of Optimal Control Theory, including PMP and Hamilton-Jacobi-Bellman derivations.",
+        description: "Mathematical foundations of Optimal Control Theory, rigorous derivations of Pontryagin&#39;s Maximum Principle, the Hamilton-Jacobi-Bellman Equation, and linear-quadratic analytical equivalence.",
         section: "Posts",
         handler: () => {
           
