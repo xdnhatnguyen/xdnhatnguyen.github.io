@@ -18,7 +18,7 @@ ninja.data = [{
           },
         },{id: "nav-publications",
           title: "publications",
-          description: "Research notes, working papers, and the mathematics behind the experiments.",
+          description: "Peer-reviewed conference proceedings, project pages, and research directions in generative models and computer vision.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/publications/";
@@ -32,7 +32,7 @@ ninja.data = [{
           },
         },{id: "nav-cv",
           title: "CV",
-          description: "Second-year CS student and aspiring AI researcher building from mathematics toward computer vision and diffusion models.",
+          description: "Undergraduate student in Computer Science at University of Science, VNUHCM. Researching generative models, optimal control, and computer vision.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/cv/";
@@ -108,25 +108,23 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
-            },},{id: "news-take-my-recent-publication-here",
-          title: 'Take my recent publication here.',
+            },},{id: "news-honored-as-a-quarter-finalist-top-36-200-teams-in-coding-challenge-2026-hosted-by-the-faculty-of-information-technology-vnuhcm-university-of-science",
+          title: 'Honored as a Quarter-finalist (Top 36 / 200+ teams) in Coding Challenge 2026...',
           description: "",
-          section: "News",},{id: "news-honey-if-you-see-this-you-are-gay",
-          title: 'Honey, if you see this, you are gay!',
+          section: "News",},{id: "news-leading-a-research-team-in-the-ho-chi-minh-city-ai-challenge-2026-to-develop-an-end-to-end-multimodal-video-retrieval-pipeline-integrating-lancedb-hybrid-search-and-dynamic-programming-for-temporal-sequence-matching",
+          title: 'Leading a research team in the Ho Chi Minh City AI Challenge 2026...',
           description: "",
-          section: "News",handler: () => {
-              window.location.href = "/news/announcement_2/";
-            },},{id: "news-sparkles-smile",
-          title: ':sparkles: :smile:',
+          section: "News",},{id: "news-our-paper-orthostyle-manifold-preserving-training-free-style-transfer-via-score-orthogonal-guidance-has-been-accepted-for-oral-presentation-at-soict-2026-explore-the-project-page",
+          title: '🎉 Our paper OrthoStyle: Manifold-Preserving Training-Free Style Transfer via Score-Orthogonal Guidance has been...',
           description: "",
           section: "News",},{id: "projects-digits-classification-project",
           title: 'Digits Classification Project',
           description: "Team Lead | CNN vs. MLP benchmark for digit recognition (analyze model performance and architectural trade-offs).",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project/";
-            },},{id: "projects-latent-patch-shuffle-style-transfer",
-          title: 'Latent Patch-Shuffle Style Transfer',
-          description: "Training-Free artistic style transfer via Latent Diffusion Models &amp; patch-shuffling to preserve content and eliminate grid artifacts.",
+            },},{id: "projects-orthostyle-training-free-style-transfer",
+          title: 'OrthoStyle: Training-Free Style Transfer',
+          description: "Training-Free style transfer via score-orthogonal guidance and latent dynamics, balancing style fidelity and content preservation (Oral at SOICT 2026).",
           section: "Projects",handler: () => {
               window.location.href = "/projects/style_transfer/";
             },},{id: "projects-video-retrieval-pipeline-ai-challenge-hcmc-2026",
@@ -156,14 +154,14 @@ ninja.data = [{
         title: 'email',
         section: 'Socials',
         handler: () => {
-          window.open("mailto:%79%6F%75@%65%78%61%6D%70%6C%65.%63%6F%6D", "_blank");
+          window.open("mailto:%6E%67%75%79%65%6E%6D%69%6E%68%6E%68%61%74.%63%73@%67%6D%61%69%6C.%63%6F%6D", "_blank");
         },
       },{
-        id: 'social-inspire',
-        title: 'Inspire HEP',
+        id: 'social-github',
+        title: 'GitHub',
         section: 'Socials',
         handler: () => {
-          window.open("https://inspirehep.net/authors/1010907", "_blank");
+          window.open("https://github.com/xdnhatnguyen", "_blank");
         },
       },{
         id: 'social-rss',
@@ -171,20 +169,6 @@ ninja.data = [{
         section: 'Socials',
         handler: () => {
           window.open("/feed.xml", "_blank");
-        },
-      },{
-        id: 'social-scholar',
-        title: 'Google Scholar',
-        section: 'Socials',
-        handler: () => {
-          window.open("https://scholar.google.com/citations?user=qc6CJjYAAAAJ", "_blank");
-        },
-      },{
-        id: 'social-custom_social',
-        title: 'Custom_social',
-        section: 'Socials',
-        handler: () => {
-          window.open("https://www.alberteinstein.com/", "_blank");
         },
       },{
       id: 'light-theme',
