@@ -22,7 +22,7 @@ pagination:
   <header class="portfolio-hero">
     <div class="portfolio-hero-copy">
       <p class="portfolio-kicker">— Research & Life Notes</p>
-      <h1>pixelchemy<br><em>blog.</em></h1>
+      <h1>pixeltheorem<br><em>blog.</em></h1>
       <p class="portfolio-hero-description">Learning and building AI from scratch with math, algorithms, and personal musings.</p>
     </div>
     <p class="portfolio-hero-aside">Small proofs.<br>Useful questions.<br>Shared in public.</p>
@@ -144,7 +144,6 @@ pagination:
     </ul>
   </section>
 
-  <p class="portfolio-note">Organized into separate research and personal writing streams.</p>
 </div>
 
 <script>

@@ -1,8 +1,8 @@
 ---
 layout: post
-date: 2015-10-22 15:59:00-0400
+date: 2026-10-25 10:00:00+0700
 inline: true
 related_posts: false
 ---
 
-Take my recent publication [here](https://www.youtube.com/watch?v=dQw4w9WgXcQ).
+🎉 Our paper **OrthoStyle: Manifold-Preserving Training-Free Style Transfer via Score-Orthogonal Guidance** has been accepted for **Oral Presentation** at **SOICT 2026**! Explore the [Project Page](https://xdnhatnguyen.github.io/OrthoStyle/).

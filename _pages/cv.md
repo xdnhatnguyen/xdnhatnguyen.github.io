@@ -6,17 +6,16 @@ permalink: /cv/
 title: CV
 nav: true
 nav_order: 4
-cv_format: rendercv
 cv_pdf: /assets/pdf/cv/MinhNhatNguyen_CV.pdf
-description: Second-year CS student and aspiring AI researcher building from mathematics toward computer vision and diffusion models.
+description: Undergraduate student in Computer Science at University of Science, VNUHCM. Researching generative models, optimal control, and computer vision.
 ---
 
 <div class="portfolio-shell" id="cv-document">
   <header class="portfolio-cv-header">
     <div>
-      <p class="portfolio-kicker">— Profile / 2026</p>
-      <h1>Nhat M.<br><em>Nguyen.</em></h1>
-      <p class="portfolio-cv-subtitle">Second-year CS student · aspiring AI researcher</p>
+      <p class="portfolio-kicker">— Curriculum Vitæ / 2026</p>
+      <h1>Minh-Nhat<br><em>Nguyen.</em></h1>
+      <p class="portfolio-cv-subtitle">Undergraduate CS Student · Aspiring AI Researcher</p>
       <p class="portfolio-hero-description">{{ page.description }}</p>
     </div>
     <div class="portfolio-cv-actions" aria-label="CV actions">
@@ -27,7 +26,7 @@ description: Second-year CS student and aspiring AI researcher building from mat
         Preview PDF
       </button>
       <button class="portfolio-button portfolio-button--ghost" type="button" onclick="window.print()">Print / save</button>
-      <a class="portfolio-button portfolio-button--ghost" href="https://github.com/xdnhatnguyen" rel="noopener noreferrer">View GitHub ↗</a>
+      <a class="portfolio-button portfolio-button--ghost" href="https://github.com/xdnhatnguyen" target="_blank" rel="noopener noreferrer">View GitHub ↗</a>
     </div>
     <p class="portfolio-index" aria-hidden="true">— 04 / 04 · CV</p>
   </header>
@@ -51,45 +50,92 @@ description: Second-year CS student and aspiring AI researcher building from mat
         <h2>Contact</h2>
         <ul class="portfolio-contact-list">
           <li>Ho Chi Minh City, Vietnam</li>
-          <li><a href="https://github.com/xdnhatnguyen" rel="noopener noreferrer">github.com/xdnhatnguyen</a></li>
-          <li><a href="{{ '/' | relative_url }}#contact">Start a conversation</a></li>
+          <li><a href="mailto:nguyenminhnhat.cs@gmail.com">nguyenminhnhat.cs@gmail.com</a></li>
+          <li><a href="https://github.com/xdnhatnguyen" target="_blank" rel="noopener noreferrer">github.com/xdnhatnguyen</a></li>
+          <li><a href="https://xdnhatnguyen.github.io">xdnhatnguyen.github.io</a></li>
         </ul>
       </section>
 
       <section>
         <h2>Focus</h2>
         <div class="portfolio-tags">
-          <span class="portfolio-tag">computer vision</span>
-          <span class="portfolio-tag">diffusion models</span>
-          <span class="portfolio-tag">video retrieval</span>
-          <span class="portfolio-tag">calculus</span>
-          <span class="portfolio-tag">open source</span>
+          <span class="portfolio-tag">Generative Models</span>
+          <span class="portfolio-tag">Diffusion & Flow</span>
+          <span class="portfolio-tag">Optimal Control</span>
+          <span class="portfolio-tag">Computer Vision</span>
+          <span class="portfolio-tag">Video Retrieval</span>
         </div>
       </section>
 
       <section>
         <h2>Languages / tooling</h2>
         <ul>
-          <li>Python</li>
-          <li>PyTorch</li>
-          <li>LanceDB</li>
+          <li>Python & PyTorch</li>
+          <li>LanceDB (Vector + BM25)</li>
           <li>C / C++</li>
-          <li>HuggingFace / CLIP</li>
-          <li>LaTeX & Git</li>
+          <li>HuggingFace & Transformers</li>
+          <li>Git & LaTeX</li>
         </ul>
       </section>
     </aside>
 
     <main class="portfolio-cv-main">
+      <section class="portfolio-cv-section" aria-labelledby="summary-heading">
+        <h2 id="summary-heading">Professional Summary</h2>
+        <p style="color: var(--portfolio-muted); line-height: 1.6;">
+          A Computer Science undergraduate with a solid mathematical foundation (Calculus, Linear Algebra, Stochastic Systems) and hands-on research in Computer Vision and Generative Models (Diffusion Models, Flow Matching). Experienced in developing training-free generative methods and multimodal video retrieval pipelines.
+        </p>
+      </section>
+
       <section class="portfolio-cv-section" aria-labelledby="education-heading">
         <h2 id="education-heading">Education</h2>
         <ol class="portfolio-timeline">
           <li class="portfolio-timeline-item">
-            <p class="portfolio-year">2025 — present</p>
-            <h3>VNU-HCM University of Science</h3>
-            <p><strong>Bachelor of Information Technology</strong> · GPA: 3.74/4.0 (8.75/10.0)</p>
-            <p style="font-size: 0.9em; opacity: 0.9;"><em>Coursework (All 4.0/4.0):</em> Calculus I & II, Linear Algebra, Data Structures & Algorithms, Programming Fundamentals</p>
+            <p class="portfolio-year">2025 — 2029 (expected)</p>
+            <h3>University of Science, VNUHCM</h3>
+            <p><strong>Bachelor of Information Technology</strong> (Intended Major: Computer Science) · GPA: 3.74/4.0 (8.75/10.0)</p>
+            <p style="font-size: 0.9em; opacity: 0.9; margin-top: 0.25rem;"><em>Relevant Coursework (All 4.0/4.0):</em> Calculus I & II, Linear Algebra, Data Structures & Algorithms, Programming Fundamentals</p>
             <p style="font-size: 0.9em; opacity: 0.9; margin-top: 0.25rem;"><em>Advanced Online Coursework:</em> <strong>MIT 6.S184:</strong> Generative AI with Stochastic Differential Equations</p>
+          </li>
+          <li class="portfolio-timeline-item">
+            <p class="portfolio-year">2022 — 2025</p>
+            <h3>Le Quy Don Gifted High School</h3>
+            <p><strong>High School Diploma</strong> · Mathematics Specialization (Da Nang, Vietnam)</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="portfolio-cv-section" aria-labelledby="experience-heading">
+        <h2 id="experience-heading">Experience & Research</h2>
+        <ol class="portfolio-timeline">
+          <li class="portfolio-timeline-item">
+            <p class="portfolio-year">March 2026 — Present</p>
+            <h3>Undergraduate AI Researcher · University of Science, VNUHCM</h3>
+            <p>Developing training-free methods for style transfer using Latent Diffusion Models and Flow Matching, introducing latent patch-shuffling to eliminate content leakage and pixel-space grid artifacts.</p>
+            <p style="font-size: 0.9em; opacity: 0.9; margin-top: 0.25rem;">Optimizing generative algorithms by manipulating sampling trajectories, guidance terms, and cross-attention maps to control stylistic and structural outputs.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="portfolio-cv-section" aria-labelledby="publications-heading">
+        <h2 id="publications-heading">Publications</h2>
+        <ol class="portfolio-timeline">
+          <li class="portfolio-timeline-item">
+            <p class="portfolio-year">SOICT 2026 · Oral</p>
+            <h3>
+              <a href="https://xdnhatnguyen.github.io/OrthoStyle/" target="_blank" rel="noopener noreferrer">
+                OrthoStyle: Manifold-Preserving Training-Free Style Transfer via Score-Orthogonal Guidance ↗
+              </a>
+            </h3>
+            <p style="font-size: 0.9em; opacity: 0.9; margin-bottom: 0.4rem;">
+              <strong>Minh Nhat Nguyen</strong>, Dang Quang Pham, Thien Phuc Vo, Phuc Loc Dang, Duc Khoan Le
+            </p>
+            <p style="font-size: 0.9em; opacity: 0.85; margin-bottom: 0.4rem;">
+              <em>The 13th International Symposium on Information and Communication Technology (SOICT 2026)</em> · <strong>Oral Presentation</strong> · <a href="https://xdnhatnguyen.github.io/OrthoStyle/" target="_blank" rel="noopener noreferrer">Project Page</a>
+            </p>
+            <p>
+              A training-free framework balancing style fidelity and content preservation without network fine-tuning or DDIM inversion. Extensive quantitative and qualitative comparisons with both OC-based baselines and representative stylization methods show that OrthoStyle achieves a favorable balance between style fidelity and content preservation while maintaining structural consistency, outperforming the baseline that uses the same Stable Cascade backbone.
+            </p>
           </li>
         </ol>
       </section>
@@ -98,47 +144,41 @@ description: Second-year CS student and aspiring AI researcher building from mat
         <h2 id="awards-heading">Honors & Awards</h2>
         <ol class="portfolio-timeline">
           <li class="portfolio-timeline-item">
-            <p class="portfolio-year">2026</p>
+            <p class="portfolio-year">May 2026</p>
             <h3>Quarter-finalist (Top 36 / 200+ teams) · Coding Challenge 2026</h3>
-            <p>Faculty of Information Technology, VNUHCM University of Science (FIT - HCMUS).</p>
-          </li>
-        </ol>
-      </section>
-
-      <section class="portfolio-cv-section" aria-labelledby="research-heading">
-        <h2 id="research-heading">Research direction</h2>
-        <ol class="portfolio-timeline">
-          <li class="portfolio-timeline-item">
-            <p class="portfolio-year">Now</p>
-            <h3>Generative models, stochastic systems, and vision</h3>
-            <p>Developing training-free style transfer via latent patch-shuffling in diffusion models and flow matching, alongside optimal control and stochastic differential equations.</p>
+            <p>Faculty of Information Technology, University of Science, VNUHCM.</p>
           </li>
         </ol>
       </section>
 
       <section class="portfolio-cv-section" aria-labelledby="selected-work-heading">
-        <h2 id="selected-work-heading">Selected work</h2>
+        <h2 id="selected-work-heading">Projects</h2>
         <ol class="portfolio-timeline">
           <li class="portfolio-timeline-item">
-            <p class="portfolio-year">Competition / 2026</p>
-            <h3>Video Retrieval Pipeline — AI Challenge HCMC 2026</h3>
-            <p>Team lead building an end-to-end multimodal video retrieval system featuring LanceDB hybrid indexing (Vector + BM25) and dynamic programming for temporal sequence alignment (TRAKE). <em>Active competition (Private source code).</em></p>
+            <p class="portfolio-year">Aug. 2026</p>
+            <h3>Video Retrieval Pipeline — AI Challenge HCMC 2026 (Team Lead)</h3>
+            <p>Multimodal video retrieval pipeline addressing KIS, VQA, and temporal alignment (TRAKE). Engineered hybrid retrieval combining dense semantic embeddings (CLIP/SigLIP) with full-text search (BM25 via LanceDB) and Dynamic Programming (DANTE algorithm).</p>
           </li>
           <li class="portfolio-timeline-item">
-            <p class="portfolio-year">Research / 2026</p>
+            <p class="portfolio-year">Aug. 2026</p>
             <h3>Latent Patch-Shuffle Style Transfer</h3>
-            <p>Training-free style transfer using Latent Diffusion Models and latent patch-permutations, eliminating content leakage and pixel-space grid artifacts.</p>
+            <p>Training-free style transfer framework on latent diffusion models, utilizing latent patch-shuffling to retain core object geometry while preventing content leakage.</p>
           </li>
           <li class="portfolio-timeline-item">
-            <p class="portfolio-year">Study / 2025</p>
-            <h3>Digits Classification Project</h3>
-            <p>Team lead for a CNN vs. MLP benchmark on MNIST, with reproducible training, evaluation, and visualization.</p>
+            <p class="portfolio-year">Nov. 2025</p>
+            <h3>Handwritten Digits Classification (MNIST benchmark)</h3>
+            <p>Led research benchmarking CNN vs. MLP architectures from scratch in PyTorch, analyzing mathematical convergence and accuracy trade-offs.</p>
+          </li>
+          <li class="portfolio-timeline-item">
+            <p class="portfolio-year">Dec. 2025</p>
+            <h3>Gomoku (Tic-Tac-Toe) AI Bot</h3>
+            <p>Classical AI opponent implemented in C++ using Minimax with Alpha-Beta pruning for efficient game tree evaluation.</p>
           </li>
         </ol>
       </section>
 
       <section class="portfolio-cv-section" aria-labelledby="writing-heading">
-        <h2 id="writing-heading">Writing</h2>
+        <h2 id="writing-heading">Research Notes & Writing</h2>
         <ol class="portfolio-timeline">
           <li class="portfolio-timeline-item">
             <p class="portfolio-year">Aug. 2026</p>
@@ -156,7 +196,6 @@ description: Second-year CS student and aspiring AI researcher building from mat
   </div>
 
   <div class="portfolio-cv-footer-note">
-    <span>Rendered from <code>_data/cv.yml</code> · available as RenderCV or JSONResume</span>
     <span>Last updated 2026</span>
   </div>
 </div>
@@ -175,4 +214,3 @@ description: Second-year CS student and aspiring AI researcher building from mat
     }
   }
 </script>
-

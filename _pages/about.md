@@ -15,26 +15,31 @@ announcements:
 
 latest_posts:
   enabled: true
-  limit: 5
+  limit: 2
 ---
 
 <div class="portfolio-shell">
 
   <!-- ═══════════════════════════════════════════════════
-       HERO — Name + profile photo
+       HERO — Name + profile photo + concise bio + contact
   ════════════════════════════════════════════════════ -->
   <header class="about-hero" data-reveal>
     <div class="about-hero-copy">
       <p class="portfolio-kicker">— About / 2026</p>
-      <h1>Nhat M.<br><em>Nguyen.</em></h1>
-      <p class="about-subtitle">Second-year CS student · aspiring AI researcher</p>
-      <p class="portfolio-hero-description">
-        University of Science, Viet Nam National University Ho Chi Minh City.
-        Building toward computer vision and diffusion models — one equation at a time.
-      </p>
-      <div class="about-ctas">
-        <a class="portfolio-button" href="{{ '/cv/' | relative_url }}">View CV →</a>
-        <a class="portfolio-button portfolio-button--ghost" href="https://github.com/xdnhatnguyen" rel="noopener noreferrer">GitHub ↗</a>
+      <h1>Minh Nhat<br><em>Nguyen.</em></h1>
+      <p class="about-subtitle">Undergraduate Researcher · Computer Science</p>
+      <div class="portfolio-hero-description" style="display: flex; flex-direction: column; gap: 0.75rem;">
+        <p>
+          Undergraduate student in Computer Science at the <strong>Faculty of Information Technology, VNUHCM - University of Science</strong>.
+        </p>
+        <p>
+          My research focuses on <strong>generative models</strong>, <strong>optimal control</strong>, and <strong>computer vision</strong>. I work in public — sharing research notes, mathematical proofs, and experimental findings on my <a href="{{ '/blog/' | relative_url }}">pixeltheorem blog</a>.
+        </p>
+      </div>
+      <div class="about-ctas" style="margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 0.6rem;">
+        <a class="portfolio-button" href="mailto:nguyenminhnhat.cs@gmail.com">Email ↗</a>
+        <a class="portfolio-button portfolio-button--ghost" href="{{ '/cv/' | relative_url }}">Resume / CV →</a>
+        <a class="portfolio-button portfolio-button--ghost" href="https://github.com/xdnhatnguyen" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
       </div>
     </div>
 
@@ -42,13 +47,13 @@ latest_posts:
       <div class="about-profile-img-wrap">
         <img
           src="{{ 'assets/img/avt.png' | relative_url }}"
-          alt="Nhat Nguyen — Dark mode avatar"
+          alt="Minh Nhat Nguyen — Dark mode avatar"
           class="about-profile-img only-dark"
           loading="eager"
         >
         <img
           src="{{ 'assets/img/avt_0.png' | relative_url }}"
-          alt="Nhat Nguyen — Light mode avatar"
+          alt="Minh Nhat Nguyen — Light mode avatar"
           class="about-profile-img only-light"
           loading="eager"
         >
@@ -56,6 +61,7 @@ latest_posts:
       </div>
       <figcaption class="about-profile-caption">
         <span>Generative PixelChemy Group</span>
+        <span>Faculty of Information Technology, VNUHCM - University of Science</span>
         <span>Ho Chi Minh City, Viet Nam</span>
       </figcaption>
     </figure>
@@ -64,87 +70,7 @@ latest_posts:
   </header>
 
   <!-- ═══════════════════════════════════════════════════
-       BIO — prose content
-  ════════════════════════════════════════════════════ -->
-  <section class="about-bio" aria-labelledby="bio-heading" data-reveal>
-    <div class="portfolio-section-heading">
-      <h2 id="bio-heading">In a few<br><em class="portfolio-display-accent">lines.</em></h2>
-      <p>The longer version is still being written — in notebooks, not bio pages.</p>
-    </div>
-    <div class="about-bio-body">
-      <p>
-        I am a university student from Vietnam, majoring in Information Technology at the
-        University of Science, Viet Nam National University Ho Chi Minh City
-      </p>
-      <p>
-        My research areas focus on <strong>generative models</strong>,
-        <strong>stochastic differential equations</strong>, and <strong>computer vision</strong>.
-        I follow the mathematics from optimal control and differential equations toward
-        diffusion models and image generation experiments.
-      </p>
-      <p>
-        I work in public — notes, proofs, and experiments all appear on the
-        <a href="{{ '/blog/' | relative_url }}">blog</a> before they become anything more formal.
-      </p>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════
-       RESEARCH FOCUS — 3 principle cards
-  ════════════════════════════════════════════════════ -->
-  <section class="about-focus" aria-labelledby="focus-heading" data-reveal>
-    <div class="portfolio-section-heading">
-      <h2 id="focus-heading">Research<br><em class="portfolio-display-accent">directions.</em></h2>
-      <p>Three threads I follow simultaneously — they converge more often than not.</p>
-    </div>
-
-    <div class="about-focus-grid">
-      <div class="about-focus-item" data-reveal>
-        <p class="about-focus-number">01</p>
-        <h3 class="about-focus-title">Generative Models</h3>
-        <p class="about-focus-desc">
-          Score-based diffusion, latent spaces, and the mathematics that connect
-          stochastic processes to image synthesis.
-        </p>
-        <div class="portfolio-tags about-focus-tags">
-          <span class="portfolio-tag">diffusion</span>
-          <span class="portfolio-tag">SDE</span>
-          <span class="portfolio-tag">latent</span>
-        </div>
-      </div>
-
-      <div class="about-focus-item" data-reveal>
-        <p class="about-focus-number">02</p>
-        <h3 class="about-focus-title">Computer Vision</h3>
-        <p class="about-focus-desc">
-          Architectures, datasets, and what the loss curve says next. CNN vs MLP,
-          then whatever the next benchmark demands.
-        </p>
-        <div class="portfolio-tags about-focus-tags">
-          <span class="portfolio-tag">CNN</span>
-          <span class="portfolio-tag">PyTorch</span>
-          <span class="portfolio-tag">MNIST</span>
-        </div>
-      </div>
-
-      <div class="about-focus-item" data-reveal>
-        <p class="about-focus-number">03</p>
-        <h3 class="about-focus-title">Stochastic Systems</h3>
-        <p class="about-focus-desc">
-          ODE → SDE → PDE. Optimal control, HJB equations, and Pontryagin's
-          Maximum Principle as lenses on learning.
-        </p>
-        <div class="portfolio-tags about-focus-tags">
-          <span class="portfolio-tag">calculus</span>
-          <span class="portfolio-tag">control</span>
-          <span class="portfolio-tag">math</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════
-       NEWS / ANNOUNCEMENTS
+       NEWS / ANNOUNCEMENTS (Brought to the top)
   ════════════════════════════════════════════════════ -->
   {% if page.announcements.enabled %}
     {% assign all_news = site.news | reverse %}
@@ -152,7 +78,7 @@ latest_posts:
       <section class="about-news" aria-labelledby="news-heading" data-reveal>
         <div class="portfolio-section-heading">
           <h2 id="news-heading">Recent<br><em class="portfolio-display-accent">news.</em></h2>
-          <p>Updates, announcements, and things worth sharing.</p>
+          <p>Updates, publications, and milestone announcements.</p>
         </div>
 
         <ul class="about-news-list">
@@ -172,9 +98,65 @@ latest_posts:
             </li>
           {% endfor %}
         </ul>
+
+        <div class="about-posts-more" style="margin-top: 1.5rem;">
+          <a class="portfolio-button portfolio-button--ghost" href="{{ '/news/' | relative_url }}">All news →</a>
+        </div>
       </section>
     {% endif %}
   {% endif %}
+
+  <!-- ═══════════════════════════════════════════════════
+       RESEARCH DIRECTIONS — 3 principal cards
+  ════════════════════════════════════════════════════ -->
+  <section class="about-focus" aria-labelledby="focus-heading" data-reveal>
+    <div class="portfolio-section-heading">
+      <h2 id="focus-heading">Research<br><em class="portfolio-display-accent">directions.</em></h2>
+      <p>Three core research areas I actively explore.</p>
+    </div>
+
+    <div class="about-focus-grid">
+      <div class="about-focus-item" data-reveal>
+        <p class="about-focus-number">01</p>
+        <h3 class="about-focus-title">Generative Modeling Theory</h3>
+        <p class="about-focus-desc">
+          Mathematical foundations of generative models spanning Optimal Control, Optimal Transport, and Schrödinger Bridge formulations.
+        </p>
+        <div class="portfolio-tags about-focus-tags">
+          <span class="portfolio-tag">Optimal Control</span>
+          <span class="portfolio-tag">Optimal Transport</span>
+          <span class="portfolio-tag">Schrödinger Bridge</span>
+        </div>
+      </div>
+
+      <div class="about-focus-item" data-reveal>
+        <p class="about-focus-number">02</p>
+        <h3 class="about-focus-title">Generative Models' Applications</h3>
+        <p class="about-focus-desc">
+          Applied generative frameworks with Diffusion Models, Flow Matching, and VAEs for controllable synthesis and training-free style transfer.
+        </p>
+        <div class="portfolio-tags about-focus-tags">
+          <span class="portfolio-tag">Diffusion</span>
+          <span class="portfolio-tag">Flow Matching</span>
+          <span class="portfolio-tag">VAE</span>
+        </div>
+      </div>
+
+      <div class="about-focus-item" data-reveal>
+        <p class="about-focus-number">03</p>
+        <h3 class="about-focus-title">Vision Foundation Models</h3>
+        <p class="about-focus-desc">
+          Multimodal video and image retrieval, object detection, YOLO variants, representation embedding models, and point learning.
+        </p>
+        <div class="portfolio-tags about-focus-tags">
+          <span class="portfolio-tag">Retrieval</span>
+          <span class="portfolio-tag">Detection</span>
+          <span class="portfolio-tag">YOLO</span>
+          <span class="portfolio-tag">Embeddings</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ═══════════════════════════════════════════════════
        LATEST POSTS
@@ -186,7 +168,7 @@ latest_posts:
       <section class="about-posts" aria-labelledby="posts-heading" data-reveal>
         <div class="portfolio-section-heading">
           <h2 id="posts-heading">Latest<br><em class="portfolio-display-accent">notes.</em></h2>
-          <p>Written while learning — equations, experiments, and the ideas between them.</p>
+          <p>Research notes, mathematical derivations, and technical essays from my <a href="{{ '/blog/' | relative_url }}">pixeltheorem blog</a>.</p>
         </div>
 
         <ul class="portfolio-post-list">
@@ -213,49 +195,6 @@ latest_posts:
     {% endif %}
   {% endif %}
 
-  <!-- ═══════════════════════════════════════════════════
-       CONTACT / CTA
-  ════════════════════════════════════════════════════ -->
-  <section id="contact" class="about-contact" aria-labelledby="contact-heading" data-reveal>
-    <div class="portfolio-section-heading">
-      <h2 id="contact-heading">Start a<br><em class="portfolio-display-accent">conversation.</em></h2>
-      <p>Open to discussions on AI research, computer vision, or just a good question.</p>
-    </div>
-
-    <div class="about-contact-grid">
-      <div class="about-contact-links">
-        <a class="about-contact-link" href="https://github.com/xdnhatnguyen" rel="noopener noreferrer">
-          <span class="about-contact-icon" aria-hidden="true">↗</span>
-          <span>
-            <strong>GitHub</strong>
-            <span>github.com/xdnhatnguyen</span>
-          </span>
-        </a>
-        <a class="about-contact-link" href="{{ '/cv/' | relative_url }}">
-          <span class="about-contact-icon" aria-hidden="true">→</span>
-          <span>
-            <strong>Curriculum Vitæ</strong>
-            <span>Education, research, writing</span>
-          </span>
-        </a>
-        <a class="about-contact-link" href="{{ '/publications/' | relative_url }}">
-          <span class="about-contact-icon" aria-hidden="true">→</span>
-          <span>
-            <strong>Publications</strong>
-            <span>Research directions in progress</span>
-          </span>
-        </a>
-      </div>
-
-      <div class="about-contact-note">
-        <p class="portfolio-kicker">— Location</p>
-        <p class="about-location-name">Ho Chi Minh City<br><em>Vietnam</em></p>
-        <p class="about-location-sub">Generative PixelChemy Group · VNU-HCM University of Science</p>
-      </div>
-    </div>
-  </section>
-
-  <p class="portfolio-note">Rendered from <code>_pages/about.md</code> · profile image from <code>assets/img/avt.png</code> (dark) & <code>assets/img/avt_0.png</code> (light)</p>
 </div>
 
 <script>

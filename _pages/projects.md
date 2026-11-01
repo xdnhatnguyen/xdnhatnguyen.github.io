@@ -102,5 +102,4 @@ latency   sub-second response</pre>
     </ul>
   </section>
 
-  <p class="portfolio-note">Projects are rendered from <code>_projects/</code> with importance sorting and collection metadata.</p>
 </div>

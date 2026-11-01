@@ -1256,15 +1256,17 @@ body.portfolio-site {
     .about-profile-img-wrap {
       position: relative;
       width: 100%;
+      aspect-ratio: 1 / 1;
       overflow: hidden;
       border: 1px solid var(--portfolio-border);
+      border-radius: 12px;
     }
 
     .about-profile-img {
       display: block;
       width: 100%;
-      height: auto;
-      aspect-ratio: 4 / 5;
+      height: 100%;
+      aspect-ratio: 1 / 1;
       object-fit: cover;
       filter: grayscale(0.18) contrast(1.04);
       transition: filter 400ms var(--portfolio-ease), transform 400ms var(--portfolio-ease);

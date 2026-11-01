@@ -89,7 +89,7 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: "pixelchemy blog" # blog_name will be displayed in your blog page
+blog_name: "pixeltheorem blog" # blog_name will be displayed in your blog page
 blog_description: Learning and building AI from scratch with math and algorithms.
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
@@ -268,7 +268,7 @@ display_categories: ["ai-theory", "paper-review", "university", "experience", "l
 
 scholar:
   last_name: [Nguyễn, Nguyen]
-  first_name: [Minh Nhật, M. N., Nhat]
+  first_name: [Minh Nhật, M. N., Nhat, Minh-Nhat]
 
   style: apa
   locale: en

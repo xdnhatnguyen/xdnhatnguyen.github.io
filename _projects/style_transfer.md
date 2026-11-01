@@ -1,39 +1,37 @@
 ---
 layout: page
-title: Latent Patch-Shuffle Style Transfer
-description: Training-Free artistic style transfer via Latent Diffusion Models & patch-shuffling to preserve content and eliminate grid artifacts.
+title: "OrthoStyle: Training-Free Style Transfer"
+description: Training-Free style transfer via score-orthogonal guidance and latent dynamics, balancing style fidelity and content preservation (Oral at SOICT 2026).
 img: assets/img/style_transfer_v1/the_starry_night_cat.png
-importance: 2
+importance: 1
 category: research
 giscus_comments: true
 ---
 
-![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white) ![Diffusion](https://img.shields.io/badge/Generative-Diffusion%20%26%20Flow%20Matching-blueviolet.svg?style=for-the-badge) ![Research](https://img.shields.io/badge/Undergraduate-Research%20Project-success.svg?style=for-the-badge)
+![Oral](https://img.shields.io/badge/SOICT%202026-Oral%20Presentation-orange.svg?style=for-the-badge) ![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white) ![Diffusion](https://img.shields.io/badge/Generative-Diffusion%20%26%20Flow%20Matching-blueviolet.svg?style=for-the-badge) ![Research](https://img.shields.io/badge/Undergraduate-Research%20Project-success.svg?style=for-the-badge)
 
-> **Generative PixelChemy Research Group · VNU-HCM University of Science**
-> **Focus:** Training-Free Style Transfer, Latent Space Dynamics, Generative Diffusion Models
+> **Generative PixelChemy Research Group · Faculty of Information Technology, VNUHCM - University of Science**  
+> **Paper:** *OrthoStyle: Manifold-Preserving Training-Free Style Transfer via Score-Orthogonal Guidance* (SOICT 2026, Oral)  
+> **Authors:** Minh Nhat Nguyen, Dang Quang Pham, Thien Phuc Vo, Phuc Loc Dang, Duc Khoan Le
 
 ---
 
-## 📄 Project Summary & Research Post
+## 🌐 Official Project Page & Code
 
-This project investigates a **Training-Free Style Transfer framework** based on Latent Diffusion Models (Stable Diffusion / Flow Matching). 
-
-👉 **[Read the Full Experimental Report & Interactive Visualizations]({{ '/blog/2026/style-transfer/' | relative_url }})**
+👉 **[Visit the OrthoStyle Project Page (Interactive Demos & Visualizations)](https://xdnhatnguyen.github.io/OrthoStyle/)**  
+👉 **[GitHub Code Repository](https://github.com/xdnhatnguyen/OrthoStyle-CodeRunner)**  
+👉 **[Read Experimental Report & Blog Post]({{ '/blog/2026/style-transfer/' | relative_url }})**
 
 ---
 
 ## 💡 Motivation & Core Innovation
 
-Traditional style transfer methods using patch permutations or inversion in pixel space suffer from two major limitations:
-1. **Content Leakage:** Style reference images frequently leak unintended semantic entities into the stylized output.
-2. **Grid Line Artifacts:** Shuffling patches directly on pixel grids leaves sharp, noticeable boundary seams.
+Reference-based diffusion style transfer often struggles with a fundamental trade-off: strong style injection causes structural distortion and semantic leakage, while conservative guidance results in under-stylization.
 
-### Our Solution: Latent Patch-Shuffle & Guidance Control
-
-* **Latent-Domain Patch Permutation:** Performing patch-shuffling inside the latent manifold ($\mathcal{Z}$-space) of the VAE encoder rather than the RGB pixel space, allowing the decoder to naturally synthesize seamless boundary transitions.
-* **Cross-Attention & Sampling Guidance:** Manipulating the denoising trajectory, self-attention maps, and text condition embeddings to preserve fine object contours while adopting artistic textures (e.g., Starry Night, Cyberpunk, Rain Princess).
-* **Training-Free Efficiency:** Operates at inference time without requiring expensive per-style fine-tuning or custom adapter training.
+**OrthoStyle** introduces a training-free framework balancing style fidelity and content preservation without network fine-tuning or DDIM inversion:
+* **Score-Orthogonal Guidance:** Projects style gradients orthogonally to the diffusion score trajectory, ensuring minimal destructive interference with content semantics.
+* **Semantic Gating & Early Step Control:** Governs style pushforward during crucial initial layout timesteps while preserving fine structural boundaries.
+* **Benchmark Outperformance:** Extensive quantitative and qualitative comparisons show OrthoStyle achieves a superior balance of style fidelity and structural consistency, completely outperforming baselines on the same Stable Cascade backbone.
 
 ---
 
