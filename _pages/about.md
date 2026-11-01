@@ -34,7 +34,7 @@ announcements:
       </div>
       <div class="about-ctas" style="margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 0.6rem;">
         <a class="portfolio-button" href="mailto:nguyenminhnhat.cs@gmail.com">Email ↗</a>
-        <a class="portfolio-button portfolio-button--ghost" href="{{ '/cv/' | relative_url }}">Resume / CV →</a>
+        <a class="portfolio-button portfolio-button--ghost" href="{{ '/cv/' | relative_url }}">Resume / CV ↗</a>
         <a class="portfolio-button portfolio-button--ghost" href="{{ '/blog/' | relative_url }}">Blog ↗</a>
         <a class="portfolio-button portfolio-button--ghost" href="https://github.com/xdnhatnguyen" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
       </div>
