@@ -1748,3 +1748,180 @@ body.portfolio-site {
     }
   }
 }
+
+// -----------------------------------------------------------------------------
+// Academic & Mathematical Prose Styling (Inspired by sophtang / discrete-beckmann-transport)
+// -----------------------------------------------------------------------------
+.portfolio-prose {
+  font-family: 'Source Serif 4', 'Charter', Georgia, 'Times New Roman', serif;
+  font-size: 1.12rem;
+  line-height: 1.85;
+  color: var(--portfolio-fg-prose);
+  max-width: 820px;
+  margin: 0 auto;
+  word-wrap: break-word;
+
+  p {
+    margin-top: 0;
+    margin-bottom: 1.6rem;
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+  }
+
+  // Heading hierarchy
+  h1 {
+    font-family: var(--portfolio-display);
+    font-size: clamp(2.2rem, 4vw, 2.85rem);
+    font-weight: 400;
+    line-height: 1.15;
+    margin-top: 3.8rem;
+    margin-bottom: 1.35rem;
+    color: var(--portfolio-fg);
+    border-bottom: 2px solid var(--portfolio-accent);
+    padding-bottom: 0.6rem;
+  }
+
+  h2 {
+    font-family: var(--portfolio-display);
+    font-size: clamp(1.7rem, 3vw, 2.15rem);
+    font-weight: 400;
+    line-height: 1.25;
+    margin-top: 3rem;
+    margin-bottom: 1.1rem;
+    color: var(--portfolio-fg);
+    border-bottom: 1px solid var(--portfolio-border);
+    padding-bottom: 0.4rem;
+  }
+
+  h3 {
+    font-family: var(--portfolio-body);
+    font-size: 1.28rem;
+    font-weight: 600;
+    line-height: 1.35;
+    margin-top: 2.3rem;
+    margin-bottom: 0.85rem;
+    color: var(--portfolio-fg);
+  }
+
+  h4 {
+    font-family: var(--portfolio-body);
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-top: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: var(--portfolio-accent);
+  }
+
+  ul, ol {
+    margin-top: 0.5rem;
+    margin-bottom: 1.6rem;
+    padding-left: 1.8rem;
+
+    li {
+      margin-bottom: 0.5rem;
+      line-height: 1.8;
+    }
+  }
+
+  hr {
+    margin: 3.2rem 0;
+    border: 0;
+    border-top: 1px solid var(--portfolio-border-strong);
+  }
+
+  // Math display equations
+  .mjx-container[jax="CHTML"][display="true"] {
+    margin: 2.2rem 0 !important;
+    padding: 0.75rem 0.5rem !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    max-width: 100% !important;
+    font-size: 1.06em;
+    text-align: center;
+  }
+
+  // Inline math
+  .mjx-container[jax="CHTML"]:not([display="true"]) {
+    margin: 0 0.15em;
+    vertical-align: -0.1em;
+  }
+
+  // Equation card (Highlighted cornerstone equation)
+  .eq-box {
+    position: relative;
+    margin: 2.6rem 0 2.2rem;
+    padding: 1.6rem 1.8rem 1.2rem;
+    border: 1.5px solid var(--portfolio-border-strong);
+    border-radius: 12px;
+    background: var(--portfolio-surface);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+
+    .eq-label {
+      position: absolute;
+      top: -12px;
+      left: 18px;
+      padding: 0.18rem 0.75rem;
+      border-radius: 4px;
+      font-family: var(--portfolio-body);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: var(--portfolio-accent);
+      color: #ffffff;
+      line-height: 1.4;
+    }
+
+    .mjx-container[jax="CHTML"][display="true"] {
+      margin: 0.5rem 0 0.2rem !important;
+      padding: 0 !important;
+    }
+  }
+
+  // Callouts, Key Ideas, Notes & Theorems
+  .theorem, .key-idea, .note, .proof, .definition {
+    margin: 2.2rem 0;
+    padding: 1.35rem 1.6rem;
+    border-radius: 0 10px 10px 0;
+    font-size: 1.04rem;
+    line-height: 1.8;
+  }
+
+  .theorem {
+    background: var(--portfolio-surface-subtle);
+    border-left: 4px solid var(--portfolio-accent);
+  }
+
+  .proof {
+    background: var(--portfolio-surface);
+    border-left: 3px solid var(--portfolio-border-strong);
+    position: relative;
+
+    &::after {
+      content: "■";
+      display: block;
+      text-align: right;
+      color: var(--portfolio-accent);
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+    }
+  }
+
+  .note, .key-idea {
+    background: var(--portfolio-surface-subtle);
+    border-left: 4px solid var(--portfolio-accent);
+  }
+
+  .tag-label {
+    font-family: var(--portfolio-body);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--portfolio-accent);
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+}

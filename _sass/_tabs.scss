@@ -1,43 +1,76 @@
+// -----------------------------------------------------------------------------
+// Interactive Tabs & Language Switcher with Pixel Cat Signature
+// -----------------------------------------------------------------------------
 .tab {
   display: flex;
-  flex-wrap: wrap;
-  margin-left: -20px;
-  padding: 0;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 1.5rem auto 3.5rem;
+  padding: 0 0 0.25rem 0;
   list-style: none;
   position: relative;
+  max-width: 480px;
+  border-bottom: 1.5px solid var(--portfolio-border, rgba(0, 0, 0, 0.1));
 }
 
 .tab > * {
   flex: none;
-  padding-left: 20px;
   position: relative;
 }
 
 .tab > * > a {
-  display: block;
+  display: inline-block;
   text-align: center;
-  padding: 9px 20px;
-  color: var(--global-text-color-light);
-  border-bottom: 2px solid transparent;
-  border-bottom-color: transparent;
-  font-size: 12px;
+  padding: 0.6rem 1.25rem;
+  font-family: var(--portfolio-body, sans-serif);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  transition: color 0.1s ease-in-out;
-  line-height: 20px;
+  color: var(--portfolio-muted, #706860);
+  border-bottom: 3px solid transparent;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.tab > * > a:hover {
+  color: var(--portfolio-fg, #181513);
 }
 
 .tab > .active > a {
-  color: var(--global-text-color);
-  border-color: var(--global-theme-color);
+  color: var(--portfolio-accent, #ea580c) !important;
+  border-bottom: 3px solid var(--portfolio-accent, #ea580c) !important;
 }
 
-.tab > li > a {
-  text-decoration: none;
-  cursor: pointer;
+// Pixel cat sitting beneath the active tab
+.tab > .active::after {
+  content: "";
+  position: absolute;
+  bottom: -32px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 28px;
+  height: 24px;
+  background-image: url("../img/pixel_cat.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  image-rendering: pixelated;
+  pointer-events: none;
+  animation: tabCatBob 2s ease-in-out infinite alternate;
+}
+
+@keyframes tabCatBob {
+  0% { transform: translateX(-50%) translateY(0); }
+  100% { transform: translateX(-50%) translateY(-3px); }
 }
 
 .tab-content {
   padding: 0;
+  list-style: none;
 }
 
 .tab-content > li {
