@@ -114,7 +114,7 @@ ninja.data = [{
           section: "News",},{id: "news-leading-a-research-team-in-the-ho-chi-minh-city-ai-challenge-2026-to-develop-an-end-to-end-multimodal-video-retrieval-pipeline-integrating-lancedb-hybrid-search-and-dynamic-programming-for-temporal-sequence-matching",
           title: 'Leading a research team in the Ho Chi Minh City AI Challenge 2026...',
           description: "",
-          section: "News",},{id: "news-our-paper-orthostyle-manifold-preserving-training-free-style-transfer-via-score-orthogonal-guidance-has-been-accepted-for-oral-presentation-at-soict-2026-explore-the-project-page",
+          section: "News",},{id: "news-our-paper-orthostyle-manifold-preserving-training-free-style-transfer-via-score-orthogonal-guidance-has-been-accepted-for-oral-presentation-at-the-15th-soict-2026-explore-the-project-page",
           title: '🎉 Our paper OrthoStyle: Manifold-Preserving Training-Free Style Transfer via Score-Orthogonal Guidance has been...',
           description: "",
           section: "News",},{id: "projects-digits-classification-project",
