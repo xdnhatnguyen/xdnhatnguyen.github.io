@@ -34,7 +34,7 @@ cv:
           - Specialized in Advanced Mathematics.
 
     experience:
-      - company: Autonomous AI Lab
+      - company: SGF Group Pty Ltd
         position: AI Research Intern
         start_date: 2026-10
         end_date: present
@@ -64,7 +64,6 @@ cv:
         journal: The 15th International Symposium on Information and Communication Technology (SOICT 2026) - Oral Presentation
         date: 2026-10
         url: https://xdnhatnguyen.github.io/OrthoStyle/
-        summary: Proposed a training-free framework balancing style fidelity and content preservation without network fine-tuning or DDIM inversion. Demonstrates superior structural consistency and completely outperforms baselines using the same Stable Cascade backbone.
 
     awards:
       - name: Quarter-finalist (Top 36 / 200+ teams)
