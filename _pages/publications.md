@@ -46,11 +46,21 @@ nav_order: 2
       <p>Interactive project demo, visual results matrix, and source code.</p>
     </div>
 
-    <div class="portfolio-feature" style="display: flex; flex-direction: column; gap: 1rem; padding: 2rem; border: 1px solid var(--portfolio-border); border-radius: 12px; background: var(--portfolio-surface-subtle, var(--portfolio-surface));">
+    <div class="portfolio-feature" style="display: flex; flex-direction: column; gap: 1.25rem; padding: 2rem; border: 1px solid var(--portfolio-border); border-radius: 12px; background: var(--portfolio-surface-subtle, var(--portfolio-surface));">
       <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem;">
-        <span class="portfolio-kicker" style="color: var(--portfolio-accent); font-weight: 600;">Oral Presentation · SOICT 2026</span>
-        <span class="portfolio-year">2026</span>
+        <span class="portfolio-kicker" style="color: var(--portfolio-accent); font-weight: 600;">Oral Presentation · SOICT 2026 (The 15th)</span>
+        <span class="portfolio-year">October 2026</span>
       </div>
+
+      <div style="width: 100%; overflow: hidden; border-radius: 8px; border: 1px solid var(--portfolio-border);">
+        <img
+          src="{{ '/assets/img/publication_preview/OrthoStyle_ Manifold-Preserved Style Transfer.png' | relative_url }}"
+          alt="OrthoStyle Framework: Manifold-Preserved Guidance & Semantic Gating"
+          style="width: 100%; height: auto; display: block;"
+          loading="eager"
+        >
+      </div>
+
       <h3 style="font-size: 1.5rem; margin: 0; color: var(--portfolio-fg);">
         <a href="https://xdnhatnguyen.github.io/OrthoStyle/" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
           OrthoStyle: Manifold-Preserving Training-Free Style Transfer via Score-Orthogonal Guidance ↗
@@ -59,11 +69,11 @@ nav_order: 2
       <p style="margin: 0; color: var(--portfolio-muted); line-height: 1.6;">
         A training-free framework balancing style fidelity and content preservation without network fine-tuning or DDIM inversion. Extensive quantitative and qualitative comparisons with both OC-based baselines and representative stylization methods show that OrthoStyle achieves a favorable balance between style fidelity and content preservation while maintaining structural consistency, outperforming the Stable Cascade backbone.
       </p>
-      <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 0.5rem;">
+      <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 0.25rem;">
         <a class="portfolio-button" href="https://xdnhatnguyen.github.io/OrthoStyle/" target="_blank" rel="noopener noreferrer">
           Visit Project Page ↗
         </a>
-        <a class="portfolio-button portfolio-button--ghost" href="https://github.com/xdnhatnguyen/OrthoStyle-CodeRunner" target="_blank" rel="noopener noreferrer">
+        <a class="portfolio-button portfolio-button--ghost" href="https://github.com/xdnhatnguyen/OrthoStyle" target="_blank" rel="noopener noreferrer">
           GitHub Code ↗
         </a>
       </div>

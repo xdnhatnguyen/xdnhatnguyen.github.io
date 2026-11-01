@@ -83,7 +83,7 @@ description: Undergraduate student in Computer Science at University of Science,
       <section class="portfolio-cv-section" aria-labelledby="summary-heading">
         <h2 id="summary-heading">Professional Summary</h2>
         <p style="color: var(--portfolio-muted); line-height: 1.6;">
-          A Computer Science undergraduate with a solid mathematical foundation (Calculus, Linear Algebra, Stochastic Systems) and hands-on research in Computer Vision and Generative Models (Diffusion Models, Flow Matching). Experienced in developing training-free generative methods and multimodal video retrieval pipelines.
+          A Computer Science undergraduate with a solid mathematical foundation (Calculus, Linear Algebra, Stochastic Systems) and hands-on research in Computer Vision and Generative Models (Diffusion Models, Flow Matching). Experienced in developing training-free generative methods, multimodal video retrieval, and architectural document understanding pipelines.
         </p>
       </section>
 
@@ -109,10 +109,17 @@ description: Undergraduate student in Computer Science at University of Science,
         <h2 id="experience-heading">Experience & Research</h2>
         <ol class="portfolio-timeline">
           <li class="portfolio-timeline-item">
+            <p class="portfolio-year">Oct. 2026 — Present</p>
+            <h3>AI Research Intern · Architectural AI Project</h3>
+            <p>Engineered an automated architectural drawing recognition and component counting pipeline from vector PDF floorplans, accurately detecting doors and structural building elements.</p>
+            <p style="font-size: 0.9em; opacity: 0.9; margin-top: 0.25rem;">Developed end-to-end preprocessing and geometric post-processing algorithms integrated with Vision Foundation Models (VFMs) to significantly improve recognition precision.</p>
+            <p style="font-size: 0.9em; opacity: 0.9; margin-top: 0.25rem;">Implemented semi-supervised fine-tuning to adapt models across heterogeneous CAD datasets and successfully deployed the inference recognition pipeline.</p>
+          </li>
+          <li class="portfolio-timeline-item">
             <p class="portfolio-year">March 2026 — Present</p>
             <h3>Undergraduate AI Researcher · University of Science, VNUHCM</h3>
             <p>Developing training-free methods for style transfer using Latent Diffusion Models and Flow Matching, introducing latent patch-shuffling to eliminate content leakage and pixel-space grid artifacts.</p>
-            <p style="font-size: 0.9em; opacity: 0.9; margin-top: 0.25rem;">Optimizing generative algorithms by manipulating sampling trajectories, guidance terms, and cross-attention maps to control stylistic and structural outputs.</p>
+            <p style="font-size: 0.9em; opacity: 0.9; margin-top: 0.25rem;">Optimizing generative algorithms by manipulating sampling trajectories, guidance terms, and cross-attention maps to balance stylistic fidelity and structural consistency.</p>
           </li>
         </ol>
       </section>
@@ -121,7 +128,7 @@ description: Undergraduate student in Computer Science at University of Science,
         <h2 id="publications-heading">Publications</h2>
         <ol class="portfolio-timeline">
           <li class="portfolio-timeline-item">
-            <p class="portfolio-year">SOICT 2026 · Oral</p>
+            <p class="portfolio-year">Oct. 2026 · Oral</p>
             <h3>
               <a href="https://xdnhatnguyen.github.io/OrthoStyle/" target="_blank" rel="noopener noreferrer">
                 OrthoStyle: Manifold-Preserving Training-Free Style Transfer via Score-Orthogonal Guidance ↗
@@ -131,10 +138,13 @@ description: Undergraduate student in Computer Science at University of Science,
               <strong>Minh Nhat Nguyen</strong>, Dang Quang Pham, Thien Phuc Vo, Phuc Loc Dang, Duc Khoan Le
             </p>
             <p style="font-size: 0.9em; opacity: 0.85; margin-bottom: 0.4rem;">
-              <em>The 13th International Symposium on Information and Communication Technology (SOICT 2026)</em> · <strong>Oral Presentation</strong> · <a href="https://xdnhatnguyen.github.io/OrthoStyle/" target="_blank" rel="noopener noreferrer">Project Page</a>
+              <em>The 15th International Symposium on Information and Communication Technology (SOICT 2026)</em> · <strong>Oral Presentation</strong> · <a href="https://xdnhatnguyen.github.io/OrthoStyle/" target="_blank" rel="noopener noreferrer">Project Page</a>
             </p>
             <p>
-              A training-free framework balancing style fidelity and content preservation without network fine-tuning or DDIM inversion. Extensive quantitative and qualitative comparisons with both OC-based baselines and representative stylization methods show that OrthoStyle achieves a favorable balance between style fidelity and content preservation while maintaining structural consistency, outperforming the baseline that uses the same Stable Cascade backbone.
+              Developed a training-free reference-based style transfer framework resolving semantic content leakage and structural distortion without requiring network fine-tuning or DDIM inversion.
+            </p>
+            <p style="font-size: 0.9em; opacity: 0.9; margin-top: 0.25rem;">
+              Introduced score-orthogonal guidance and latent manifold manipulation to achieve a favorable trade-off between style fidelity and structural consistency, notably outperforming baselines built on the same Stable Cascade backbone.
             </p>
           </li>
         </ol>

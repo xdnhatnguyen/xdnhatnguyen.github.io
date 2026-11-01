@@ -1,47 +1,59 @@
 cv:
   name: Minh-Nhat Nguyen
-  label: Undergraduate AI Researcher
-  email: nguyenminhnhat.cs@gmail.com
+  headline: Undergraduate AI Researcher
   location: Ho Chi Minh City, Vietnam
-  image: "assets/img/avt.png"
-  summary: A second-year Computer Science undergraduate with a solid mathematical foundation and hands-on research in Computer Vision and Generative Models.
-
+  email: nguyenminhnhat.cs@gmail.com
   social_networks:
     - network: GitHub
       username: xdnhatnguyen
 
   sections:
-    Education:
+    summary:
+      - A Computer Science undergraduate with a solid mathematical foundation and hands-on research in Computer Vision and Generative Models (Diffusion Models, Flow Matching). Experienced in developing training-free generative methods, multimodal video retrieval, and architectural document understanding pipelines.
+
+    education:
       - institution: University of Science, VNUHCM
         location: Ho Chi Minh City, Vietnam
         url: https://www.hcmus.edu.vn/
-        area: Information Technology / Computer Science
-        studyType: Bachelor of Information Technology
+        area: Information Technology (Computer Science)
+        degree: Bachelor of Information Technology
         start_date: 2025
-        end_date: 2029 (expected)
-        score: "3.74 / 4.0"
-        courses: "Calculus I & II, Linear Algebra, Data Structures & Algorithms, Programming Fundamentals"
+        end_date: 2029
         highlights:
           - "GPA: 3.74/4.0 (8.75/10.0), All core mathematics and CS courses: 4.0/4.0."
-          - "Online Coursework: MIT 6.S184: Generative AI with Stochastic Differential Equations."
+          - "Expected graduation: 2029"
+          - "Advanced Online Coursework: MIT 6.S184: Generative AI with Stochastic Differential Equations."
 
       - institution: Le Quy Don Gifted High School
         location: Da Nang, Vietnam
         area: Mathematics
-        studyType: High School Diploma
+        degree: High School Diploma
         start_date: 2022
         end_date: 2025
         highlights:
-          - "Specialized in Advanced Mathematics."
+          - Specialized in Advanced Mathematics.
 
-    Experience:
+    experience:
+      - company: Autonomous AI Lab
+        position: AI Research Intern
+        start_date: 2026-10
+        end_date: present
+        location: Ho Chi Minh City, Vietnam
+        highlights:
+          - Engineered an automated architectural drawing recognition and component counting system from vector PDF floorplans, accurately detecting doors and structural building elements.
+          - Developed preprocessing and geometric post-processing algorithms integrated with Vision Foundation Models (VFMs) to significantly improve recognition precision.
+          - Implemented semi-supervised fine-tuning tailored to heterogeneous CAD datasets and deployed the complete inference recognition pipeline.
+
       - company: University of Science, VNUHCM
         position: Undergraduate AI Researcher
         location: Ho Chi Minh City, Vietnam
-        start_date: 2026-03-01
-        summary: Developing a Training-Free method for Style Transfer using Latent Diffusion Models and Flow Matching, introducing latent patch-shuffling to eliminate content leakage and pixel-space grid artifacts.
+        start_date: 2026-03
+        end_date: present
+        highlights:
+          - Developed training-free methods for style transfer using Latent Diffusion Models and Flow Matching, introducing latent patch-shuffling to eliminate content leakage and pixel-space grid artifacts.
+          - Optimized generative algorithms by manipulating sampling trajectories, guidance terms, and cross-attention maps to balance stylistic and structural fidelity.
 
-    Publications:
+    publications:
       - title: "OrthoStyle: Manifold-Preserving Training-Free Style Transfer via Score-Orthogonal Guidance"
         authors:
           - Minh Nhat Nguyen
@@ -49,26 +61,24 @@ cv:
           - Thien Phuc Vo
           - Phuc Loc Dang
           - Duc Khoan Le
-        publisher: "The 13th International Symposium on Information and Communication Technology (SOICT 2026)"
-        release_date: 2026
+        journal: The 15th International Symposium on Information and Communication Technology (SOICT 2026) - Oral Presentation
+        date: 2026-10
         url: https://xdnhatnguyen.github.io/OrthoStyle/
-        summary: "Oral Presentation at SOICT 2026. A training-free framework balancing style fidelity and content preservation without network fine-tuning or DDIM inversion."
+        summary: Proposed a training-free framework balancing style fidelity and content preservation without network fine-tuning or DDIM inversion. Demonstrates superior structural consistency and completely outperforms baselines using the same Stable Cascade backbone.
 
-    Awards:
-      - title: Quarter-finalist (Top 36 / 200+ teams)
-        authors: Coding Challenge 2026
-        date: 2026-05-01
-        awarder: Faculty of Information Technology, University of Science, VNUHCM
+    awards:
+      - name: Quarter-finalist (Top 36 / 200+ teams)
+        date: 2026-05
+        location: Ho Chi Minh City, Vietnam
+        summary: Coding Challenge 2026, Faculty of Information Technology, University of Science, VNUHCM
 
-    Projects:
+    projects:
       - name: Video Retrieval Pipeline — AI Challenge HCMC 2026
-        start_date: 2026-08-01
-        summary: "Team lead building an end-to-end multimodal video retrieval pipeline addressing KIS, VQA, and temporal alignment using LanceDB and dynamic programming."
+        date: 2026-08
+        summary: "Team lead building an end-to-end multimodal video retrieval pipeline addressing KIS, VQA, and temporal alignment using LanceDB hybrid search (SigLIP + BM25) and dynamic programming."
       - name: Latent Patch-Shuffle Style Transfer
-        start_date: 2026-08-01
-        url: https://xdnhatnguyen.github.io/blog/2026/style-transfer/
-        summary: "Researched and implemented a training-free style transfer framework on latent diffusion models."
+        date: 2026-08
+        summary: Researched and implemented a training-free style transfer framework on latent diffusion models.
       - name: Handwritten Digits Classification
-        start_date: 2025-11-01
-        url: https://github.com/xdnhatnguyen/Digits-Classification-Project
-        summary: "Led research benchmarking CNN vs. MLP architectures from scratch for MNIST dataset."
+        date: 2025-11
+        summary: Led research benchmarking CNN vs. MLP architectures from scratch in PyTorch for the MNIST dataset.

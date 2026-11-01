@@ -12,10 +12,6 @@ profile:
 announcements:
   enabled: true
   limit: 3
-
-latest_posts:
-  enabled: true
-  limit: 2
 ---
 
 <div class="portfolio-shell">
@@ -33,12 +29,13 @@ latest_posts:
           Undergraduate student in Computer Science at the <strong>Faculty of Information Technology, VNUHCM - University of Science</strong>.
         </p>
         <p>
-          My research focuses on <strong>generative models</strong>, <strong>optimal control</strong>, and <strong>computer vision</strong>. I work in public — sharing research notes, mathematical proofs, and experimental findings on my <a href="{{ '/blog/' | relative_url }}">pixeltheorem blog</a>.
+          My research focuses on <strong>generative models</strong>, <strong>optimal control</strong>, and <strong>computer vision</strong>. I work in public — sharing research notes, mathematical proofs, and experimental findings on my <a href="{{ '/blog/' | relative_url }}" style="color: var(--portfolio-accent); font-weight: 600; text-decoration: underline;">pixeltheorem blog</a>.
         </p>
       </div>
       <div class="about-ctas" style="margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 0.6rem;">
         <a class="portfolio-button" href="mailto:nguyenminhnhat.cs@gmail.com">Email ↗</a>
         <a class="portfolio-button portfolio-button--ghost" href="{{ '/cv/' | relative_url }}">Resume / CV →</a>
+        <a class="portfolio-button portfolio-button--ghost" href="{{ '/blog/' | relative_url }}">Blog ↗</a>
         <a class="portfolio-button portfolio-button--ghost" href="https://github.com/xdnhatnguyen" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
       </div>
     </div>
@@ -157,43 +154,6 @@ latest_posts:
       </div>
     </div>
   </section>
-
-  <!-- ═══════════════════════════════════════════════════
-       LATEST POSTS
-  ════════════════════════════════════════════════════ -->
-  {% if page.latest_posts.enabled %}
-    {% assign public_posts = site.posts | where_exp: "item", "item.hidden != true and item.hide != true" %}
-    {% assign posts_count = public_posts | size %}
-    {% if posts_count > 0 %}
-      <section class="about-posts" aria-labelledby="posts-heading" data-reveal>
-        <div class="portfolio-section-heading">
-          <h2 id="posts-heading">Latest<br><em class="portfolio-display-accent">notes.</em></h2>
-          <p>Research notes, mathematical derivations, and technical essays from my <a href="{{ '/blog/' | relative_url }}">pixeltheorem blog</a>.</p>
-        </div>
-
-        <ul class="portfolio-post-list">
-          {% for post in public_posts limit: page.latest_posts.limit %}
-            {% assign read_time = post.content | number_of_words | divided_by: 180 | plus: 1 %}
-            <li>
-              <a class="portfolio-post-row" href="{{ post.url | relative_url }}">
-                <span class="portfolio-year">{{ post.date | date: '%Y' }}<br>{{ post.date | date: '%m.%d' }}</span>
-                <span>
-                  <h3>{{ post.title }}</h3>
-                  <p>{{ post.description }}</p>
-                </span>
-                <span class="portfolio-post-meta">{{ read_time }} min<br>{{ post.categories | join: ' · ' }}</span>
-                <span class="portfolio-post-arrow" aria-hidden="true">→</span>
-              </a>
-            </li>
-          {% endfor %}
-        </ul>
-
-        <div class="about-posts-more">
-          <a class="portfolio-button portfolio-button--ghost" href="{{ '/blog/' | relative_url }}">All notes →</a>
-        </div>
-      </section>
-    {% endif %}
-  {% endif %}
 
 </div>
 

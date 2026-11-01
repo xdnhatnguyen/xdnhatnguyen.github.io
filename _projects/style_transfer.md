@@ -8,10 +8,10 @@ category: research
 giscus_comments: true
 ---
 
-![Oral](https://img.shields.io/badge/SOICT%202026-Oral%20Presentation-orange.svg?style=for-the-badge) ![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white) ![Diffusion](https://img.shields.io/badge/Generative-Diffusion%20%26%20Flow%20Matching-blueviolet.svg?style=for-the-badge) ![Research](https://img.shields.io/badge/Undergraduate-Research%20Project-success.svg?style=for-the-badge)
+![Oral](https://img.shields.io/badge/15th%20SOICT%202026-Oral%20Presentation-orange.svg?style=for-the-badge) ![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white) ![Diffusion](https://img.shields.io/badge/Generative-Diffusion%20%26%20Flow%20Matching-blueviolet.svg?style=for-the-badge) ![Research](https://img.shields.io/badge/Undergraduate-Research%20Project-success.svg?style=for-the-badge)
 
 > **Generative PixelChemy Research Group · Faculty of Information Technology, VNUHCM - University of Science**  
-> **Paper:** *OrthoStyle: Manifold-Preserving Training-Free Style Transfer via Score-Orthogonal Guidance* (SOICT 2026, Oral)  
+> **Paper:** *OrthoStyle: Manifold-Preserving Training-Free Style Transfer via Score-Orthogonal Guidance* (The 15th SOICT 2026, Oral)  
 > **Authors:** Minh Nhat Nguyen, Dang Quang Pham, Thien Phuc Vo, Phuc Loc Dang, Duc Khoan Le
 
 ---
@@ -19,7 +19,7 @@ giscus_comments: true
 ## 🌐 Official Project Page & Code
 
 👉 **[Visit the OrthoStyle Project Page (Interactive Demos & Visualizations)](https://xdnhatnguyen.github.io/OrthoStyle/)**  
-👉 **[GitHub Code Repository](https://github.com/xdnhatnguyen/OrthoStyle-CodeRunner)**  
+👉 **[GitHub Code Repository](https://github.com/xdnhatnguyen/OrthoStyle)**  
 👉 **[Read Experimental Report & Blog Post]({{ '/blog/2026/style-transfer/' | relative_url }})**
 
 ---
